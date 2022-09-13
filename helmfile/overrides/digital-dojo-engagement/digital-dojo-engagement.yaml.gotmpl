@@ -19,6 +19,7 @@ extraEnv:
           name: web-example-secret
           key: example-secret-password         
 */}}
+{{/*
 deployment: 
   labels: 
     branch: "{{ requiredEnv "APP_LABEL_BRANCH" | replace " " "-" }}"
@@ -33,6 +34,7 @@ deployment:
     project-id: "{{ requiredEnv "APP_LABEL_PROJECT_ID" | replace " " "-" }}"
     project-name: "{{ requiredEnv "PROJECT" | replace " " "-" }}"
     section: "{{ requiredEnv "APP_LABEL_SECTION" | replace " " "-" }}"
+*/}}
 secrets:
   ingress-tls-{{ requiredEnv "BRANCH" | lower }}:
     type: kubernetes.io/tls
@@ -42,7 +44,7 @@ secrets:
         tls.key: |
           {{ requiredEnv "INGRESS_TLS_KEY" }}
 image:
-  repository: {{ requiredEnv "CLOUD_ACR_DOMAIN" }}/{{ requiredEnv "PROJECT" }}
+  repository: {{ requiredEnv "ACR_DOMAIN" }}/{{ requiredEnv "PROJECT" }}
   tag: "{{ env "DOCKER_TAG" | default "latest" }}" 
   pullPolicy: Always
 service:
