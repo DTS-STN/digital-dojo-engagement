@@ -53,18 +53,15 @@ service:
     prometheus.io/path: /api/metrics
     prometheus.io/port: "3000"
 ingress:
-    enabled: true
-    annotations: 
-      kubernetes.io/ingress.class: azure/application-gateway
-    tls:
-      - hosts:
-          - {{ requiredEnv "PROJECT" }}-{{ requiredEnv "BRANCH" | lower }}.{{ requiredEnv "BASE_DOMAIN" }}
-        secretName: ingress-tls-{{ requiredEnv "BRANCH" | lower }}
-    hosts:
-    - host: {{ requiredEnv "PROJECT" }}-{{ requiredEnv "BRANCH" | lower }}.{{ requiredEnv "BASE_DOMAIN" }}
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+  enabled: true
+  path: /
+  annotations: {}
+  hosts:
+    {{- if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") }}
+    - {{ requiredEnv "PROJECT" }}.{{ requiredEnv "BASE_DOMAIN" }}
+    {{ else }}
+    - {{ requiredEnv "PROJECT" }}-{{ requiredEnv "BRANCH" | lower }}.{{ requiredEnv "BASE_DOMAIN" }}
+    {{ end }}
 resources:
   requests:
     cpu: 200m
