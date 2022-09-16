@@ -23,15 +23,15 @@ describe('index page', () => {
 
   const meta = {
     data_en: {
-      title: 'Next Template - Canada.ca',
+      title: 'Digital Dojo',
       desc: 'English',
-      author: 'Service Canada',
+      author: '',
       keywords: '',
     },
     data_fr: {
-      title: 'Next Template - Canada.ca',
+      title: 'Dojo Numérique',
       desc: 'Français',
-      author: 'Service Canada',
+      author: '',
       keywords: '',
     },
   }
@@ -44,7 +44,7 @@ describe('index page', () => {
 
   it('should render the page', () => {
     render(<App Component={component} pageProps={pageProps} />)
-    const heading = screen.getByRole('heading', { level: 1 })
-    expect(heading).toBeInTheDocument()
+    const main = screen.getByRole('main')
+    expect(main).toBeInTheDocument()
   })
 })

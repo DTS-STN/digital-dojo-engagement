@@ -24,15 +24,15 @@ describe('index page', () => {
   /* Place-holder Meta Data Props */
   const meta = {
     data_en: {
-      title: 'Next Template - Canada.ca',
+      title: 'Digital Dojo',
       desc: 'English',
-      author: 'Service Canada',
+      author: '',
       keywords: '',
     },
     data_fr: {
-      title: 'Next Template - Canada.ca',
+      title: 'Dojo Numérique',
       desc: 'Français',
-      author: 'Service Canada',
+      author: '',
       keywords: '',
     },
   }
@@ -46,8 +46,8 @@ describe('index page', () => {
 
   it('should render the page', () => {
     render(<Index locale="en" meta={meta} />)
-    const heading = screen.getByRole('heading')
-    expect(heading).toBeInTheDocument()
+    const main = screen.getByRole('main')
+    expect(main).toBeInTheDocument()
   })
 
   it('Test getStaticProps', async () => {
@@ -58,16 +58,16 @@ describe('index page', () => {
         locale: 'en',
         meta: {
           data_en: {
+            title: 'Digital Dojo',
             desc: 'English',
-            author: 'Service Canada',
+            author: '',
             keywords: '',
-            title: 'Next Template - Canada.ca',
           },
           data_fr: {
-            author: 'Service Canada',
+            title: 'Dojo Numérique',
             desc: 'Français',
+            author: '',
             keywords: '',
-            title: 'Next Template - Canada.ca',
           },
         },
       },
