@@ -1,7 +1,7 @@
 # Click to view the test reports for Main 👩‍🔬🧪
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/E2E%20Test?label=E2E)](https://dts-stn.github.io/digital-dojo-engagement/main/coverage/e2e-report)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/Lint%20and%20Test?label=Lint%20and%20Unit)](https://dts-stn.github.io/digital-dojo-engagement/main/coverage/lcov-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/E2E%20Tests?label=E2E)](https://dts-stn.github.io/digital-dojo-engaement/refs/heads/main/e2e-report/)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/Unit%20Tests?label=Unit%20Tests)](https://dts-stn.github.io/digital-dojo-engagement/refs/heads/main/coverage/lcov-report)
 
 ![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fdigital-dojo-engagement%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
 ![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fdigital-dojo-engagement%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
@@ -17,8 +17,7 @@
 
 ## Description
 
-Quick starter template for DTS projects making use of one of our commonly-used [Next.js](https://nextjs.org/) setups.
-This template uses the basic Next.js [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) bootstrap template.
+Digital Dojo 2.0 Application
 
 ### Technologies Implemented
 
@@ -28,28 +27,6 @@ This project uses
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Jest](https://jestjs.io/) for unit testing
 - [Cypress](https://www.cypress.io/) for end-to-end testing.
-
-## How to Implement/Get Started
-
-### Values that need to be configured:
-
-#### Replace next-template name to new project name
-
-Search "next-template", replace in package.json, run "npm i" in terminal and confirm package-lock.json is updated
-
-#### Update the Licence
-
-In order to use any licence with your repository, you will need DG approval. Your PO should send an email to the DG resposible for the product to request a licence ("MIT" or other).
-
-Until you have approval from your DG your LICENCE file should only state the following (updating the year)
-
-```md
-All Rights Reserved
-
-Copyright (c) Her Majesty the Queen in Right of Canada, as represented by the Employment and Social Development Canada, 2021
-```
-
-Once approved by the DG, the copyright statement must still be included in the LICENCE.
 
 #### Configuring Helm
 
@@ -74,12 +51,6 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Learn More
 
