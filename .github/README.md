@@ -1,7 +1,7 @@
 # Click to view the test reports for Main 👩‍🔬🧪
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/End-To-End%20Tests?label=E2E)](https://dts-stn.github.io/digital-dojo-engagement/refs/heads/main/e2e-report/)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/Unit%20Tests?label=Unit%20Tests)](https://dts-stn.github.io/digital-dojo-engagement/refs/heads/main/coverage/lcov-report)
+[![End-to-end workflow status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/End-To-End%20Tests?label=E2E)](https://dts-stn.github.io/digital-dojo-engagement/refs/heads/main/e2e-report)
+[![Unit test workflow status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/Unit%20Tests?label=Unit%20Tests)](https://dts-stn.github.io/digital-dojo-engagement/refs/heads/main/coverage/lcov-report)
 
 ![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fdigital-dojo-engagement%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
 ![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fdigital-dojo-engagement%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
