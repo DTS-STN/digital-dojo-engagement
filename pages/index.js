@@ -14,11 +14,13 @@ export default function Index(props) {
             width="200px"
             height="200px"
           ></Image>
-          <span className="text-periwinkle text-3xl mb-4 mt-4">
-            Digital Dojo
-          </span>
-          <hr className="h-2 w-36"></hr>
-          <span className="text-periwinkle text-3xl">Dojo Numérique</span>
+          <h1 className="flex flex-col justify-center items-center">
+            <span className="text-periwinkle text-3xl mb-4 mt-4">
+              Digital Dojo
+            </span>
+            <hr className="h-2 w-36"></hr>
+            <span className="text-periwinkle text-3xl">Dojo Numérique</span>
+          </h1>
           <div className="flex w-max container py-11 mx-auto">
             <div className="grid grid-cols-2 gap-2 xl:gap-6">
               <Link href="/home">
