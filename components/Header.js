@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Link from 'next/link'
+import Sidenav from './Sidenav'
 
 export default function Header(props) {
   return (
@@ -78,7 +79,11 @@ export default function Header(props) {
         </div>
 
         {/* Border */}
-        <div className="mb-2 border-t pb-2 mt-4"></div>
+        <div className="relative mb-2 border-t pb-2 mt-4">
+          <div className="absolute top-0 left-0">
+            <Sidenav />
+          </div>
+        </div>
 
         {/* <Menu
           loginText={props.t.login}
@@ -105,12 +110,11 @@ export default function Header(props) {
         </div>
         */}
 
-        <div className="container">
-          {/* <div id="left"> {% include sidebar.html %} </div> */}
+        <div className="flex justify-center">
           <Link href={props.locale === 'fr' ? 'fr/home' : '/home'}>
             <a>
               <img
-                className="h-20 mx-auto"
+                className="h-20"
                 src="/Header-noborder.png"
                 alt="Digital Dojo Logo / Logo du Dojo numérique"
               />
