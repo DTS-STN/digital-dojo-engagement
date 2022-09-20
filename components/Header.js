@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Link from 'next/link'
+
 export default function Header(props) {
   return (
     <>
@@ -19,12 +20,12 @@ export default function Header(props) {
         </a>
       </nav>
 
-      <header>
+      <header className="mb-10">
         <div className="container mx-auto px-6 flex-col flex md:flex md:flex-row justify-between pt-6">
           <div className="flex flex-row justify-between items-center lg:mt-7">
             <a href={props.t.gocLink}>
               <img
-                className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 "
+                className="h-5 w-auto xs:h-6 sm:h-7"
                 src={
                   props.language === 'en'
                     ? '/sig-blk-en.svg'
@@ -103,6 +104,19 @@ export default function Header(props) {
           <Breadcrumb items={breadcrumbItems} />
         </div>
         */}
+
+        <div className="container">
+          {/* <div id="left"> {% include sidebar.html %} </div> */}
+          <Link href={props.locale === 'fr' ? 'fr/home' : '/home'}>
+            <a>
+              <img
+                className="h-20 mx-auto"
+                src="/Header-noborder.png"
+                alt="Digital Dojo Logo / Logo du Dojo numérique"
+              />
+            </a>
+          </Link>
+        </div>
       </header>
     </>
   )

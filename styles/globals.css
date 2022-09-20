@@ -15,4 +15,7 @@
     @apply focus-visible:ring-1;
     @apply focus-visible:ring-black;
   }
+  html {
+    font-family: 'Didact Gothic', sans-serif;
+  }
 }
