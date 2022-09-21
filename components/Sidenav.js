@@ -29,7 +29,7 @@ const Sidenav = ({ t }) => {
       </button>
       <div className="p-2 flex flex-col gap-4 fixed w-64 min-h-full bg-[#373737] text-white text-xl tracking-wide">
         <Link href="/home">
-          <a className="hover:bg-periwinkle px-2">{t.homeSide}</a>
+          <a className="hover:bg-periwinkle px-2">{t.home}</a>
         </Link>
         <label
           tabIndex={0}
