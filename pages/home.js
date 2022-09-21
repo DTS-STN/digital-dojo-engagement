@@ -91,7 +91,7 @@ export default function Home(props) {
       </section>
 
       <section>
-        <h2 className="text-3xl text-periwinkle mb-4">What&apos;s a Dojo?</h2>
+        <h1 className="text-3xl text-periwinkle mb-4">What&apos;s a Dojo?</h1>
 
         <div className="flex gap-10">
           <div className="flex flex-col gap-6">

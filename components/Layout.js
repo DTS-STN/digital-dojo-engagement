@@ -19,7 +19,7 @@ export default function Layout(props) {
         langToggleLink={props.langToggleLink}
       ></Header>
 
-      <main className="mb-10">
+      <main className="mb-10" id="mainContent">
         <div>{props.children}</div>
       </main>
 
