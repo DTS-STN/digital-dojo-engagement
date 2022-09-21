@@ -36,7 +36,7 @@ describe('Home page', () => {
   it('should render the page', () => {
     render(<Home locale="en" content={content} />)
     const headings = screen.getAllByRole('heading')
-    expect(headings).toBeInTheDocument()
+    expect(headings.length).toBeGreaterThan(0)
   })
 
   it('Test getStaticProps', async () => {
