@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import en from '../locales/en'
 import fr from '../locales/fr'
+import enHome from '../locales/home/en'
+import frHome from '../locales/home/fr'
 import logger from '../lib/logger'
 import { useEffect, useState } from 'react'
 
@@ -9,6 +11,7 @@ import { fetchContent } from '../lib/cms'
 export default function Home(props) {
   /* istanbul ignore next */
   const t = props.locale === 'en' ? en : fr
+  const th = props.locale === 'en' ? enHome : frHome
 
   logger.info('Home page')
   logger.error('test')
@@ -28,26 +31,14 @@ export default function Home(props) {
         <div className="flex flex-col items-center">
           <div className="border border-black shadow-lg p-4 text-periwinkle">
             <div className={quote && 'hidden'}>
-              <blockquote className="italic">
-                &quot;The Digital Dojo provided an excellent introduction into
-                the methods involved with using Azure DevOps, and Agile as a
-                whole. Their service is collaborative with team members on a
-                personal level, and they consistently accommodate the needs of
-                others.&quot;
-              </blockquote>
+              <blockquote className="italic">{th.quote1}</blockquote>
               <cite className="block font-semibold text-end">
                 - Stefan M. (ESDC)
               </cite>
             </div>
 
             <div className={!quote && 'hidden'}>
-              <blockquote className="italic">
-                &quot;Your team is always innovative and kept us engaged
-                throughout the coaching. You have listened to our requirements
-                and connected us to subject matter experts ... I would encourage
-                my peers to connect to the Dojo for learning and improving their
-                day-to-day job functions.&quot;
-              </blockquote>
+              <blockquote className="italic">{th.quote2}</blockquote>
               <cite className="block font-semibold text-end">
                 - Uma P. (ESDC)
               </cite>
@@ -91,28 +82,13 @@ export default function Home(props) {
       </section>
 
       <section>
-        <h1 className="text-3xl text-periwinkle mb-4">What&apos;s a Dojo?</h1>
+        <h1 className="text-3xl text-periwinkle mb-4">{th.h1}</h1>
 
         <div className="flex gap-10">
           <div className="flex flex-col gap-6">
-            <p>
-              A Dojo is a Japanese word for a space for immersive learning or
-              meditation. The global DevOps community have embraced the concept
-              of a Dojo for learning and implementing organizational
-              transformation.
-            </p>
-
-            <p>
-              Digital Technology Solutions within IITB at ESDC is taking this
-              concept and applying it to learning on the TBS Digital Standards,
-              which are aligned to Agile and DevOps mindsets.
-            </p>
-
-            <p>
-              Our Digital Dojo aims to provide an immersive virtual space where
-              ESDC product teams can learn new skills and new ways to solve
-              common problems with the help and guidance of GC Experts.
-            </p>
+            <p>{th.p1}</p>
+            <p>{th.p2}</p>
+            <p>{th.p3}</p>
           </div>
 
           <div className="group">
@@ -127,7 +103,7 @@ export default function Home(props) {
               ></img>
             </a>
             <p className="text-center text-sm group-hover:text-periwinkle">
-              View our Team Charter
+              {th.charter}
             </p>
           </div>
         </div>
@@ -143,28 +119,16 @@ export default function Home(props) {
       </section>
 
       <section className="flex flex-col gap-2">
-        <h2 className="text-3xl text-periwinkle mb-2">Why our Dojo?</h2>
+        <h2 className="text-3xl text-periwinkle mb-2">{th.h2}</h2>
 
-        <h3 className="text-xl text-periwinkle">Team Based Experience</h3>
-        <p className="mb-2">
-          We upskill a whole team – business and IT - together.​ This builds
-          trust, mutual​ understanding, cohesion and​ collaboration
-        </p>
+        <h3 className="text-xl text-periwinkle">{th.h31}</h3>
+        <p className="mb-2">{th.p4}</p>
 
-        <h3 className="text-xl text-periwinkle">
-          Government of Canada Focused
-        </h3>
-        <p className="mb-2">
-          We cater our experienced based on realistic Government of Canada IT
-          practices, standards,​ languages and challenges.
-        </p>
+        <h3 className="text-xl text-periwinkle">{th.h32}</h3>
+        <p className="mb-2">{th.p5}</p>
 
-        <h3 className="text-xl text-periwinkle">Virtual Learning</h3>
-        <p>
-          We are designing the Dojo with virtual learning in mind. We will also
-          help teams learn how to work together more effectively in this new
-          world.
-        </p>
+        <h3 className="text-xl text-periwinkle">{th.h33}</h3>
+        <p>{th.p6}</p>
       </section>
     </div>
   )

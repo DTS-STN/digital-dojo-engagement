@@ -81,7 +81,7 @@ export default function Header(props) {
         {/* Border */}
         <div className="relative mb-2 border-t pb-2 mt-4">
           <div className="absolute top-0 left-0">
-            <Sidenav />
+            <Sidenav t={props.t} />
           </div>
         </div>
 
