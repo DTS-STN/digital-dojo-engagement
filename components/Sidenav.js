@@ -32,15 +32,15 @@ const Sidenav = () => {
         </Link>
         <label
           tabIndex={0}
-          labelFor="about-us"
-          className="flex flex-col px-2"
+          htmlFor="about-us"
+          className="flex flex-col px-2 cursor-pointer"
           onKeyDown={(e) =>
             e.key === 'Enter'
               ? (document.getElementById('about-us').checked ^= 1)
               : null
           }
         >
-          <div className="flex items-center">
+          <div className="flex items-center hover:bg-periwinkle">
             About us <span className="text-[9px] ml-2">&#9660;</span>
           </div>
           <input
@@ -49,27 +49,27 @@ const Sidenav = () => {
             className="items-center peer hidden"
           ></input>
           <Link href="">
-            <a className="peer-checked:hidden hover:bg-periwinkle px-5">
+            <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
               Our Coaches
             </a>
           </Link>
           <Link href="">
-            <a className="peer-checked:hidden hover:bg-periwinkle px-5">
+            <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
               Service Catalogue
             </a>
           </Link>
         </label>
         <label
           tabIndex={0}
-          labelFor="dojo-assessment"
-          className="flex flex-col px-2"
+          htmlFor="dojo-assessment"
+          className="flex flex-col px-2 cursor-pointer"
           onKeyDown={(e) =>
             e.key === 'Enter'
               ? (document.getElementById('dojo-assessment').checked ^= 1)
               : null
           }
         >
-          <div className="flex items-center">
+          <div className="flex items-center hover:bg-periwinkle">
             Dojo Assesment <span className="text-[9px] ml-2">&#9660;</span>
           </div>
           <input
@@ -78,22 +78,22 @@ const Sidenav = () => {
             className="items-center peer hidden"
           ></input>
           <Link href="">
-            <a className="peer-checked:hidden hover:bg-periwinkle px-5">
+            <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
               Belt System
             </a>
           </Link>
         </label>
         <label
           tabIndex={0}
-          labelFor="dojo-engagement"
-          className="flex flex-col px-2"
+          htmlFor="dojo-engagement"
+          className="flex flex-col px-2 cursor-pointer"
           onKeyDown={(e) =>
             e.key === 'Enter'
               ? (document.getElementById('dojo-engagement').checked ^= 1)
               : null
           }
         >
-          <div className="flex items-center">
+          <div className="flex items-center hover:bg-periwinkle">
             Dojo Engagement <span className="text-[9px] ml-2">&#9660;</span>
           </div>
           <input
@@ -102,7 +102,7 @@ const Sidenav = () => {
             className="items-center peer hidden"
           ></input>
           <Link href="">
-            <a className="peer-checked:hidden hover:bg-periwinkle px-5">
+            <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
               Start team engagement
             </a>
           </Link>
