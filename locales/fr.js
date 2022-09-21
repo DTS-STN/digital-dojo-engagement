@@ -87,6 +87,7 @@ export default {
   //footer logo alt text
   footerCanadaCaAltText: 'Symbole du gouvernement du Canada',
 
+  //sidebar
   home: 'Accueil',
   aboutUs: 'À propos de nous',
   ourCoaches: 'Nos coachs',
@@ -98,5 +99,5 @@ export default {
   events: 'Événements',
   tools: 'Outils et ressources',
   faq: 'FAQ',
-  contactUs: 'Outils et ressources',
+  contactUs: 'Contactez-nous',
 }

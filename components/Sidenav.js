@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const Sidenav = ({ t }) => {
+  console.log(t)
   const [open, setOpen] = useState(false)
   return (
     <div
@@ -28,7 +29,7 @@ const Sidenav = ({ t }) => {
       </button>
       <div className="p-2 flex flex-col gap-4 fixed w-64 min-h-full bg-[#373737] text-white text-xl tracking-wide">
         <Link href="/home">
-          <a className="hover:bg-periwinkle px-2">{t.home}</a>
+          <a className="hover:bg-periwinkle px-2">{t.homeSide}</a>
         </Link>
         <label
           tabIndex={0}
@@ -117,7 +118,7 @@ const Sidenav = ({ t }) => {
           <a className="hover:bg-periwinkle px-2">{t.faq}</a>
         </Link>
         <Link href="">
-          <a className="hover:bg-periwinkle px-2">{t.contact}</a>
+          <a className="hover:bg-periwinkle px-2">{t.contactUs}</a>
         </Link>
       </div>
     </div>
