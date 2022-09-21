@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const Sidenav = () => {
+const Sidenav = ({ t }) => {
+  console.log(t)
   const [open, setOpen] = useState(false)
   return (
     <div
@@ -28,7 +29,7 @@ const Sidenav = () => {
       </button>
       <div className="p-2 flex flex-col gap-4 fixed w-64 min-h-full bg-[#373737] text-white text-xl tracking-wide">
         <Link href="/home">
-          <a className="hover:bg-periwinkle px-2">Home</a>
+          <a className="hover:bg-periwinkle px-2">{t.home}</a>
         </Link>
         <label
           tabIndex={0}
@@ -41,7 +42,7 @@ const Sidenav = () => {
           }
         >
           <div className="flex items-center hover:bg-periwinkle">
-            About us <span className="text-[9px] ml-2">&#9660;</span>
+            {t.aboutUs} <span className="text-[9px] ml-2">&#9660;</span>
           </div>
           <input
             id="about-us"
@@ -50,12 +51,12 @@ const Sidenav = () => {
           ></input>
           <Link href="">
             <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
-              Our Coaches
+              {t.ourCoaches}
             </a>
           </Link>
           <Link href="">
             <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
-              Service Catalogue
+              {t.serviceCatalogue}
             </a>
           </Link>
         </label>
@@ -70,7 +71,7 @@ const Sidenav = () => {
           }
         >
           <div className="flex items-center hover:bg-periwinkle">
-            Dojo Assesment <span className="text-[9px] ml-2">&#9660;</span>
+            {t.dojoAssessment} <span className="text-[9px] ml-2">&#9660;</span>
           </div>
           <input
             id="dojo-assessment"
@@ -79,7 +80,7 @@ const Sidenav = () => {
           ></input>
           <Link href="">
             <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
-              Belt System
+              {t.beltSystem}
             </a>
           </Link>
         </label>
@@ -94,7 +95,7 @@ const Sidenav = () => {
           }
         >
           <div className="flex items-center hover:bg-periwinkle">
-            Dojo Engagement <span className="text-[9px] ml-2">&#9660;</span>
+            {t.dojoEngagement} <span className="text-[9px] ml-2">&#9660;</span>
           </div>
           <input
             id="dojo-engagement"
@@ -103,21 +104,21 @@ const Sidenav = () => {
           ></input>
           <Link href="">
             <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
-              Start team engagement
+              {t.startTeam}
             </a>
           </Link>
         </label>
         <Link href="">
-          <a className="hover:bg-periwinkle px-2">Events</a>
+          <a className="hover:bg-periwinkle px-2">{t.events}</a>
         </Link>
         <Link href="">
-          <a className="hover:bg-periwinkle px-2">Tools &amp; Resources</a>
+          <a className="hover:bg-periwinkle px-2">{t.tools}</a>
         </Link>
         <Link href="">
-          <a className="hover:bg-periwinkle px-2">FAQ</a>
+          <a className="hover:bg-periwinkle px-2">{t.faq}</a>
         </Link>
         <Link href="">
-          <a className="hover:bg-periwinkle px-2">Contact us</a>
+          <a className="hover:bg-periwinkle px-2">{t.contactUs}</a>
         </Link>
       </div>
     </div>

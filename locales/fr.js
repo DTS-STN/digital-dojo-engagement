@@ -86,4 +86,18 @@ export default {
 
   //footer logo alt text
   footerCanadaCaAltText: 'Symbole du gouvernement du Canada',
+
+  //sidebar
+  home: 'Accueil',
+  aboutUs: 'À propos de nous',
+  ourCoaches: 'Nos coachs',
+  serviceCatalogue: 'Catalogue de services',
+  dojoAssessment: 'Évaluation du dojo',
+  beltSystem: 'Système de ceinture',
+  dojoEngagement: 'Fiançailles du Dojo',
+  startTeam: `Commencer l'engagement de l'équipe`,
+  events: 'Événements',
+  tools: 'Outils et ressources',
+  faq: 'FAQ',
+  contactUs: 'Contactez-nous',
 }
