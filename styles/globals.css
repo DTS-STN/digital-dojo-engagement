@@ -11,8 +11,11 @@
 @layer base {
   /* consistent focus styles on all components */
   * {
-    @apply focus:outline-none;
+    /* @apply focus:outline-none; */
     @apply focus-visible:ring-1;
-    @apply focus-visible:ring-black;
+    @apply focus-visible:ring-periwinkle;
+  }
+  html {
+    font-family: 'Didact Gothic', sans-serif;
   }
 }

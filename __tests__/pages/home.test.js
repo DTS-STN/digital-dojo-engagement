@@ -35,8 +35,8 @@ describe('Home page', () => {
 
   it('should render the page', () => {
     render(<Home locale="en" content={content} />)
-    const heading = screen.getByRole('heading')
-    expect(heading).toBeInTheDocument()
+    const headings = screen.getAllByRole('heading')
+    expect(headings.length).toBeGreaterThan(0)
   })
 
   it('Test getStaticProps', async () => {
@@ -50,15 +50,15 @@ describe('Home page', () => {
         meta: {
           data_en: {
             desc: 'English',
-            author: 'Service Canada',
+            title: 'Digital Dojo - Home',
+            author: '',
             keywords: '',
-            title: 'Next Template - Home',
           },
           data_fr: {
-            author: 'Service Canada',
+            title: 'Dojo Numérique - Accueil',
             desc: 'Français',
+            author: '',
             keywords: '',
-            title: 'Next Template - Accueil',
           },
         },
       },

@@ -1,6 +1,8 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import Link from 'next/link'
+import Sidenav from './Sidenav'
+
 export default function Header(props) {
   return (
     <>
@@ -12,19 +14,19 @@ export default function Header(props) {
         <a
           id="skipToMainContent"
           className="bg-blue-800 text-white px-2 focus:outline-black-solid hover:bg-gray-dark"
-          href="#homeContent"
+          href="#mainContent"
           draggable="false"
         >
           {props.t.skipToMainContent}
         </a>
       </nav>
 
-      <header>
+      <header className="mb-10">
         <div className="container mx-auto px-6 flex-col flex md:flex md:flex-row justify-between pt-6">
           <div className="flex flex-row justify-between items-center lg:mt-7">
             <a href={props.t.gocLink}>
               <img
-                className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 "
+                className="h-5 w-auto xs:h-6 sm:h-7"
                 src={
                   props.language === 'en'
                     ? '/sig-blk-en.svg'
@@ -77,7 +79,11 @@ export default function Header(props) {
         </div>
 
         {/* Border */}
-        <div className="mb-2 border-t pb-2 mt-4"></div>
+        <div className="relative mb-2 border-t pb-2 mt-4">
+          <div className="absolute top-0 left-0">
+            <Sidenav />
+          </div>
+        </div>
 
         {/* <Menu
           loginText={props.t.login}
@@ -103,6 +109,18 @@ export default function Header(props) {
           <Breadcrumb items={breadcrumbItems} />
         </div>
         */}
+
+        <div className="flex justify-center">
+          <Link href={props.locale === 'fr' ? 'fr/home' : '/home'}>
+            <a>
+              <img
+                className="h-20"
+                src="/Header-noborder.png"
+                alt="Digital Dojo Logo / Logo du Dojo numérique"
+              />
+            </a>
+          </Link>
+        </div>
       </header>
     </>
   )
