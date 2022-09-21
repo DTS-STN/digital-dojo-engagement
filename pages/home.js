@@ -26,8 +26,8 @@ export default function Home(props) {
     <div className="max-w-xl mx-auto">
       <section className="flex items-center gap-5 mb-10">
         <div className="flex flex-col items-center">
-          <div class="border border-black shadow-lg p-4 text-periwinkle">
-            <div class={quote && 'hidden'}>
+          <div className="border border-black shadow-lg p-4 text-periwinkle">
+            <div className={quote && 'hidden'}>
               <blockquote className="italic">
                 "The Digital Dojo provided an excellent introduction into the
                 methods involved with using Azure DevOps, and Agile as a whole.
@@ -39,7 +39,7 @@ export default function Home(props) {
               </cite>
             </div>
 
-            <div class={!quote && 'hidden'}>
+            <div className={!quote && 'hidden'}>
               <blockquote className="italic">
                 "Your team is always innovative and kept us engaged throughout
                 the coaching. You have listened to our requirements and
@@ -47,11 +47,13 @@ export default function Home(props) {
                 peers to connect to the Dojo for learning and improving their
                 day-to-day job functions."
               </blockquote>
-              <cite class="block font-semibold text-end">- Uma P. (ESDC)</cite>
+              <cite className="block font-semibold text-end">
+                - Uma P. (ESDC)
+              </cite>
             </div>
           </div>
           <div className="mt-8">
-            <div class="flex gap-3">
+            <div className="flex gap-3">
               <button
                 aria-label="previous quote"
                 className={`bg-teal-600 rounded-full w-4 h-4 hover:bg-teal-900 duration-200 ${
@@ -90,7 +92,7 @@ export default function Home(props) {
       <section>
         <h2 className="text-3xl text-periwinkle mb-4">What's a Dojo?</h2>
 
-        <div class="flex gap-10">
+        <div className="flex gap-10">
           <div className="flex flex-col gap-6">
             <p>
               A Dojo is a Japanese word for a space for immersive learning or
@@ -112,7 +114,7 @@ export default function Home(props) {
             </p>
           </div>
 
-          <div class="group">
+          <div className="group">
             <a
               href={`/Team_charter_${props.locale === 'en' ? 'EN' : 'FR'}.png`}
               target="_blank"
@@ -133,7 +135,7 @@ export default function Home(props) {
         <img
           className=""
           src="/decorative-dots.png"
-          class="dots"
+          className="dots"
           role="presentation"
           alt=""
         />
