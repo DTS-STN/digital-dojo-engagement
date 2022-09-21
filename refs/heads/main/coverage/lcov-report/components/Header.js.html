@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">95.45% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>20/20</span>
+                <span class='fraction'>21/22</span>
             </div>
         
             
@@ -216,11 +216,47 @@
 <a name='L151'></a><a href='#L151'>151</a>
 <a name='L152'></a><a href='#L152'>152</a>
 <a name='L153'></a><a href='#L153'>153</a>
-<a name='L154'></a><a href='#L154'>154</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -372,6 +408,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
 import propTypes from 'prop-types'
 import Link from 'next/link'
+import Sidenav from './Sidenav'
+&nbsp;
 export default function Header(props) {
   return (
     &lt;&gt;
@@ -383,19 +421,19 @@ export default function Header(props) {
         &lt;a
           id="skipToMainContent"
           className="bg-blue-800 text-white px-2 focus:outline-black-solid hover:bg-gray-dark"
-          href="#homeContent"
+          href="#mainContent"
           draggable="false"
         &gt;
           {props.t.skipToMainContent}
         &lt;/a&gt;
       &lt;/nav&gt;
 &nbsp;
-      &lt;header&gt;
+      &lt;header className="mb-10"&gt;
         &lt;div className="container mx-auto px-6 flex-col flex md:flex md:flex-row justify-between pt-6"&gt;
           &lt;div className="flex flex-row justify-between items-center lg:mt-7"&gt;
             &lt;a href={props.t.gocLink}&gt;
               &lt;img
-                className="h-5 w-auto xs:h-6 sm:h-8 md:h-8 lg:h-7 xl:h-8 "
+                className="h-5 w-auto xs:h-6 sm:h-7"
                 src={
                   props.language === 'en'
                     ? '/sig-blk-en.svg'
@@ -448,7 +486,11 @@ export default function Header(props) {
         &lt;/div&gt;
 &nbsp;
         {/* Border */}
-        &lt;div className="mb-2 border-t pb-2 mt-4"&gt;&lt;/div&gt;
+        &lt;div className="relative mb-2 border-t pb-2 mt-4"&gt;
+          &lt;div className="absolute top-0 left-0"&gt;
+            &lt;Sidenav /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
 &nbsp;
         {/* &lt;Menu
           loginText={props.t.login}
@@ -474,6 +516,18 @@ export default function Header(props) {
           &lt;Breadcrumb items={breadcrumbItems} /&gt;
         &lt;/div&gt;
         */}
+&nbsp;
+        &lt;div className="flex justify-center"&gt;
+          &lt;Link href={props.locale === 'fr' ? <span class="branch-0 cbranch-no" title="branch not covered" >'fr/home' </span>: '/home'}&gt;
+            &lt;a&gt;
+              &lt;img
+                className="h-20"
+                src="/Header-noborder.png"
+                alt="Digital Dojo Logo / Logo du Dojo numérique"
+              /&gt;
+            &lt;/a&gt;
+          &lt;/Link&gt;
+        &lt;/div&gt;
       &lt;/header&gt;
     &lt;/&gt;
   )
@@ -529,7 +583,7 @@ Header.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Sep 16 2022 20:40:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Sep 21 2022 11:26:16 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>
