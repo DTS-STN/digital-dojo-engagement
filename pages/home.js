@@ -29,10 +29,11 @@ export default function Home(props) {
           <div className="border border-black shadow-lg p-4 text-periwinkle">
             <div className={quote && 'hidden'}>
               <blockquote className="italic">
-                "The Digital Dojo provided an excellent introduction into the
-                methods involved with using Azure DevOps, and Agile as a whole.
-                Their service is collaborative with team members on a personal
-                level, and they consistently accommodate the needs of others."
+                &quot;The Digital Dojo provided an excellent introduction into
+                the methods involved with using Azure DevOps, and Agile as a
+                whole. Their service is collaborative with team members on a
+                personal level, and they consistently accommodate the needs of
+                others.&quot;
               </blockquote>
               <cite className="block font-semibold text-end">
                 - Stefan M. (ESDC)
@@ -41,11 +42,11 @@ export default function Home(props) {
 
             <div className={!quote && 'hidden'}>
               <blockquote className="italic">
-                "Your team is always innovative and kept us engaged throughout
-                the coaching. You have listened to our requirements and
-                connected us to subject matter experts ... I would encourage my
-                peers to connect to the Dojo for learning and improving their
-                day-to-day job functions."
+                &quot;Your team is always innovative and kept us engaged
+                throughout the coaching. You have listened to our requirements
+                and connected us to subject matter experts ... I would encourage
+                my peers to connect to the Dojo for learning and improving their
+                day-to-day job functions.&quot;
               </blockquote>
               <cite className="block font-semibold text-end">
                 - Uma P. (ESDC)
@@ -90,7 +91,7 @@ export default function Home(props) {
       </section>
 
       <section>
-        <h2 className="text-3xl text-periwinkle mb-4">What's a Dojo?</h2>
+        <h2 className="text-3xl text-periwinkle mb-4">What&apos;s a Dojo?</h2>
 
         <div className="flex gap-10">
           <div className="flex flex-col gap-6">
