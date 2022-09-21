@@ -30,7 +30,16 @@ const Sidenav = () => {
         <Link href="/home">
           <a className="hover:bg-periwinkle px-2">Home</a>
         </Link>
-        <label tabIndex={0} labelFor="about-us" className="flex flex-col px-2">
+        <label
+          tabIndex={0}
+          labelFor="about-us"
+          className="flex flex-col px-2"
+          onKeyDown={(e) =>
+            e.key === 'Enter'
+              ? (document.getElementById('about-us').checked ^= 1)
+              : null
+          }
+        >
           <div className="flex items-center">
             About us <span className="text-[9px] ml-2">&#9660;</span>
           </div>
@@ -50,12 +59,54 @@ const Sidenav = () => {
             </a>
           </Link>
         </label>
-        <Link href="">
-          <a className="hover:bg-periwinkle px-2">Dojo Assesment</a>
-        </Link>
-        <Link href="">
-          <a className="hover:bg-periwinkle px-2">Dojo Engagement</a>
-        </Link>
+        <label
+          tabIndex={0}
+          labelFor="dojo-assessment"
+          className="flex flex-col px-2"
+          onKeyDown={(e) =>
+            e.key === 'Enter'
+              ? (document.getElementById('dojo-assessment').checked ^= 1)
+              : null
+          }
+        >
+          <div className="flex items-center">
+            Dojo Assesment <span className="text-[9px] ml-2">&#9660;</span>
+          </div>
+          <input
+            id="dojo-assessment"
+            type="checkbox"
+            className="items-center peer hidden"
+          ></input>
+          <Link href="">
+            <a className="peer-checked:hidden hover:bg-periwinkle px-5">
+              Belt System
+            </a>
+          </Link>
+        </label>
+        <label
+          tabIndex={0}
+          labelFor="dojo-engagement"
+          className="flex flex-col px-2"
+          onKeyDown={(e) =>
+            e.key === 'Enter'
+              ? (document.getElementById('dojo-engagement').checked ^= 1)
+              : null
+          }
+        >
+          <div className="flex items-center">
+            Dojo Engagement <span className="text-[9px] ml-2">&#9660;</span>
+          </div>
+          <input
+            id="dojo-engagement"
+            type="checkbox"
+            className="items-center peer hidden"
+          ></input>
+          <Link href="">
+            <a className="peer-checked:hidden hover:bg-periwinkle px-5">
+              Start team engagement
+            </a>
+          </Link>
+        </label>
         <Link href="">
           <a className="hover:bg-periwinkle px-2">Events</a>
         </Link>
