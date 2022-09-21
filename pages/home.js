@@ -118,6 +118,7 @@ export default function Home(props) {
             <a
               href={`/Team_charter_${props.locale === 'en' ? 'EN' : 'FR'}.png`}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={`/Team_charter_${props.locale === 'en' ? 'EN' : 'FR'}.png`}
@@ -133,7 +134,6 @@ export default function Home(props) {
 
       <section className="flex justify-center mt-10 mb-10">
         <img
-          className=""
           src="/decorative-dots.png"
           className="dots"
           role="presentation"

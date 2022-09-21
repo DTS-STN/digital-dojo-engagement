@@ -49,16 +49,16 @@ describe('Home page', () => {
         locale: 'en',
         meta: {
           data_en: {
+            title: 'Digital Dojo - Homez',
             desc: 'English',
-            author: 'Service Canada',
+            author: '',
             keywords: '',
-            title: 'Next Template - Home',
           },
           data_fr: {
-            author: 'Service Canada',
+            title: 'Dojo Numérique - Accueil',
             desc: 'Français',
+            author: '',
             keywords: '',
-            title: 'Next Template - Accueil',
           },
         },
       },
