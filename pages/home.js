@@ -3,7 +3,6 @@ import en from '../locales/en'
 import fr from '../locales/fr'
 import logger from '../lib/logger'
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
 
 import { fetchContent } from '../lib/cms'
 
