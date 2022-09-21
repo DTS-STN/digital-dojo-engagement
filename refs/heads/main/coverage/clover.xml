@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663759601213" clover="3.2.0">
-  <project timestamp="1663759601213" name="All files">
+<coverage generated="1663765944170" clover="3.2.0">
+  <project timestamp="1663765944170" name="All files">
     <metrics statements="49" coveredstatements="39" conditionals="62" coveredconditionals="43" methods="25" coveredmethods="18" elements="136" coveredelements="100" complexity="0" loc="49" ncloc="49" packages="3" files="14" classes="14"/>
     <package name="components">
       <metrics statements="19" coveredstatements="18" conditionals="36" coveredconditionals="31" methods="9" coveredmethods="8"/>
@@ -19,12 +19,12 @@
       </file>
       <file name="Header.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/Header.js">
         <metrics statements="2" coveredstatements="2" conditionals="22" coveredconditionals="21" methods="1" coveredmethods="1"/>
-        <line num="7" count="10" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
         <line num="136" count="3" type="stmt"/>
       </file>
       <file name="Layout.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/Layout.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="10" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="8" type="cond" truecount="2" falsecount="0"/>
         <line num="12" count="7" type="stmt"/>
         <line num="101" count="2" type="stmt"/>
         <line num="105" count="2" type="stmt"/>
@@ -37,7 +37,7 @@
       <file name="Sidenav.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/Sidenav.js">
         <metrics statements="4" coveredstatements="3" conditionals="8" coveredconditionals="4" methods="2" coveredmethods="1"/>
         <line num="4" count="3" type="stmt"/>
-        <line num="5" count="10" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
         <line num="6" count="10" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
       </file>
