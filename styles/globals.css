@@ -18,4 +18,8 @@
   html {
     font-family: 'Didact Gothic', sans-serif;
   }
+  /* [data-theme="dark"] {
+    background-color: #111;
+    color: white;
+  } */
 }

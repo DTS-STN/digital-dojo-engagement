@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout'
+import { ThemeProvider } from 'next-themes'
 
 function MyApp({ Component, pageProps }) {
   /* istanbul ignore next */
@@ -9,13 +10,15 @@ function MyApp({ Component, pageProps }) {
 
   /* istanbul ignore next */
   return (
-    <Layout
-      locale={pageProps.locale}
-      meta={pageProps.meta}
-      langToggleLink={pageProps.langToggleLink}
-    >
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider attribute="class">
+      <Layout
+        locale={pageProps.locale}
+        meta={pageProps.meta}
+        langToggleLink={pageProps.langToggleLink}
+      >
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   )
 }
 
