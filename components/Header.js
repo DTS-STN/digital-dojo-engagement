@@ -2,8 +2,10 @@ import React from 'react'
 import propTypes from 'prop-types'
 import Link from 'next/link'
 import Sidenav from './Sidenav'
+import { useTheme } from 'next-themes'
 
 export default function Header(props) {
+  const { theme } = useTheme()
   return (
     <>
       <nav
@@ -29,7 +31,11 @@ export default function Header(props) {
                 className="h-5 w-auto xs:h-6 sm:h-7"
                 src={
                   props.language === 'en'
-                    ? '/sig-blk-en.svg'
+                    ? theme === 'dark'
+                      ? '/sig-en.svg'
+                      : '/sig-blk-en.svg'
+                    : theme === 'dark'
+                    ? '/sig-fr.svg'
                     : '/sig-blk-fr.svg'
                 }
                 alt={
