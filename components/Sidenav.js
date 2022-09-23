@@ -50,7 +50,7 @@ const Sidenav = ({ t }) => {
             type="checkbox"
             className="items-center peer hidden"
           ></input>
-          <Link href="">
+          <Link href="/about/coaches">
             <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
               {t.ourCoaches}
             </a>
