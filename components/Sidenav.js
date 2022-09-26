@@ -6,7 +6,7 @@ const Sidenav = ({ t }) => {
   const [open, setOpen] = useState(false)
   return (
     <div
-      className={`fixed transition-all duration-500 ${
+      className={`z-index-50 fixed transition-all duration-500 ${
         open ? 'left-0' : 'left-[-260px]'
       }`}
     >
@@ -28,7 +28,7 @@ const Sidenav = ({ t }) => {
         ></div>
       </button>
       <ThemeChanger />
-      <div className="p-2 flex flex-col gap-4 fixed w-64 min-h-full bg-[#373737] text-white text-xl tracking-wide">
+      <div className="z-index-50 p-2 flex flex-col gap-4 fixed w-64 min-h-full bg-[#373737] text-white text-xl tracking-wide">
         <Link href="/home">
           <a className="hover:bg-periwinkle px-2">{t.home}</a>
         </Link>
