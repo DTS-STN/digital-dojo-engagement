@@ -8,6 +8,7 @@ export default function Coaches({ fakeCoaches }) {
       <div className="grid grid-cols-3 gap-10 mt-10">
         {fakeCoaches.map((e) => (
           <Coach
+            key={e.uid}
             src={e.picture.large}
             name={`${e.first_name} ${e.last_name}`}
             title={e.employment.title}
