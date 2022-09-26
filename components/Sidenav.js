@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import ThemeChanger from './ThemeChanger'
+import { useRouter } from 'next/router'
 
 const Sidenav = ({ t }) => {
+  let { asPath: path } = useRouter()
   const [open, setOpen] = useState(false)
   return (
     <div
@@ -30,7 +32,13 @@ const Sidenav = ({ t }) => {
       <ThemeChanger />
       <div className="z-index-50 p-2 flex flex-col gap-4 fixed w-64 min-h-full bg-[#373737] text-white text-xl tracking-wide">
         <Link href="/home">
-          <a className="hover:bg-periwinkle px-2">{t.home}</a>
+          <a
+            className={`hover:bg-periwinkle px-2 ${
+              path === '/home' ? 'underline underline-offset-4' : ''
+            }`}
+          >
+            {t.home}
+          </a>
         </Link>
         <label
           tabIndex={0}
@@ -51,12 +59,22 @@ const Sidenav = ({ t }) => {
             className="items-center peer hidden"
           ></input>
           <Link href="/about/coaches">
-            <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
+            <a
+              className={`hidden peer-checked:block hover:bg-periwinkle px-5 ${
+                path === '/about/coaches' ? 'underline underline-offset-4' : ''
+              }`}
+            >
               {t.ourCoaches}
             </a>
           </Link>
           <Link href="">
-            <a className="hidden peer-checked:block hover:bg-periwinkle px-5">
+            <a
+              className={`hidden peer-checked:block hover:bg-periwinkle px-5 ${
+                path === '/about/service-catalogue'
+                  ? 'underline underline-offset-4'
+                  : ''
+              }`}
+            >
               {t.serviceCatalogue}
             </a>
           </Link>
