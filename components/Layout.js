@@ -23,73 +23,7 @@ export default function Layout(props) {
         <div>{props.children}</div>
       </main>
 
-      <Footer
-        footerLogoAltText="symbol2"
-        footerLogoImage="/wmms-blk.svg"
-        footerNav1="aboutGovernment"
-        footerNav2="aboutThisSite"
-        t={t}
-        links={[
-          {
-            link: t.footerSocialMediaURL,
-            linkText: t.footerSocialMedia,
-          },
-          {
-            link: t.footerMobileAppURL,
-            linkText: t.footerMobileApp,
-          },
-          {
-            link: t.footerAboutURL,
-            linkText: t.footerAbout,
-          },
-          {
-            link: t.footerTermsAndConditionURL,
-            linkText: t.footerTermsAndCondition,
-          },
-          {
-            link: t.footerPrivacyURL,
-            linkText: t.footerPrivacy,
-          },
-        ]}
-        footerBoxLinks={[
-          {
-            footerBoxlink: t.footerContactUsURL,
-            footerBoxLinkText: t.footerContactUs,
-          },
-          {
-            footerBoxlink: t.footerNewsURL,
-            footerBoxLinkText: t.footerNews,
-          },
-          {
-            footerBoxlink: t.footerPmURL,
-            footerBoxLinkText: t.footerPm,
-          },
-          {
-            footerBoxlink: t.footerDepartmentAgenciesURL,
-            footerBoxLinkText: t.footerDepartmentAgencies,
-          },
-          {
-            footerBoxlink: t.footerTreatiesURL,
-            footerBoxLinkText: t.footerTreaties,
-          },
-          {
-            footerBoxlink: t.footerHowGovWorksURL,
-            footerBoxLinkText: t.footerHowGovWorks,
-          },
-          {
-            footerBoxlink: t.footerPublicServiceURL,
-            footerBoxLinkText: t.footerPublicService,
-          },
-          {
-            footerBoxlink: t.footerGovReportingURL,
-            footerBoxLinkText: t.footerGovReporting,
-          },
-          {
-            footerBoxlink: t.footerOpenGovURL,
-            footerBoxLinkText: t.footerOpenGov,
-          },
-        ]}
-      />
+      <Footer footerLogoAltText="footerCanadaCaAltText" t={t} />
     </>
   )
 }

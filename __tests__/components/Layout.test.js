@@ -62,16 +62,6 @@ describe('Layout with default text', () => {
     expect(screen.getByRole('main')).toBeInTheDocument()
   })
 
-  it('Layout contains footer with Prime Minister link', () => {
-    render(<Layout locale="en" meta={meta} />)
-    expect(screen.getByText('Prime Minister')).toBeInTheDocument()
-  })
-
-  it('Layout contains Canada Wordmark', () => {
-    render(<Layout locale="en" meta={meta} />)
-    expect(screen.getByAltText('symbol2')).toBeInTheDocument()
-  })
-
   it('Layout contains no a11y violations', async () => {
     const { container } = render(<Layout locale="en" meta={meta} />)
     const results = await axe(container)

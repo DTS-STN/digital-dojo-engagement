@@ -7,11 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        periwinkle: '#4574b5',
+        periwinkle: '#505d91',
       },
-      backgroundImage: () => ({
-        'footer-parliament-image': 'url(../public/landscape.png)',
-      }),
       boxShadow: {
         card: '0px 2px 8px rgba(0, 0, 0, 0.25)',
       },
