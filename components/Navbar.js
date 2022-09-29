@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { GoTriangleDown } from 'react-icons/go'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
-function Navbar() {
+function Navbar({ t }) {
   // states for opening/closing nav dropdowns
   const [about, setAbout] = useState(false)
   const [assessment, setAssessment] = useState(false)
@@ -18,41 +18,41 @@ function Navbar() {
   }
 
   return (
-    <nav className="">
+    <nav>
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="md:hidden hover:text-periwinkle text-2xl"
+        className="md:hidden hover:text-periwinkle text-2xl px-2"
       >
         <GiHamburgerMenu />
       </button>
       <div
         className={`${
           !open ? 'hidden md:flex' : ''
-        } flex flex-col items-start md:flex-row md:justify-around md:items-center md:h-12 bg-periwinkle text-white`}
+        } flex flex-col gap-2 items-start md:flex-row md:justify-around md:items-center md:h-12 bg-periwinkle text-white px-2`}
       >
         <Link href="/home">
-          <a>Home</a>
+          <a>{t.home}</a>
         </Link>
         <button
           className="relative"
           onClick={() => handleClick(about, setAbout)}
         >
           <div className="flex md:justify-center items-center gap-2">
-            About <GoTriangleDown className="text-xs" />
+            {t.aboutUs} <GoTriangleDown className="text-xs" />
           </div>
           <div
             className={`${
               about ? 'flex flex-col items-start' : 'hidden'
             } bg-periwinkle md:absolute top-9 left-0'`}
           >
-            <Link href="">
+            <Link href="/about/coaches">
               <a className="w-full p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
-                Coaches
+                {t.ourCoaches}
               </a>
             </Link>
             <Link href="">
               <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
-                Service Catalogue
+                {t.serviceCatalogue}
               </a>
             </Link>
           </div>
@@ -62,7 +62,7 @@ function Navbar() {
           onClick={() => handleClick(assessment, setAssessment)}
         >
           <div className="flex md:justify-center items-center gap-2">
-            Dojo Assessment <GoTriangleDown className="text-xs" />
+            {t.dojoAssessment} <GoTriangleDown className="text-xs" />
           </div>
           <div
             className={`${
@@ -71,7 +71,7 @@ function Navbar() {
           >
             <Link href="">
               <a className="w-full p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
-                Belt System
+                {t.beltSystem}
               </a>
             </Link>
           </div>
@@ -81,7 +81,7 @@ function Navbar() {
           onClick={() => handleClick(engagement, setEngagement)}
         >
           <div className="flex md:justify-center items-center gap-2">
-            Dojo Engagement <GoTriangleDown className="text-xs" />
+            {t.dojoEngagement} <GoTriangleDown className="text-xs" />
           </div>
           <div
             className={`${
@@ -90,22 +90,22 @@ function Navbar() {
           >
             <Link href="">
               <a className="w-full p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
-                Team Engagement
+                {t.startTeam}
               </a>
             </Link>
           </div>
         </button>
         <Link href="">
-          <a>Events</a>
+          <a>{t.events}</a>
         </Link>
         <Link href="">
-          <a>Resources</a>
+          <a>{t.tools}</a>
         </Link>
         <Link href="">
-          <a>FAQ</a>
+          <a>{t.faq}</a>
         </Link>
         <Link href="">
-          <a>Contact</a>
+          <a>{t.contactUs}</a>
         </Link>
       </div>
     </nav>

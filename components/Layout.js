@@ -20,7 +20,7 @@ export default function Layout(props) {
         langToggleLink={props.langToggleLink}
       ></Header>
 
-      <Navbar />
+      <Navbar t={t} />
 
       <main className="mb-10" id="mainContent">
         <div>{props.children}</div>
