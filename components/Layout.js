@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import Header from './Header'
 import Footer from './Footer'
 import MetaData from './MetaData'
+import Navbar from './Navbar'
 
 import en from '../locales/en'
 import fr from '../locales/fr'
@@ -18,6 +19,8 @@ export default function Layout(props) {
         t={t}
         langToggleLink={props.langToggleLink}
       ></Header>
+
+      <Navbar />
 
       <main className="mb-10" id="mainContent">
         <div>{props.children}</div>
