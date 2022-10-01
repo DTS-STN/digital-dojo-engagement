@@ -20,8 +20,9 @@ function Navbar({ t }) {
   return (
     <nav>
       <button
+        aria-label="toggle navigation menu"
         onClick={() => setOpen((prev) => !prev)}
-        className="md:hidden hover:text-periwinkle text-2xl px-2"
+        className="md:hidden hover:text-periwinkle text-2xl ml-1 p-1"
       >
         <GiHamburgerMenu />
       </button>
@@ -31,13 +32,13 @@ function Navbar({ t }) {
         } flex flex-col gap-2 items-start md:flex-row md:justify-around md:items-center md:h-12 bg-periwinkle text-white px-2`}
       >
         <Link href="/home">
-          <a>{t.home}</a>
+          <a className="hover:underline">{t.home}</a>
         </Link>
         <button
           className="relative"
           onClick={() => handleClick(about, setAbout)}
         >
-          <div className="flex md:justify-center items-center gap-2">
+          <div className="flex md:justify-center items-center gap-2 hover:underline">
             {t.aboutUs} <GoTriangleDown className="text-xs" />
           </div>
           <div
@@ -61,7 +62,7 @@ function Navbar({ t }) {
           className="relative"
           onClick={() => handleClick(assessment, setAssessment)}
         >
-          <div className="flex md:justify-center items-center gap-2">
+          <div className="flex md:justify-center items-center gap-2 hover:underline">
             {t.dojoAssessment} <GoTriangleDown className="text-xs" />
           </div>
           <div
@@ -80,7 +81,7 @@ function Navbar({ t }) {
           className="relative"
           onClick={() => handleClick(engagement, setEngagement)}
         >
-          <div className="flex md:justify-center items-center gap-2">
+          <div className="flex md:justify-center items-center gap-2 hover:underline">
             {t.dojoEngagement} <GoTriangleDown className="text-xs" />
           </div>
           <div
@@ -96,16 +97,16 @@ function Navbar({ t }) {
           </div>
         </button>
         <Link href="">
-          <a>{t.events}</a>
+          <a className="hover:underline">{t.events}</a>
         </Link>
         <Link href="">
-          <a>{t.tools}</a>
+          <a className="hover:underline">{t.tools}</a>
         </Link>
         <Link href="">
-          <a>{t.faq}</a>
+          <a className="hover:underline">{t.faq}</a>
         </Link>
         <Link href="">
-          <a>{t.contactUs}</a>
+          <a className="hover:underline">{t.contactUs}</a>
         </Link>
       </div>
     </nav>

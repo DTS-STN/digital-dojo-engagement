@@ -22,7 +22,7 @@ export default function Layout(props) {
 
       <Navbar t={t} />
 
-      <main className="mb-10" id="mainContent">
+      <main className="mt-10 mb-10" id="mainContent">
         <div>{props.children}</div>
       </main>
 
