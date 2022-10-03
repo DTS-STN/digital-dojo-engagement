@@ -24,11 +24,11 @@ export default function Header(props) {
       </nav>
 
       <header className="mb-2">
-        <div className="container mx-auto px-6 flex-col flex md:flex md:flex-row justify-between pt-6">
+        <div className="mx-auto px-2 md:px-4 flex-col flex md:flex md:flex-row justify-between pt-6">
           <div className="flex flex-row justify-between items-center w-full mb-2">
             <a href={props.t.gocLink}>
               <img
-                className="h-5 w-auto xs:h-6 sm:h-7"
+                className="h-5 object-scale-down"
                 src={
                   props.language === 'en'
                     ? theme === 'dark'
@@ -86,7 +86,7 @@ export default function Header(props) {
           <Link href={props.locale === 'fr' ? 'fr/home' : '/home'}>
             <a>
               <img
-                className="h-20"
+                className="h-20 object-scale-down"
                 src="/Header-noborder.png"
                 alt="Digital Dojo Logo / Logo du Dojo numérique"
               />
