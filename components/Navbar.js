@@ -34,9 +34,13 @@ function Navbar({ t }) {
         <Link href="/home">
           <a className="hover:underline">{t.home}</a>
         </Link>
-        <button
+        <div
+          tabIndex={0}
           className="relative"
           onClick={() => handleClick(about, setAbout)}
+          onKeyDown={(e) =>
+            e.key === 'Enter' ? handleClick(about, setAbout) : null
+          }
         >
           <div className="flex md:justify-center items-center gap-2 hover:underline">
             {t.aboutUs} <GoTriangleDown className="text-xs" />
@@ -57,10 +61,14 @@ function Navbar({ t }) {
               </a>
             </Link>
           </div>
-        </button>
-        <button
+        </div>
+        <div
+          tabIndex={0}
           className="relative"
           onClick={() => handleClick(assessment, setAssessment)}
+          onKeyDown={(e) =>
+            e.key === 'Enter' ? handleClick(assessment, setAssessment) : null
+          }
         >
           <div className="flex md:justify-center items-center gap-2 hover:underline">
             {t.dojoAssessment} <GoTriangleDown className="text-xs" />
@@ -76,10 +84,14 @@ function Navbar({ t }) {
               </a>
             </Link>
           </div>
-        </button>
-        <button
+        </div>
+        <div
+          tabIndex={0}
           className="relative"
           onClick={() => handleClick(engagement, setEngagement)}
+          onKeyDown={(e) =>
+            e.key === 'Enter' ? handleClick(engagement, setEngagement) : null
+          }
         >
           <div className="flex md:justify-center items-center gap-2 hover:underline">
             {t.dojoEngagement} <GoTriangleDown className="text-xs" />
@@ -95,7 +107,7 @@ function Navbar({ t }) {
               </a>
             </Link>
           </div>
-        </button>
+        </div>
         <Link href="">
           <a className="hover:underline">{t.events}</a>
         </Link>
