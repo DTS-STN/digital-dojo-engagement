@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/20</span>
+                <span class='fraction'>0/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -215,10 +215,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -362,13 +362,13 @@ import Link from 'next/link'
 import ThemeChanger from './ThemeChanger'
 import { useRouter } from 'next/router'
 &nbsp;
-const Sidenav = ({ t }) =&gt; {
-  let { asPath: path } = useRouter()
-  const [open, setOpen] = useState(false)
-  return (
+const Sidenav = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> t }) =&gt; {</span>
+  let { asPath: path } = <span class="cstat-no" title="statement not covered" >useRouter()</span>
+  const [open, setOpen] = <span class="cstat-no" title="statement not covered" >useState(false)</span>
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div
       className={`z-index-50 fixed transition-all duration-500 ${
-        open ? <span class="branch-0 cbranch-no" title="branch not covered" >'left-0' </span>: 'left-[-260px]'
+        open ? 'left-0' : 'left-[-260px]'
       }`}
     &gt;
       &lt;button
@@ -378,13 +378,13 @@ const Sidenav = ({ t }) =&gt; {
       &gt;
         &lt;div
           className={`w-4 h-0.5 bg-gray-200 ${
-            open ? <span class="branch-0 cbranch-no" title="branch not covered" >'absolute top-[15px] left-[9px] rotate-45' </span>: ''
+            open ? 'absolute top-[15px] left-[9px] rotate-45' : ''
           }`}
         &gt;&lt;/div&gt;
-        &lt;div className={`w-4 h-0.5 bg-gray-200 ${open ? <span class="branch-0 cbranch-no" title="branch not covered" >'hidden' </span>: ''}`}&gt;&lt;/div&gt;
+        &lt;div className={`w-4 h-0.5 bg-gray-200 ${open ? 'hidden' : ''}`}&gt;&lt;/div&gt;
         &lt;div
           className={`w-4 h-0.5 bg-gray-200 ${
-            open ? <span class="branch-0 cbranch-no" title="branch not covered" >'absolute top-[11px] left-[9px] -rotate-45' </span>: ''
+            open ? 'absolute top-[11px] left-[9px] -rotate-45' : ''
           }`}
         &gt;&lt;/div&gt;
       &lt;/button&gt;
@@ -393,7 +393,7 @@ const Sidenav = ({ t }) =&gt; {
         &lt;Link href="/home"&gt;
           &lt;a
             className={`hover:bg-periwinkle px-2 ${
-              path === '/home' ? <span class="branch-0 cbranch-no" title="branch not covered" >'underline underline-offset-4' </span>: ''
+              path === '/home' ? 'underline underline-offset-4' : ''
             }`}
           &gt;
             {t.home}
@@ -420,7 +420,7 @@ const Sidenav = ({ t }) =&gt; {
           &lt;Link href="/about/coaches"&gt;
             &lt;a
               className={`hidden peer-checked:block hover:bg-periwinkle px-5 ${
-                path === '/about/coaches' ? <span class="branch-0 cbranch-no" title="branch not covered" >'underline underline-offset-4' </span>: ''
+                path === '/about/coaches' ? 'underline underline-offset-4' : ''
               }`}
             &gt;
               {t.ourCoaches}
@@ -430,7 +430,7 @@ const Sidenav = ({ t }) =&gt; {
             &lt;a
               className={`hidden peer-checked:block hover:bg-periwinkle px-5 ${
                 path === '/about/service-catalogue'
-                  ? <span class="branch-0 cbranch-no" title="branch not covered" >'underline underline-offset-4'</span>
+                  ? 'underline underline-offset-4'
                   : ''
               }`}
             &gt;
@@ -511,7 +511,7 @@ export default Sidenav
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Oct 03 2022 13:34:54 GMT+0000 (Coordinated Universal Time)
+                at Mon Oct 03 2022 14:40:26 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>
