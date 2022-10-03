@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        periwinkle: '#505d91',
+        periwinkle: '#6E749F',
       },
       boxShadow: {
         card: '0px 2px 8px rgba(0, 0, 0, 0.25)',
