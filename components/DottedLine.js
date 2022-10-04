@@ -2,7 +2,10 @@ import PropTypes from 'prop-types'
 
 export default function DottedLine({ numDots }) {
   return (
-    <ul className="flex flex-initial flex-row justify-center w-full my-5">
+    <ul
+      role="presentation"
+      className="flex flex-initial flex-row justify-center w-full my-5"
+    >
       {[...Array(numDots)].map((_, i) => (
         <li
           className="justify-center bg-[#b7c1e1] aspect-square w-[17px] rounded-full mx-3.5"
