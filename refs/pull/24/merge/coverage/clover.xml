@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1664910447262" clover="3.2.0">
-  <project timestamp="1664910447262" name="All files">
+<coverage generated="1664912578642" clover="3.2.0">
+  <project timestamp="1664912578642" name="All files">
     <metrics statements="86" coveredstatements="47" conditionals="98" coveredconditionals="48" methods="47" coveredmethods="18" elements="231" coveredelements="113" complexity="0" loc="86" ncloc="86" packages="5" files="20" classes="20"/>
     <package name="components">
       <metrics statements="55" coveredstatements="25" conditionals="80" coveredconditionals="35" methods="31" coveredmethods="8"/>
@@ -27,9 +27,9 @@
       <file name="DottedLine.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/DottedLine.js">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="4" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
       </file>
       <file name="Footer.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/Footer.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
