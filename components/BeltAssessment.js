@@ -27,7 +27,7 @@ function BeltAssessment() {
   return (
     <>
       <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-        <h2 className="font-bold text-2xl text-periwinkle bg-blue-50 px-5 py-1">
+        <h2 className="font-bold text-2xl text-periwinkle bg-blue-50 px-5 py-1 mt-5">
           Agile
         </h2>
         <fieldset
@@ -297,7 +297,7 @@ function BeltAssessment() {
           </div>
         </fieldset>
 
-        <h2 className="font-bold text-2xl text-periwinkle bg-yellow-50 px-5 py-1">
+        <h2 className="font-bold text-2xl text-periwinkle bg-yellow-50 px-5 py-1 mt-5">
           Agile/DevOps
         </h2>
         <fieldset
@@ -383,7 +383,7 @@ function BeltAssessment() {
           </div>
         </fieldset>
 
-        <h2 className="font-bold text-2xl text-periwinkle bg-green-50 px-5 py-1">
+        <h2 className="font-bold text-2xl text-periwinkle bg-green-50 px-5 py-1 mt-5">
           DevOps
         </h2>
         <fieldset
@@ -728,7 +728,7 @@ function BeltAssessment() {
           </div>
         </fieldset>
 
-        <h2 className="font-bold text-2xl text-periwinkle bg-rose-50 px-5 py-1">
+        <h2 className="font-bold text-2xl text-periwinkle bg-rose-50 px-5 py-1 mt-5">
           Design Thinking
         </h2>
         <fieldset
@@ -816,7 +816,7 @@ function BeltAssessment() {
             </label>
           </div>
         </fieldset>
-        <button className="bg-gray-600 text-white rounded px-3 hover:bg-gray-800 self-end">
+        <button className="bg-gray-600 text-white rounded px-3 hover:bg-gray-800 self-end mt-5">
           Get Results
         </button>
       </form>

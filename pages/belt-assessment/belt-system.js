@@ -34,7 +34,11 @@ export default function BeltSystem() {
       {/* todo:: large images of text are an antipattern for accessibility.  
       The image should be made into a component that is a table and rendered as text, 
       otherwise we'll have to add a long description for all of the text in the image */}
-      <img src="/belt-assessment.jpg" alt="belt assessment chart"></img>
+      <img
+        src="/belt-assessment.jpg"
+        alt="belt assessment chart"
+        className="mb-5"
+      ></img>
 
       <BeltAssessment />
     </div>
