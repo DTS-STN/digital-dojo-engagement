@@ -1,7 +1,5 @@
 # Click to view the test reports for Main 👩‍🔬🧪
 
-small change
-
 [![End-to-end workflow status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/End-To-End%20Tests?label=E2E)](https://dts-stn.github.io/digital-dojo-engagement/refs/heads/main/e2e-report)
 [![Unit test workflow status](https://img.shields.io/github/workflow/status/DTS-STN/digital-dojo-engagement/Unit%20Tests?label=Unit%20Tests)](https://dts-stn.github.io/digital-dojo-engagement/refs/heads/main/coverage/lcov-report)
 
