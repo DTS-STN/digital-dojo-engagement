@@ -7,6 +7,7 @@ function Coach({ src, name, title, blurb }) {
       <div className="rounded-full border-2 p-1 h-32 w-32">
         {src ? (
           <Image
+            alt="A picture of our team member, {{name}}"
             width={500}
             height={500}
             src={src}
