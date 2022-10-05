@@ -1,14 +1,15 @@
 import { useState } from 'react'
+import Router from 'next/router'
 
 function BeltAssessment() {
   const [state, setState] = useState({
-    'continuous-collaboration': 'na',
-    'continuous-delivery': 'na',
-    'continuous-improvement': 'na',
-    'continuous-integration': 'na',
-    'continuous-operations': 'na',
     'continuous-planning': 'na',
+    'continuous-collaboration': 'na',
+    'continuous-improvement': 'na',
     'continuous-quality': 'na',
+    'continuous-integration': 'na',
+    'continuous-delivery': 'na',
+    'continuous-operations': 'na',
     'continuous-security': 'na',
     'continuous-user-feedback': 'na',
   })
@@ -21,7 +22,16 @@ function BeltAssessment() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(state)
+
+    // we can use Router instead of useRouter to keep the route 'clean'
+    // (not add query parameter when navigating) and push state as well
+    Router.push(
+      {
+        pathname: '/belt-assessment/belt-results',
+        query: { state: JSON.stringify(state) },
+      },
+      '/belt-system/belt-results'
+    )
   }
 
   return (
