@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/ThemeChanger.js</title>
+    <title>Code coverage report for components/DottedLine.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> ThemeChanger.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> DottedLine.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -88,22 +88,13 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,30 +104,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useTheme } from 'next-themes'
-import { BsMoon, BsSun } from 'react-icons/bs'
-import { useState, useEffect } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import PropTypes from 'prop-types'
 &nbsp;
-export default function ThemeChanger() {
-  const { theme, setTheme } = useTheme()
-  const [isMounted, setIsMounted] = useState(false)
-&nbsp;
-  // needed for rehydration mismatch between server/client
-  useEffect(() =&gt; {
-    setIsMounted(true)
-  }, [])
-&nbsp;
-  if (!isMounted) return null
-&nbsp;
-  return (
-    &lt;button
-      className="flex items-center w-7 h-7 bg-gray-900 p-2 cursor-pointer rounded hover:bg-gray-800 text-white dark:bg-periwinkle"
-      aria-label={`toggle ${theme === 'dark' ? <span class="branch-0 cbranch-no" title="branch not covered" >'light' </span>: 'dark'} mode`}
-      onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setTheme(theme === 'dark' ? 'light' : 'dark')}</span>
+export default function <span class="fstat-no" title="function not covered" >DottedLine(</span>{ numDots }) {
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;ul
+      role="presentation"
+      className="flex flex-initial flex-row justify-center w-full my-5"
     &gt;
-      {theme === 'dark' ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;BsSun /&gt; </span>: &lt;BsMoon /&gt;}
-    &lt;/button&gt;
+      {[...Array(numDots)].map(<span class="fstat-no" title="function not covered" >(_</span>, i) =&gt; (
+<span class="cstat-no" title="statement not covered" >        &lt;li</span>
+          className="justify-center bg-[#b7c1e1] aspect-square w-[17px] rounded-full mx-3.5"
+          key={i}
+        /&gt;
+      ))}
+    &lt;/ul&gt;
   )
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DottedLine.propTypes = {</span>
+  // numDots - Number of dots to display
+  numDots: PropTypes.number,
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DottedLine.defaultProps = {</span>
+  numDots: 8,
 }
 &nbsp;</pre></td></tr></table></pre>
 
