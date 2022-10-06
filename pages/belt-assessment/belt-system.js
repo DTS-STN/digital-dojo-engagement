@@ -2,28 +2,35 @@ import BeltAssessment from '../../components/BeltAssessment'
 
 export default function BeltSystem() {
   return (
-    <div className="max-w-xl mx-auto">
-      <h1 className="text-2xl text-periwinkle">Belt System</h1>
-      <p>
+    <div className="max-w-2xl mx-auto">
+      <h1 className="text-2xl text-periwinkle text-center mb-5">Belt System</h1>
+      <p className="mb-5">
         The Digital Dojo Belt System Self-Assessment is designed for your team
         to help identify your team's current knowledge of Agile, DevOps, and
         Design Thinking domains. This will help the Dojo team work with you to
         improve your skills throughout an engagement.
       </p>
-      <h2>How to Assess</h2>
-      <p>
-        Below we categorized the <strong>4 Digital Dojo Domains</strong> and
-        their <strong>key Principles</strong>.
+      <img
+        src="/dots.png"
+        alt=""
+        className="w-64 object-scale-down mx-auto mb-5"
+      ></img>
+      <h2 className="text-xl font-bold text-periwinkle mb-5">How-to Assess</h2>
+      <p className="mb-5">
+        Below we categorized the
+        <span className="font-bold"> 4 Digital Dojo domains</span> and their
+        <span className="font-bold"> key principles</span>.
       </p>
-      <p>
+      <p className="mb-5">
         For each category, select the corresponsing belt colour that best
         descirbes your team's current maturity.
       </p>
-      <p>
+      <p className="mb-5">
         Your belt assessment results will help us create a customized session
         where we can identify areas of iterest together, adding the most value
         to your project.
       </p>
+
       <BeltAssessment />
     </div>
   )
