@@ -35,6 +35,7 @@ export default function BeltResults({ locale }) {
       <h1 className="text-2xl font-bold text-periwinkle text-center">
         Belt System Results
       </h1>
+      <img src="/dots.png" className="w-64 mx-auto"></img>
       {Object.keys(groups).map((k) => (
         <GroupedBeltResults
           key={k}
