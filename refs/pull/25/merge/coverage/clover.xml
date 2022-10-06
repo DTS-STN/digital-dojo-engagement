@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665077478201" clover="3.2.0">
-  <project timestamp="1665077478201" name="All files">
+<coverage generated="1665077647664" clover="3.2.0">
+  <project timestamp="1665077647664" name="All files">
     <metrics statements="86" coveredstatements="49" conditionals="98" coveredconditionals="48" methods="47" coveredmethods="19" elements="231" coveredelements="116" complexity="0" loc="86" ncloc="86" packages="5" files="20" classes="20"/>
     <package name="components">
       <metrics statements="55" coveredstatements="27" conditionals="80" coveredconditionals="35" methods="31" coveredmethods="9"/>
@@ -138,11 +138,11 @@
       <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="coaches.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/about/coaches.js">
         <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">
