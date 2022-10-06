@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import en from '../../locales/belt-assessment/belt-results/en'
 import fr from '../../locales/belt-assessment/belt-results/fr'
-import mostCommon from '../../lib/mostCommon'
 import GroupedBeltResults from '../../components/GroupedBeltResults'
 
 export default function BeltResults({ locale }) {
@@ -31,7 +30,7 @@ export default function BeltResults({ locale }) {
   }
 
   return (
-    <div className="flex flex-col gap-5 max-w-5xl mx-auto">
+    <div className="flex flex-col gap-5 max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold text-periwinkle text-center">
         Belt System Results
       </h1>
@@ -45,6 +44,20 @@ export default function BeltResults({ locale }) {
           state={state}
         />
       ))}
+      <div className="self-end flex gap-4">
+        <button
+          onClick={() => router.push('/belt-assessment/belt-system')}
+          className="w-24 rounded bg-gray-600 text-white px-2 hover:bg-gray-800"
+        >
+          Back
+        </button>
+        <button
+          onClick={() => router.push('/belt-assessment/belt-system')}
+          className="w-24 rounded bg-gray-600 text-white px-2 hover:bg-gray-800"
+        >
+          Reassess
+        </button>
+      </div>
     </div>
   )
 }
