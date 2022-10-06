@@ -1,10 +1,11 @@
 import Coach from '../../components/Coach'
 import fakeUsers from '../../lib/fakeUsers'
+import DottedLine from '../../components/DottedLine'
 
 export default function Coaches({ fakeCoaches }) {
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-center text-periwinkle">Our Coaches</h1>
+      <h1 className="text-center">Our Coaches</h1>
       <p>
         Our experienced coaches are here to help guide your team and provide
         support through your entire Dojo engagement.
