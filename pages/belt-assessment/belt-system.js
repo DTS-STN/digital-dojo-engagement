@@ -2,7 +2,7 @@ import BeltAssessment from '../../components/BeltAssessment'
 
 export default function BeltSystem() {
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-2xl mx-auto">
       <h1 className="text-2xl text-periwinkle text-center mb-5">Belt System</h1>
       <p className="mb-5">
         The Digital Dojo Belt System Self-Assessment is designed for your team
@@ -30,15 +30,6 @@ export default function BeltSystem() {
         where we can identify areas of iterest together, adding the most value
         to your project.
       </p>
-
-      {/* todo:: large images of text are an antipattern for accessibility.  
-      The image should be made into a component that is a table and rendered as text, 
-      otherwise we'll have to add a long description for all of the text in the image */}
-      <img
-        src="/belt-assessment.jpg"
-        alt="belt assessment chart"
-        className="mb-5"
-      ></img>
 
       <BeltAssessment />
     </div>
