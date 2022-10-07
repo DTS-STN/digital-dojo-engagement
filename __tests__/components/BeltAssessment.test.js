@@ -2,14 +2,14 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import BeltAssessment from '../../components/BeltAssessment'
-import en from '../../locales/en'
+import en from '../../locales/belt-assessment/belt-assessment/en'
 
 expect.extend(toHaveNoViolations)
 
 describe('BeltAssessment', () => {
   it('renders form', () => {
     render(<BeltAssessment t={en} />)
-    const submit = screen.getByText('Get Results')
+    const submit = screen.getByRole('button', { name: 'Get Results' })
     expect(submit).toBeInTheDocument()
   })
 
