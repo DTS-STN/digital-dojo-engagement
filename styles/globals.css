@@ -15,6 +15,12 @@
     @apply focus-visible:ring-1;
     @apply focus-visible:ring-periwinkle;
   }
+  h1 {
+    @apply text-4xl py-5 text-periwinkle;
+  }
+  p {
+    @apply text-lg;
+  }
   html {
     font-family: 'Didact Gothic', sans-serif;
   }
