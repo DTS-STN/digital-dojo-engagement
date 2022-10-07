@@ -10,7 +10,11 @@ export default function BeltResults({ locale }) {
   const [state, setState] = useState({})
 
   useEffect(() => {
-    setState(JSON.parse(router.query.state))
+    try {
+      setState(JSON.parse(router.query.state))
+    } catch (e) {
+      console.error(e)
+    }
   }, [])
 
   const groups = {
@@ -32,7 +36,7 @@ export default function BeltResults({ locale }) {
   return (
     <div className="flex flex-col gap-5 max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold text-periwinkle text-center">
-        Belt System Results
+        {t.title}
       </h1>
       <img src="/dots.png" className="w-64 mx-auto"></img>
       {Object.keys(groups).map((k) => (
@@ -49,13 +53,13 @@ export default function BeltResults({ locale }) {
           onClick={() => router.push('/belt-assessment/belt-system')}
           className="w-24 rounded bg-gray-600 text-white px-2 hover:bg-gray-800"
         >
-          Back
+          {t.back}
         </button>
         <button
           onClick={() => router.push('/belt-assessment/belt-system')}
           className="w-24 rounded bg-gray-600 text-white px-2 hover:bg-gray-800"
         >
-          Reassess
+          {t.reassess}
         </button>
       </div>
     </div>

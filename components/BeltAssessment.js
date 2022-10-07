@@ -250,9 +250,9 @@ function BeltAssessment() {
               value="white"
             />
             <label htmlFor="continuous-improvement-white">
-              <span className="font-bold">White Belt:</span> Work is assigned
-              and we don't always know who is working on what, or if they are
-              struggling.
+              <span className="font-bold">White Belt:</span> Our team does not
+              have a mechanism to discuss pain points or suggest ways to improve
+              how we work.
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -263,8 +263,9 @@ function BeltAssessment() {
               value="yellow"
             />
             <label htmlFor="continuous-improvement-yellow">
-              <span className="font-bold">Yellow Belt:</span> We have daily
-              stand-ups and our work is visible to other teams and stakeholders.
+              <span className="font-bold">Yellow Belt:</span> Our team meets on
+              a regular basis for retrospectives to discuss how we work (people,
+              process, tools).
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -275,9 +276,9 @@ function BeltAssessment() {
               value="green"
             />
             <label htmlFor="continuous-improvement-green">
-              <span className="font-bold">Green Belt:</span> We have documented
-              our ways of working as a team and agreed on our use of
-              collaboration tools.
+              <span className="font-bold">Green Belt:</span> We take action
+              items from our retrospectives and add them into our sprint
+              backlog.
             </label>
           </div>
 
@@ -289,9 +290,9 @@ function BeltAssessment() {
               value="black"
             />
             <label htmlFor="continuous-improvement-black">
-              <span className="font-bold">Black Belt:</span> We self-organize
-              through task management and share our knowledge in communities of
-              practices.
+              <span className="font-bold">Black Belt:</span> Our team
+              relentlessly inspects, adapts and automates our processes to
+              deliver value to users faster.
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -337,9 +338,8 @@ function BeltAssessment() {
               value="white"
             />
             <label htmlFor="continuous-quality-white">
-              <span className="font-bold">White Belt:</span> Our team does not
-              have a mechanism to discuss pain points or suggest ways to improve
-              how we work.
+              <span className="font-bold">White Belt:</span> We rarely conduct
+              code reviews, and most of our tests are manual.
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">

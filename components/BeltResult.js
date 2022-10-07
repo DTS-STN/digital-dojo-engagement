@@ -20,15 +20,11 @@ function BeltResult({ t, id, result }) {
         <img
           src={`/${result}_belt.png`}
           className="w-24"
-          alt={`${result}`}
+          alt={`${t[result]}`}
         ></img>
         <dl className="flex gap-2 font-bold text-periwinkle text-[.95rem]">
-          <dt>Results:</dt>
-          <dd>
-            {!result || result === 'na'
-              ? 'Not Applicable'
-              : result?.replace(/^.| ./g, (e) => e.toUpperCase()) + ' Belt'}
-          </dd>
+          <dt>{t.results}:</dt>
+          <dd>{t[result]}</dd>
         </dl>
       </div>
     </div>
