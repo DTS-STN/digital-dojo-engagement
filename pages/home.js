@@ -5,6 +5,7 @@ import enHome from '../locales/home/en'
 import frHome from '../locales/home/fr'
 import logger from '../lib/logger'
 import { useEffect, useState } from 'react'
+import DottedLine from '../components/DottedLine'
 
 import { fetchContent } from '../lib/cms'
 
@@ -109,14 +110,7 @@ export default function Home(props) {
         </div>
       </section>
 
-      <section className="flex justify-center mt-10 mb-10">
-        <img
-          src="/decorative-dots.png"
-          className="dots"
-          role="presentation"
-          alt=""
-        />
-      </section>
+      <DottedLine numDots={5} />
 
       <section className="flex flex-col gap-2">
         <h2 className="text-3xl text-periwinkle mb-2">{th.h2}</h2>
