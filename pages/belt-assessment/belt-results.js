@@ -56,7 +56,10 @@ export default function BeltResults({ locale }) {
           {t.back}
         </button>
         <button
-          onClick={() => router.push('/belt-assessment/belt-system')}
+          onClick={() => {
+            sessionStorage.removeItem('belt-results')
+            router.push('/belt-assessment/belt-system')
+          }}
           className="w-24 rounded bg-gray-600 text-white px-2 hover:bg-gray-800"
         >
           {t.reassess}
