@@ -1,17 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import Router from 'next/router'
 
-function BeltAssessment() {
+function BeltAssessment({ t }) {
   const [state, setState] = useState({
-    'continuous-collaboration': 'na',
-    'continuous-delivery': 'na',
-    'continuous-improvement': 'na',
-    'continuous-integration': 'na',
-    'continuous-operations': 'na',
     'continuous-planning': 'na',
+    'continuous-collaboration': 'na',
+    'continuous-improvement': 'na',
     'continuous-quality': 'na',
+    'continuous-integration': 'na',
+    'continuous-delivery': 'na',
+    'continuous-operations': 'na',
     'continuous-security': 'na',
     'continuous-user-feedback': 'na',
   })
+
+  useEffect(() => {
+    if (sessionStorage.getItem('belt-results')) {
+      setState(JSON.parse(sessionStorage.getItem('belt-results')))
+    }
+  }, [])
 
   function handleChange(e) {
     let key = e.target.name
@@ -21,18 +28,28 @@ function BeltAssessment() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(state)
+
+    sessionStorage.setItem('belt-results', JSON.stringify(state))
+
+    // we can use Router instead of useRouter to keep the route 'clean'
+    // (not add query parameter when navigating) and push state as well
+    Router.push(
+      {
+        pathname: '/belt-assessment/belt-results',
+        query: { state: JSON.stringify(state) },
+      },
+      '/belt-assessment/belt-results'
+    )
   }
 
   return (
     <>
       <form onSubmit={handleSubmit} className="flex flex-col gap-5">
         <h2 className="font-bold text-2xl text-periwinkle bg-blue-50 px-5 py-1 mt-5">
-          Agile
+          {t.agile}
         </h2>
         <fieldset
           id="continuous-planning"
-          onChange={handleChange}
           className="flex flex-col gap-5"
           aria-labelledby="continuous-planning-legend continuous-planning-long continuous-planning-instructions"
         >
@@ -40,22 +57,16 @@ function BeltAssessment() {
             id="continuous-planning-legend"
             className="text-lg font-semibold text-indigo-800 mb-2"
           >
-            Continuous Planning
+            {t.continuousPlanning}
           </legend>
           <p
             id="continuous-planning-long"
             className="text-periwinkle font-bold"
           >
-            We create short, flexible plans that can be adapted to changing
-            circumstances and shifting priorities, adjusting to unexpected
-            delays. The continuous planning process involves monitoring goals,
-            metrics, and milestones for existing priorities; identifying,
-            developing, and advancing new strategic priorities; and ensuring a
-            culture of self-evaluation, innovation, agility, and adaptability.
+            {t.continuousPlanningLong}
           </p>
           <p id="continuous-planning-instructions" className="font-bold">
-            Select one of the belts below that best describes where your team is
-            currently at:
+            {t.select}
           </p>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
             <input
@@ -63,11 +74,12 @@ function BeltAssessment() {
               name="continuous-planning"
               id="continuous-planning-white"
               value="white"
+              checked={state['continuous-planning'] === 'white'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-planning-white">
-              <span className="font-bold">White Belt:</span> Our team does not
-              have a clear backlog of work and we don't use a work tracking
-              system.
+              <span className="font-bold mr-2">{t.whiteBelt}</span>
+              {t.continuousPlanningWhite}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -76,13 +88,12 @@ function BeltAssessment() {
               name="continuous-planning"
               id="continuous-planning-yellow"
               value="yellow"
+              checked={state['continuous-planning'] === 'yellow'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-planning-yellow">
-              <span className="font-bold">
-                <span className="font-bold">Yellow Belt:</span>
-              </span>{' '}
-              We have regular meetings to plan, review, refine work, and tasks
-              are tracked within a tool.
+              <span className="font-bold mr-2">{t.yellowBelt}</span>
+              {t.continuousPlanningYellow}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -91,11 +102,12 @@ function BeltAssessment() {
               name="continuous-planning"
               id="continuous-planning-green"
               value="green"
+              checked={state['continuous-planning'] === 'green'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-planning-green">
-              <span className="font-bold">Green Belt:</span> We have a backlog
-              which is prioritized and maintained with set goals, and we work in
-              short cycles.
+              <span className="font-bold mr-2">{t.greenBelt}</span>
+              {t.continuousPlanningGreen}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -104,11 +116,12 @@ function BeltAssessment() {
               name="continuous-planning"
               id="continuous-planning-black"
               value="black"
+              checked={state['continuous-planning'] === 'black'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-planning-black">
-              <span className="font-bold">Black Belt:</span> We have a roadmap
-              for our service/product, and continually update our plan based on
-              feedback received.
+              <span className="font-bold mr-2">{t.blackBelt}</span>
+              {t.continuousPlanningBlack}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -117,16 +130,17 @@ function BeltAssessment() {
               name="continuous-planning"
               id="continuous-planning-na"
               value="na"
+              checked={state['continuous-planning'] === 'na'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-planning-na">
-              <span className="font-bold">Not applicable.</span>
+              <span className="font-bold mr-2">{t.na}</span>
             </label>
           </div>
         </fieldset>
 
         <fieldset
           id="continuous-collaboration"
-          onChange={handleChange}
           className="flex flex-col gap-5"
           aria-labelledby="continuous-collaboration-legend continuous-collaboration-long"
         >
@@ -134,17 +148,16 @@ function BeltAssessment() {
             id="continuous-collaboration-legend"
             className="text-lg font-semibold text-indigo-800"
           >
-            Continuous Collaboration
+            {t.continuousCollaboration}
           </legend>
           <p
             id="continuous-collaboration-long"
             className="text-periwinkle font-bold"
           >
-            placeholder
+            {t.continuousCollaborationLong}
           </p>
           <p id="continuous-collaboration-instructions" className="font-bold">
-            Select one of the belts below that best describes where your team is
-            currently at:
+            {t.select}
           </p>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
             <input
@@ -152,11 +165,12 @@ function BeltAssessment() {
               name="continuous-collaboration"
               id="continuous-collaboration-white"
               value="white"
+              checked={state['continuous-collaboration'] === 'white'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-collaboration-white">
-              <span className="font-bold">White Belt:</span> Work is assigned
-              and we don't always know who is working on what, or if they are
-              struggling.
+              <span className="font-bold mr-2">{t.whiteBelt}</span>
+              {t.continuousCollaborationWhite}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -165,10 +179,12 @@ function BeltAssessment() {
               name="continuous-collaboration"
               id="continuous-collaboration-yellow"
               value="yellow"
+              checked={state['continuous-collaboration'] === 'yellow'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-collaboration-yellow">
-              <span className="font-bold">Yellow Belt:</span> We have daily
-              stand-ups and our work is visible to other teams and stakeholders.
+              <span className="font-bold mr-2">{t.yellowBelt}</span>
+              {t.continuousCollaborationYellow}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -177,11 +193,12 @@ function BeltAssessment() {
               name="continuous-collaboration"
               id="continuous-collaboration-green"
               value="green"
+              checked={state['continuous-collaboration'] === 'green'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-collaboration-green">
-              <span className="font-bold">Green Belt:</span> We have documented
-              our ways of working as a team and agreed on our use of
-              collaboration tools.
+              <span className="font-bold mr-2">{t.greenBelt}</span>
+              {t.continuousCollaborationGreen}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -190,11 +207,12 @@ function BeltAssessment() {
               name="continuous-collaboration"
               id="continuous-collaboration-black"
               value="black"
+              checked={state['continuous-collaboration'] === 'black'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-collaboration-black">
-              <span className="font-bold">Black Belt:</span> We self-organize
-              through task management and share our knowledge in communities of
-              practices.
+              <span className="font-bold mr-2">{t.blackBelt}</span>
+              {t.continuousCollaborationBlack}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -203,16 +221,17 @@ function BeltAssessment() {
               name="continuous-collaboration"
               id="continuous-collaboration-na"
               value="na"
+              checked={state['continuous-collaboration'] === 'na'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-collaboration-na">
-              <span className="font-bold">Not applicable.</span>
+              <span className="font-bold mr-2">{t.na}</span>
             </label>
           </div>
         </fieldset>
 
         <fieldset
           id="continuous-improvement"
-          onChange={handleChange}
           className="flex flex-col gap-5"
           aria-labelledby="continuous-improvement-legend continuous-improvement-long continuous-improvement-instructions"
         >
@@ -220,17 +239,16 @@ function BeltAssessment() {
             id="continuous-improvement-legend"
             className="text-lg font-semibold text-indigo-800"
           >
-            Continuous Improvement
+            {t.continuousImprovement}
           </legend>
           <p
             id="continuous-improvement-long"
             className="text-periwinkle font-bold"
           >
-            placeholder
+            {t.continuousImprovementLong}
           </p>
           <p id="continuous-improvement-instructions" className="font-bold">
-            Select one of the belts below that best describes where your team is
-            currently at:
+            {t.select}
           </p>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
             <input
@@ -238,11 +256,12 @@ function BeltAssessment() {
               name="continuous-improvement"
               id="continuous-improvement-white"
               value="white"
+              checked={state['continuous-improvement'] === 'white'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-improvement-white">
-              <span className="font-bold">White Belt:</span> Work is assigned
-              and we don't always know who is working on what, or if they are
-              struggling.
+              <span className="font-bold mr-2">{t.whiteBelt}</span>
+              {t.continuousImprovementWhite}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -251,10 +270,12 @@ function BeltAssessment() {
               name="continuous-improvement"
               id="continuous-improvement-yellow"
               value="yellow"
+              checked={state['continuous-improvement'] === 'yellow'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-improvement-yellow">
-              <span className="font-bold">Yellow Belt:</span> We have daily
-              stand-ups and our work is visible to other teams and stakeholders.
+              <span className="font-bold mr-2">{t.yellowBelt}</span>
+              {t.continuousImprovementYellow}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -263,11 +284,12 @@ function BeltAssessment() {
               name="continuous-improvement"
               id="continuous-improvement-green"
               value="green"
+              checked={state['continuous-improvement'] === 'green'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-improvement-green">
-              <span className="font-bold">Green Belt:</span> We have documented
-              our ways of working as a team and agreed on our use of
-              collaboration tools.
+              <span className="font-bold mr-2">{t.greenBelt}</span>
+              {t.continuousImprovementGreen}
             </label>
           </div>
 
@@ -277,11 +299,12 @@ function BeltAssessment() {
               name="continuous-improvement"
               id="continuous-improvement-black"
               value="black"
+              checked={state['continuous-improvement'] === 'black'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-improvement-black">
-              <span className="font-bold">Black Belt:</span> We self-organize
-              through task management and share our knowledge in communities of
-              practices.
+              <span className="font-bold mr-2">{t.blackBelt}</span>
+              {t.continuousImprovementBlack}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -290,19 +313,20 @@ function BeltAssessment() {
               name="continuous-improvement"
               id="continuous-improvement-na"
               value="na"
+              checked={state['continuous-improvement'] === 'na'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-improvement-na">
-              <span className="font-bold">Not applicable.</span>
+              <span className="font-bold">{t.na}</span>
             </label>
           </div>
         </fieldset>
 
         <h2 className="font-bold text-2xl text-periwinkle bg-yellow-50 px-5 py-1 mt-5">
-          Agile/DevOps
+          {t.agileDevops}
         </h2>
         <fieldset
           id="continuous-quality"
-          onChange={handleChange}
           className="flex flex-col gap-5"
           aria-labelledby="continuous-quality-legend continuous-quality-long continuous-quality-instructions"
         >
@@ -310,14 +334,13 @@ function BeltAssessment() {
             id="continuous-quality-legend"
             className="text-lg font-semibold text-indigo-800"
           >
-            Continuous Quality
+            {t.continuousQuality}
           </legend>
           <p id="continuous-quality-long" className="text-periwinkle font-bold">
-            placeholder
+            {t.continuousQualityLong}
           </p>
           <p id="continuous-quality-instructions" className="font-bold">
-            Select one of the belts below that best describes where your team is
-            currently at:
+            {t.select}
           </p>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
             <input
@@ -325,11 +348,12 @@ function BeltAssessment() {
               name="continuous-quality"
               id="continuous-quality-white"
               value="white"
+              checked={state['continuous-quality'] === 'white'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-quality-white">
-              <span className="font-bold">White Belt:</span> Our team does not
-              have a mechanism to discuss pain points or suggest ways to improve
-              how we work.
+              <span className="font-bold mr-2">{t.whiteBelt}</span>
+              {t.continuousQualityWhite}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -338,11 +362,12 @@ function BeltAssessment() {
               name="continuous-quality"
               id="continuous-quality-yellow"
               value="yellow"
+              checked={state['continuous-quality'] === 'yellow'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-quality-yellow">
-              <span className="font-bold">Yellow Belt:</span> Some tests are
-              automated; we engage with IT security and accessibility experts to
-              review our code.
+              <span className="font-bold mr-2">{t.yellowBelt}</span>
+              {t.continuousQualityYellow}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -351,10 +376,12 @@ function BeltAssessment() {
               name="continuous-quality"
               id="continuous-quality-green"
               value="green"
+              checked={state['continuous-quality'] === 'green'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-quality-green">
-              <span className="font-bold">Green Belt:</span> We code and
-              maintain test data and measure code coverage.
+              <span className="font-bold mr-2">{t.greenBelt}</span>
+              {t.continuousQualityGreen}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -363,11 +390,12 @@ function BeltAssessment() {
               name="continuous-quality"
               id="continuous-quality-black"
               value="black"
+              checked={state['continuous-quality'] === 'black'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-quality-black">
-              <span className="font-bold">Black Belt:</span> We continuously
-              review our test suite to better find defects and our pipeline
-              includes code reviews.
+              <span className="font-bold mr-2">{t.blackBelt}</span>
+              {t.continuousQualityBlack}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -376,19 +404,20 @@ function BeltAssessment() {
               name="continuous-quality"
               id="continuous-quality-na"
               value="na"
+              checked={state['continuous-quality'] === 'na'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-quality-na">
-              <span className="font-bold">Not applicable.</span>
+              <span className="font-bold">{t.na}</span>
             </label>
           </div>
         </fieldset>
 
         <h2 className="font-bold text-2xl text-periwinkle bg-green-50 px-5 py-1 mt-5">
-          DevOps
+          {t.devops}
         </h2>
         <fieldset
           id="continuous-integration"
-          onChange={handleChange}
           className="flex flex-col gap-5"
           aria-labelledby="continuous-integration-legend continuous-integration-long ontinuous-integration-instructions"
         >
@@ -396,17 +425,16 @@ function BeltAssessment() {
             id="continuous-integration-legend"
             className="text-lg font-semibold text-indigo-800"
           >
-            Continuous Integration
+            {t.continuousIntegration}
           </legend>
           <p
             id="continuous-integration-long"
             className="text-periwinkle font-bold"
           >
-            placeholder
+            {t.continuousIntegrationLong}
           </p>
           <p id="continuous-integration-instructions" className="font-bold">
-            Select one of the belts below that best describes where your team is
-            currently at:
+            {t.select}
           </p>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
             <input
@@ -414,10 +442,12 @@ function BeltAssessment() {
               name="continuous-integration"
               id="continuous-integration-white"
               value="white"
+              checked={state['continuous-integration'] === 'white'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-integration-white">
-              <span className="font-bold">White Belt:</span> We have our code
-              base on prem in source control.
+              <span className="font-bold mr-2">{t.whiteBelt}</span>
+              {t.continuousIntegrationWhite}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -426,11 +456,12 @@ function BeltAssessment() {
               name="continuous-integration"
               id="continuous-integration-yellow"
               value="yellow"
+              checked={state['continuous-integration'] === 'yellow'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-integration-yellow">
-              <span className="font-bold">Yellow Belt:</span> Our code commits
-              result in an automated build of the software with a version
-              control strategy.
+              <span className="font-bold mr-2">{t.yellowBelt}</span>
+              {t.continuousIntegrationYellow}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -439,11 +470,12 @@ function BeltAssessment() {
               name="continuous-integration"
               id="continuous-integration-green"
               value="green"
+              checked={state['continuous-integration'] === 'green'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-integration-green">
-              <span className="font-bold">Green Belt:</span> Our code commits
-              result in a series of automated tests and commits are tied to a
-              task.
+              <span className="font-bold mr-2">{t.greenBelt}</span>
+              {t.continuousIntegrationGreen}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -452,11 +484,12 @@ function BeltAssessment() {
               name="continuous-integration"
               id="continuous-integration-black"
               value="black"
+              checked={state['continuous-integration'] === 'black'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-integration-black">
-              <span className="font-bold">Black Belt:</span> Software is in a
-              deploy-able state throughout it's lifecycle, dependencies are
-              stable and rarely break code.
+              <span className="font-bold mr-2">{t.blackBelt}</span>
+              {t.continuousIntegrationBlack}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -465,16 +498,17 @@ function BeltAssessment() {
               name="continuous-integration"
               id="continuous-integration-na"
               value="na"
+              checked={state['continuous-integration'] === 'na'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-integration-na">
-              <span className="font-bold">Not applicable.</span>
+              <span className="font-bold">{t.na}</span>
             </label>
           </div>
         </fieldset>
 
         <fieldset
           id="continuous-delivery"
-          onChange={handleChange}
           className="flex flex-col gap-5"
           aria-labelledby="continuous-delivery-legend continuous-delivery-long continuous-delivery-instructions"
         >
@@ -482,17 +516,16 @@ function BeltAssessment() {
             id="continuous-delivery-legend"
             className="text-lg font-semibold text-indigo-800"
           >
-            Continuous Delivery
+            {t.continuousDelivery}
           </legend>
           <p
             id="continuous-delivery-long"
             className="text-periwinkle font-bold"
           >
-            placeholder
+            {t.continuousDeliveryLong}
           </p>
           <p id="continuous-delivery-instructions" className="font-bold">
-            Select one of the belts below that best describes where your team is
-            currently at:
+            {t.select}
           </p>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
             <input
@@ -500,10 +533,12 @@ function BeltAssessment() {
               name="continuous-delivery"
               id="continuous-delivery-white"
               value="white"
+              checked={state['continuous-delivery'] === 'white'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-delivery-white">
-              <span className="font-bold">White Belt:</span> Only designated
-              team members preform releases, which involve many manual steps.
+              <span className="font-bold mr-2">{t.whiteBelt}</span>
+              {t.continuousDeliveryWhite}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -512,11 +547,12 @@ function BeltAssessment() {
               name="continuous-delivery"
               id="continuous-delivery-yellow"
               value="yellow"
+              checked={state['continuous-delivery'] === 'yellow'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-delivery-yellow">
-              <span className="font-bold">Yellow Belt:</span> Builds/deployments
-              are repeatable, auditable and can be done by any member of the
-              team.
+              <span className="font-bold mr-2">{t.yellowBelt}</span>
+              {t.continuousDeliveryYellow}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -525,11 +561,12 @@ function BeltAssessment() {
               name="continuous-delivery"
               id="continuous-delivery-green"
               value="green"
+              checked={state['continuous-delivery'] === 'green'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-delivery-green">
-              <span className="font-bold">Green Belt:</span> Builds/deployments
-              are triggered automatically and automated testing is part of our
-              pipeline.
+              <span className="font-bold mr-2">{t.greenBelt}</span>
+              {t.continuousDeliveryGreen}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -538,10 +575,12 @@ function BeltAssessment() {
               name="continuous-delivery"
               id="continuous-delivery-black"
               value="black"
+              checked={state['continuous-delivery'] === 'black'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-delivery-black">
-              <span className="font-bold">Black Belt:</span> Anyone can deploy
-              our product to production or to end-users at anytime on demand.
+              <span className="font-bold mr-2">{t.blackBelt}</span>
+              {t.continuousDeliveryBlack}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -550,16 +589,17 @@ function BeltAssessment() {
               name="continuous-delivery"
               id="continuous-delivery-na"
               value="na"
+              checked={state['continuous-delivery'] === 'na'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-delivery-na">
-              <span className="font-bold">Not applicable.</span>
+              <span className="font-bold">{t.na}</span>
             </label>
           </div>
         </fieldset>
 
         <fieldset
           id="continuous-operations"
-          onChange={handleChange}
           className="flex flex-col gap-5"
           aria-labelledby="continuous-operations-legend continuous-operations-long continuous-operations-instructions"
         >
@@ -567,17 +607,16 @@ function BeltAssessment() {
             id="continuous-operations-legend"
             className="text-lg font-semibold text-indigo-800"
           >
-            Continuous Operations
+            {t.continuousOperations}
           </legend>
           <p
             id="continuous-operations-long"
             className="text-periwinkle font-bold"
           >
-            placeholder
+            {t.continuousOperationsLong}
           </p>
           <p id="continuous-operations-instructions" className="font-bold">
-            Select one of the belts below that best describes where your team is
-            currently at:
+            {t.select}
           </p>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
             <input
@@ -585,11 +624,12 @@ function BeltAssessment() {
               name="continuous-operations"
               id="continuous-operations-white"
               value="white"
+              checked={state['continuous-operations'] === 'white'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-operations-white">
-              <span className="font-bold">White Belt:</span> Creating new
-              environments is a manual process, with limited access to
-              production logs and metrics.
+              <span className="font-bold mr-2">{t.whiteBelt}</span>
+              {t.continuousOperationsWhite}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -598,11 +638,12 @@ function BeltAssessment() {
               name="continuous-operations"
               id="continuous-operations-yellow"
               value="yellow"
+              checked={state['continuous-operations'] === 'yellow'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-operations-yellow">
-              <span className="font-bold">Yellow Belt:</span> There are
-              procedures in place to inform us of incidents with access to
-              production logs.
+              <span className="font-bold mr-2">{t.yellowBelt}</span>
+              {t.continuousOperationsYellow}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -611,10 +652,12 @@ function BeltAssessment() {
               name="continuous-operations"
               id="continuous-operations-green"
               value="green"
+              checked={state['continuous-operations'] === 'green'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-operations-green">
-              <span className="font-bold">Green Belt:</span> We can create and
-              manage instances with dashboards to visualize server status.
+              <span className="font-bold mr-2">{t.greenBelt}</span>
+              {t.continuousOperationsGreen}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -623,11 +666,12 @@ function BeltAssessment() {
               name="continuous-operations"
               id="continuous-operations-black"
               value="black"
+              checked={state['continuous-operations'] === 'black'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-operations-black">
-              <span className="font-bold">Black Belt:</span> There are automated
-              processes in place to quickly respond to incidents and we can
-              dynamically increase or decrease resources.
+              <span className="font-bold mr-2">{t.blackBelt}</span>
+              {t.continuousOperationsBlack}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -636,16 +680,17 @@ function BeltAssessment() {
               name="continuous-operations"
               id="continuous-operations-na"
               value="na"
+              checked={state['continuous-operations'] === 'na'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-operations-na">
-              <span className="font-bold">Not applicable.</span>
+              <span className="font-bold">{t.na}</span>
             </label>
           </div>
         </fieldset>
 
         <fieldset
           id="continuous-security"
-          onChange={handleChange}
           className="flex flex-col gap-5"
           aria-labelledby="continuous-security-legend continuous-security-long continuous-security-instructions"
         >
@@ -653,17 +698,16 @@ function BeltAssessment() {
             id="continuous-security-legend"
             className="text-lg font-semibold text-indigo-800"
           >
-            Continuous Security
+            {t.continuousSecurity}
           </legend>
           <p
             id="continuous-security-long"
             className="text-periwinkle font-bold"
           >
-            placeholder
+            {t.continuousSecurityLong}
           </p>
           <p id="continuous-security-instructions" className="font-bold">
-            Select one of the belts below that best describes where your team is
-            currently at:
+            {t.select}
           </p>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
             <input
@@ -671,10 +715,12 @@ function BeltAssessment() {
               name="continuous-security"
               id="continuous-security-white"
               value="white"
+              checked={state['continuous-security'] === 'white'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-security-white">
-              <span className="font-bold">White Belt:</span> We have limited
-              security testing.
+              <span className="font-bold mr-2">{t.whiteBelt}</span>
+              {t.continuousSecurityWhite}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -683,10 +729,12 @@ function BeltAssessment() {
               name="continuous-security"
               id="continuous-security-yellow"
               value="yellow"
+              checked={state['continuous-security'] === 'yellow'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-security-yellow">
-              <span className="font-bold">Yellow Belt:</span> We code with
-              security in mind and environments reside in a secure store.
+              <span className="font-bold mr-2">{t.yellowBelt}</span>
+              {t.continuousSecurityYellow}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -695,11 +743,12 @@ function BeltAssessment() {
               name="continuous-security"
               id="continuous-security-green"
               value="green"
+              checked={state['continuous-security'] === 'green'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-security-green">
-              <span className="font-bold">Green Belt:</span> Security
-              requirements are included in the automated testing process for dev
-              and production.
+              <span className="font-bold mr-2">{t.greenBelt}</span>
+              {t.continuousSecurityGreen}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -708,11 +757,12 @@ function BeltAssessment() {
               name="continuous-security"
               id="continuous-security-black"
               value="black"
+              checked={state['continuous-security'] === 'black'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-security-black">
-              <span className="font-bold">Black Belt:</span> Our code is scanned
-              for security issues and automated processes are in place to
-              quickly respond to security issues.
+              <span className="font-bold mr-2">{t.blackBelt}</span>
+              {t.continuousSecurityBlack}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -721,19 +771,20 @@ function BeltAssessment() {
               name="continuous-security"
               id="continuous-security-na"
               value="na"
+              checked={state['continuous-security'] === 'na'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-security-na">
-              <span className="font-bold">Not applicable.</span>
+              <span className="font-bold">{t.na}</span>
             </label>
           </div>
         </fieldset>
 
         <h2 className="font-bold text-2xl text-periwinkle bg-rose-50 px-5 py-1 mt-5">
-          Design Thinking
+          {t.designThinking}
         </h2>
         <fieldset
           id="continuous-user-feedback"
-          onChange={handleChange}
           className="flex flex-col gap-5"
           aria-labelledby="continuous-user-feedback-legend continuous-user-feedback-long continuous-user-feedback-instructions"
         >
@@ -741,17 +792,16 @@ function BeltAssessment() {
             id="continuous-user-feedback-legend"
             className="text-lg font-semibold text-indigo-800"
           >
-            Continuous User Feedback
+            {t.continuousUserFeedback}
           </legend>
           <p
             id="continuous-user-feedback-long"
             className="text-periwinkle font-bold"
           >
-            placeholder
+            {t.continuousUserFeedbackLong}
           </p>
           <p id="continuous-user-feedback-instructions" className="font-bold">
-            Select one of the belts below that best describes where your team is
-            currently at:
+            {t.select}
           </p>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
             <input
@@ -759,10 +809,12 @@ function BeltAssessment() {
               name="continuous-user-feedback"
               id="continuous-user-feedback-white"
               value="white"
+              checked={state['continuous-user-feedback'] === 'white'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-user-feedback-white">
-              <span className="font-bold">White Belt:</span> We define our
-              requirements up-front and are defined as business rules only.
+              <span className="font-bold mr-2">{t.whiteBelt}</span>
+              {t.continuousUserFeedbackWhite}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -771,11 +823,12 @@ function BeltAssessment() {
               name="continuous-user-feedback"
               id="continuous-user-feedback-yellow"
               value="yellow"
+              checked={state['continuous-user-feedback'] === 'yellow'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-user-feedback-yellow">
-              <span className="font-bold">Yellow Belt:</span> Our team uses
-              end-user feedback to establish and validate the requirements of
-              our service.
+              <span className="font-bold mr-2">{t.yellowBelt}</span>
+              {t.continuousUserFeedbackYellow}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -784,11 +837,12 @@ function BeltAssessment() {
               name="continuous-user-feedback"
               id="continuous-user-feedback-green"
               value="green"
+              checked={state['continuous-user-feedback'] === 'green'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-user-feedback-green">
-              <span className="font-bold">Green Belt:</span> We have define
-              personas and document requirements from a user perspective (ex:
-              user stories); and actively collect customer feedback.
+              <span className="font-bold mr-2">{t.greenBelt}</span>
+              {t.continuousUserFeedbackGreen}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -797,11 +851,12 @@ function BeltAssessment() {
               name="continuous-user-feedback"
               id="continuous-user-feedback-black"
               value="black"
+              checked={state['continuous-user-feedback'] === 'black'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-user-feedback-black">
-              <span className="font-bold">Black Belt:</span> We have process or
-              tools in place to incorporate user feedback, including anonymous
-              users into the design of the service.
+              <span className="font-bold mr-2">{t.blackBelt}</span>
+              {t.continuousUserFeedbackBlack}
             </label>
           </div>
           <div className="flex gap-5 border-b-2 pb-3 text-sm">
@@ -810,14 +865,16 @@ function BeltAssessment() {
               name="continuous-user-feedback"
               id="continuous-user-feedback-na"
               value="na"
+              checked={state['continuous-user-feedback'] === 'na'}
+              onChange={handleChange}
             />
             <label htmlFor="continuous-user-feedback-na">
-              <span className="font-bold">Not applicable.</span>
+              <span className="font-bold">{t.na}</span>
             </label>
           </div>
         </fieldset>
         <button className="bg-gray-600 text-white rounded px-3 hover:bg-gray-800 self-end mt-5">
-          Get Results
+          {t.getResults}
         </button>
       </form>
     </>
