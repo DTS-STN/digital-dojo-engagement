@@ -9,6 +9,7 @@ import Navbar from './Navbar'
 export default function Header(props) {
   const t = props.t
   const { theme } = useTheme()
+  console.log(t)
   return (
     <>
       <nav
@@ -26,11 +27,13 @@ export default function Header(props) {
         </a>
       </nav>
 
-      <header className="mb-2 relative">
-        <div className="mx-auto px-2 md:px-4 flex-col flex md:flex md:flex-row justify-between pt-6">
+      <header>
+        <div className="px-2 md:px-4 flex-col flex md:flex-row justify-between pt-6">
           <div className="flex flex-row justify-between items-center w-full mb-2">
-            <a className="px-11 py-2" href={props.t.gocLink}>
-              <img
+            <a className="px-11 py-2" href={t.gocLink}>
+              <Image
+                width={200}
+                height={20}
                 className="h-5 object-scale-down"
                 src={
                   props.language === 'en'
@@ -86,7 +89,7 @@ export default function Header(props) {
         </div>
         <Navbar t={t} />
 
-        <div className="relative h-0 pb-[25%]">
+        <div className="relative h-0 pb-[40%] md:pb-[25%]">
           <Image
             className="object-cover"
             alt="Team members sitting at a table"
@@ -94,9 +97,11 @@ export default function Header(props) {
             layout="fill"
           />
           <div className="absolute whitespace-nowrap text-center font-medium tracking-[.2em] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <h1 className="text-[8rem] text-white pb-[3.5rem]">Digital Dojo</h1>
-            <h2 className="text-[2.6rem] text-white">
-              A tailored experience for your team
+            <h1 className="text-[4rem] md:text-[8rem] text-white pb-[2.5rem] md:pb-[3.5rem]">
+              {t.headerTitle}
+            </h1>
+            <h2 className="text-[1.3] md:text-[2.6rem] text-white">
+              {t.headerSubText}
             </h2>
           </div>
         </div>
