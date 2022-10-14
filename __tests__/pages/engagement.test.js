@@ -5,12 +5,12 @@ import { getStaticProps } from '../../pages/engagement'
 
 describe('engagement page', () => {
   it('renders page', () => {
-    render(<Engagement />)
+    render(<Engagement locale="en" />)
     expect(screen.getByText('Start a Team Engagement')).toBeInTheDocument()
   })
 
   it('writes to form', () => {
-    render(<Engagement />)
+    render(<Engagement locale="en" />)
     const fname = screen.getByLabelText('First Name *')
     fireEvent.change(fname, { target: { value: 'test first name' } })
     expect(fname.value).toBe('test first name')
