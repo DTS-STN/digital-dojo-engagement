@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import en from '../../locales/belt-assessment/belt-results/en'
 import fr from '../../locales/belt-assessment/belt-results/fr'
 import GroupedBeltResults from '../../components/GroupedBeltResults'
+import DottedLine from '../../components/DottedLine'
 
 export default function BeltResults({ locale }) {
   const t = locale === 'en' ? en : fr
@@ -38,7 +39,7 @@ export default function BeltResults({ locale }) {
       <h1 className="text-2xl font-bold text-periwinkle text-center">
         {t.title}
       </h1>
-      <img src="/dots.png" className="w-64 mx-auto"></img>
+      <DottedLine />
       {Object.keys(groups).map((k) => (
         <GroupedBeltResults
           key={k}
