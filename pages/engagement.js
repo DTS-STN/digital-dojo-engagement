@@ -2,7 +2,7 @@ import DottedLine from '../components/DottedLine'
 import en from '../locales/engagement/en'
 import fr from '../locales/engagement/fr'
 
-export default function ({ locale }) {
+export default function Engagement({ locale }) {
   const t = locale === 'en' ? en : fr
   return (
     <div className="max-w-2xl mx-auto">
