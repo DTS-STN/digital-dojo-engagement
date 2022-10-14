@@ -20,6 +20,7 @@ describe('engagement page', () => {
     const props = await getStaticProps({ locale: 'en' })
     expect(props).toEqual({
       props: {
+        langToggleLink: '/fr/engagement',
         locale: 'en',
         meta: {
           data_en: {
