@@ -1,4 +1,5 @@
 import BeltAssessment from '../../components/BeltAssessment'
+import DottedLine from '../../components/DottedLine'
 import en from '../../locales/belt-assessment/belt-assessment/en'
 import fr from '../../locales/belt-assessment/belt-assessment/fr'
 
@@ -8,11 +9,7 @@ export default function BeltSystem({ locale }) {
     <div className="max-w-xl mx-auto">
       <h1 className="text-2xl text-periwinkle text-center mb-5">{t.title}</h1>
       <p className="mb-5">{t.p1}</p>
-      <img
-        src="/dots.png"
-        alt=""
-        className="w-64 object-scale-down mx-auto mb-5"
-      ></img>
+      <DottedLine />
       <h2 className="text-xl font-bold text-periwinkle mb-5">{t.h2}</h2>
       <p className="mb-5">
         {t.p2}
