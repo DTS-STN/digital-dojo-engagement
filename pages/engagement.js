@@ -62,7 +62,7 @@ export default function Engagement({ locale }) {
           className="border-2 rounded"
         ></input>
         <label htmlFor="work-location" className="font-bold text-periwinkle">
-          {t.work}
+          {t.where}
         </label>
         <select
           required
