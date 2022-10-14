@@ -101,7 +101,7 @@ function Navbar({ t }) {
               engagement ? 'flex flex-col items-start' : 'hidden'
             } bg-periwinkle w-full md:absolute top-9 left-0'`}
           >
-            <Link href="">
+            <Link href="/engagement">
               <a className="w-full p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
                 {t.startTeam}
               </a>
