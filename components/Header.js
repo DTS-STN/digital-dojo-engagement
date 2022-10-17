@@ -92,7 +92,7 @@ export default function Header(props) {
         <div className="relative h-0 pb-[40%] md:pb-[25%]">
           <Image
             className="object-cover"
-            alt="Team members sitting at a table"
+            alt=""
             src="/Homepage_header.png"
             layout="fill"
           />
