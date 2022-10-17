@@ -26,4 +26,7 @@ export default {
     "Est-ce qu'il y a autre choses que nous devrions savoir au sujet de votre équipe?",
   howFindOut: 'Par quel moyen avez-vous entendu parler de notre dojo?',
   submit: 'Soumettre',
+  //api
+  emailSent: "L'e-mail a été envoyé avec succès",
+  emailNotSent: "Échec de l'envoi de l'e-mail",
 }
