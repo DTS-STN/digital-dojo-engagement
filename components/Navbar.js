@@ -47,16 +47,16 @@ function Navbar({ t }) {
           </div>
           <div
             className={`${
-              about ? 'flex flex-col items-start' : 'hidden'
-            } bg-periwinkle md:absolute top-9 left-0'`}
+              about ? 'z-50 flex flex-col items-start' : 'hidden'
+            } bg-periwinkle/50 md:absolute top-9 left-0'`}
           >
             <Link href="/about/coaches">
-              <a className="w-full p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+              <a className="w-full p-1 text-left hover:bg-periwinkle duration-200">
                 {t.ourCoaches}
               </a>
             </Link>
             <Link href="">
-              <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+              <a className="p-1 text-left hover:bg-periwinkle duration-200">
                 {t.serviceCatalogue}
               </a>
             </Link>
@@ -75,11 +75,11 @@ function Navbar({ t }) {
           </div>
           <div
             className={`${
-              assessment ? 'flex flex-col items-start' : 'hidden'
-            } bg-periwinkle w-full md:absolute top-9 left-0'`}
+              assessment ? 'z-50 flex flex-col items-start' : 'hidden'
+            } bg-periwinkle/50 w-full md:absolute top-9 left-0'`}
           >
             <Link href="/belt-assessment/belt-system">
-              <a className="w-full p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+              <a className="w-full p-1 text-left hover:bg-periwinkle duration-200">
                 {t.beltSystem}
               </a>
             </Link>
@@ -98,11 +98,11 @@ function Navbar({ t }) {
           </div>
           <div
             className={`${
-              engagement ? 'flex flex-col items-start' : 'hidden'
-            } bg-periwinkle w-full md:absolute top-9 left-0'`}
+              engagement ? 'z-50 flex flex-col items-start' : 'hidden'
+            } bg-periwinkle/50 w-full md:absolute top-9 left-0'`}
           >
             <Link href="/engagement">
-              <a className="w-full p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+              <a className="w-full p-1 text-left hover:bg-periwinkle duration-200">
                 {t.startTeam}
               </a>
             </Link>
