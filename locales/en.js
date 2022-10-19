@@ -35,6 +35,9 @@ export default {
   dateModified: 'Date Modified: ',
   // Landscape Links
 
+  headerTitle: 'Digital Dojo',
+  headerSubText: 'A tailored experience for your team',
+
   footerContactUsURL: 'https://www.canada.ca/en/contact.html',
   footerContactUs: 'Contact information',
 
