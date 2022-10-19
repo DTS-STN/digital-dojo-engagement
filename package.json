@@ -23,12 +23,12 @@
     "@opentelemetry/api": "^1.1.0",
     "@opentelemetry/auto-instrumentations-node": "^0.31.2",
     "@opentelemetry/sdk-node": "^0.31.0",
-    "next": "^12.2.5",
+    "next": "^12.3.1",
     "next-themes": "^0.2.1",
     "prom-client": "^12.0.0",
     "prop-types": "^15.8.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-icons": "^4.4.0"
   },
   "devDependencies": {
