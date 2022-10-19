@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.46% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>23/26</span>
+                <span class='fraction'>22/24</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -189,15 +189,39 @@
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
 <a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -316,13 +340,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
+import Image from 'next/image'
 import propTypes from 'prop-types'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import ThemeChanger from './ThemeChanger'
+import Navbar from './Navbar'
 &nbsp;
 export default function Header(props) {
+  const t = props.t
   const { theme } = useTheme()
+  console.log(t)
   return (
     &lt;&gt;
       &lt;nav
@@ -340,11 +368,13 @@ export default function Header(props) {
         &lt;/a&gt;
       &lt;/nav&gt;
 &nbsp;
-      &lt;header className="mb-2"&gt;
-        &lt;div className="mx-auto px-2 md:px-4 flex-col flex md:flex md:flex-row justify-between pt-6"&gt;
+      &lt;header&gt;
+        &lt;div className="px-2 md:px-4 flex-col flex md:flex-row justify-between pt-6"&gt;
           &lt;div className="flex flex-row justify-between items-center w-full mb-2"&gt;
-            &lt;a href={props.t.gocLink}&gt;
-              &lt;img
+            &lt;a className="px-11 py-2" href={t.gocLink}&gt;
+              &lt;Image
+                width={200}
+                height={20}
                 className="h-5 object-scale-down"
                 src={
                   props.language === 'en'
@@ -398,17 +428,23 @@ export default function Header(props) {
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
+        &lt;Navbar t={t} /&gt;
 &nbsp;
-        &lt;div className="flex justify-center"&gt;
-          &lt;Link href={props.locale === 'fr' ? <span class="branch-0 cbranch-no" title="branch not covered" >'fr/home' </span>: '/home'}&gt;
-            &lt;a&gt;
-              &lt;img
-                className="h-20 object-scale-down"
-                src="/Header-noborder.png"
-                alt="Digital Dojo Logo / Logo du Dojo numérique"
-              /&gt;
-            &lt;/a&gt;
-          &lt;/Link&gt;
+        &lt;div className="relative h-0 pb-[40%] md:pb-[25%]"&gt;
+          &lt;Image
+            className="object-cover"
+            alt=""
+            src="/Homepage_header.png"
+            layout="fill"
+          /&gt;
+          &lt;div className="absolute whitespace-nowrap text-center font-medium tracking-[.2em] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"&gt;
+            &lt;h1 className="text-[4rem] md:text-[8rem] text-white pb-[2.5rem] md:pb-[3.5rem]"&gt;
+              {t.headerTitle}
+            &lt;/h1&gt;
+            &lt;h2 className="text-[1.3] md:text-[2.6rem] text-white"&gt;
+              {t.headerSubText}
+            &lt;/h2&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       &lt;/header&gt;
     &lt;/&gt;
@@ -448,7 +484,7 @@ Header.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Oct 17 2022 16:14:45 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 19 2022 11:32:03 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>
