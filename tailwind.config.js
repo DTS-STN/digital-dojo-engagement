@@ -4,8 +4,12 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
   theme: {
     extend: {
+      animation: {
+        'pulse-short': 'pulse 1.5s ease-in-out 4',
+      },
       colors: {
         periwinkle: '#6E749F',
       },
@@ -14,5 +18,4 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 }
