@@ -2,8 +2,20 @@ import DottedLine from '../components/DottedLine'
 import en from '../locales/contact/en'
 import fr from '../locales/contact/fr'
 
+
+
 export default function Contact({ locale }) {
   const t = locale === 'en' ? en : fr
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+  
+    this.setState({
+      [name]: value
+    });
+  };
+  
+  
   return (
     <div className="max-w-2xl mx-auto">
       <h1 className="text-center">{t.h1}</h1>
@@ -80,47 +92,23 @@ export default function Contact({ locale }) {
           </option>
         </select>
         
-
-        <fieldset className="flex flex-col">
-          <legend className="font-bold text-periwinkle">{t.nextStep}</legend>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              required
-              id="yes"
-              name="next-step"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="meet">{t.meet}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="present"
-              name="next-step"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="present">{t.present}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="questions"
-              name="next-step"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="questions">{t.questions}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="other"
-              name="next-step"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="other">{t.other}</label>
-          </div>
-        </fieldset>
+        <label htmlFor="next-step" className="font-bold text-periwinkle">
+          {t.nextStep}
+        </label>
+        <select
+          required
+          id="next-step"
+          name="next-step"
+          className="border-2 rounded"
+        >
+          <option></option>
+          <option value="Meet with a Dojo Member">{t.meet}</option>
+          <option value="Get a Presentation">{t.present}</option>
+          <option value="Ask some questions">{t.questions}</option>
+          <option value="Other">
+            {t.other}
+          </option>
+        </select>
 
         <label htmlFor="tell-us" className="font-bold text-periwinkle">
           {t.tellUs}
