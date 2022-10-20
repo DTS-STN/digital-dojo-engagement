@@ -109,7 +109,6 @@ export default function Contact({ locale }) {
             {t.other}
           </option>
         </select>
-
         <label htmlFor="tell-us" className="font-bold text-periwinkle">
           {t.tellUs}
         </label>
