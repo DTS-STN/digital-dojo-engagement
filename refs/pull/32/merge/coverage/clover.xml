@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666359250869" clover="3.2.0">
-  <project timestamp="1666359250869" name="All files">
-    <metrics statements="127" coveredstatements="61" conditionals="112" coveredconditionals="49" methods="66" coveredmethods="24" elements="305" coveredelements="134" complexity="0" loc="127" ncloc="127" packages="5" files="26" classes="26"/>
+<coverage generated="1666369179015" clover="3.2.0">
+  <project timestamp="1666369179015" name="All files">
+    <metrics statements="126" coveredstatements="60" conditionals="112" coveredconditionals="49" methods="66" coveredmethods="24" elements="304" coveredelements="133" complexity="0" loc="126" ncloc="126" packages="5" files="26" classes="26"/>
     <package name="components">
-      <metrics statements="69" coveredstatements="35" conditionals="86" coveredconditionals="35" methods="39" coveredmethods="12"/>
+      <metrics statements="68" coveredstatements="34" conditionals="86" coveredconditionals="35" methods="39" coveredmethods="12"/>
       <file name="BeltAssessment.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/BeltAssessment.js">
         <metrics statements="11" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="2"/>
         <line num="5" count="2" type="stmt"/>
@@ -58,12 +58,11 @@
         <line num="16" count="0" type="stmt"/>
       </file>
       <file name="Header.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/Header.js">
-        <metrics statements="5" coveredstatements="5" conditionals="24" coveredconditionals="22" methods="1" coveredmethods="1"/>
+        <metrics statements="4" coveredstatements="4" conditionals="24" coveredconditionals="22" methods="1" coveredmethods="1"/>
         <line num="10" count="10" type="stmt"/>
         <line num="11" count="8" type="stmt"/>
         <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="120" count="3" type="stmt"/>
+        <line num="119" count="3" type="stmt"/>
       </file>
       <file name="Layout.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/Layout.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
