@@ -52,7 +52,7 @@ export default {
           personal level? Meet the team! Schedule a team meet with our Dojo crew
           by filling out the{' '}
           <Link href="">
-            <a className="underline text-red hover:text-blue-800 visited:text-purple-600">
+            <a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
               form
             </a>
           </Link>{' '}
