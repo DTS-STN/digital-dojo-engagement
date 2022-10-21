@@ -40,7 +40,10 @@ export default {
         <p>
           Unsure if the Dojo is the place for you and your team? Visit our{' '}
           <Link href="/home">
-            <a> Learn more </a>
+            <a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
+              {' '}
+              Learn more{' '}
+            </a>
           </Link>{' '}
           page where you can view our Digital Dojo deck that outlines all you
           need to know before entering the Dojo. Or take a moment to watch our
@@ -49,7 +52,9 @@ export default {
           personal level? Meet the team! Schedule a team meet with our Dojo crew
           by filling out the{' '}
           <Link href="">
-            <a>form</a>
+            <a className="underline text-red hover:text-blue-800 visited:text-purple-600">
+              form
+            </a>
           </Link>{' '}
           on our website. We look forward to meeting you!
         </p>
@@ -67,7 +72,7 @@ export default {
         <p>
           Currently, there is no part-time option.{' '}
           <Link href="#3">
-            <a>
+            <a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
               See I can't pause my ongoing work. Should I still be considering
               the Dojo?
             </a>

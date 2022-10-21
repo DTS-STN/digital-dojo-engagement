@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors')
 module.exports = {
   darkMode: 'class',
   content: [
@@ -12,6 +13,7 @@ module.exports = {
       },
       colors: {
         periwinkle: '#6E749F',
+        blue: colors.blue,
       },
       boxShadow: {
         card: '0px 2px 8px rgba(0, 0, 0, 0.25)',
