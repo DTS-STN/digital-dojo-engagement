@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/MetaData.js</title>
+    <title>Code coverage report for components/ExpandableHeadline.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> MetaData.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> ExpandableHeadline.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -89,20 +89,17 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -117,32 +114,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
-import Head from 'next/head'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Disclosure } from '@headlessui/react'
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
+import { IconContext } from 'react-icons'
 &nbsp;
-export default function MetaData(props) {
-  const d = props.language === 'en' ? props.data.data_en : props.data.data_fr
-&nbsp;
-  return (
-    &lt;&gt;
-      &lt;Head&gt;
-        &lt;title&gt;{d.title}&lt;/title&gt;
-        &lt;meta charSet="utf-8" /&gt;
-        &lt;meta name="description" content={d.desc} /&gt;
-        &lt;meta name="author" content={d.author} /&gt;
-        &lt;meta name="keywords" content={d.keywords} /&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
-        &lt;link rel="icon" href="/favicon.png" /&gt;
-      &lt;/Head&gt;
-    &lt;/&gt;
+export default function <span class="fstat-no" title="function not covered" >GroupedBeltResults(</span>{
+  qaObject: { question, answer, id },
+}) {
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;Disclosure&gt;
+      {<span class="fstat-no" title="function not covered" >({</span> open }) =&gt; (
+<span class="cstat-no" title="statement not covered" >        &lt;div id={id} className={'target:animate-pulse-short rounded-lg px-2'}&gt;</span>
+          &lt;Disclosure.Button className="flex w-full justify-between text-left items-center pt-5 pb-3"&gt;
+            &lt;h1 className="text-2xl py-1"&gt;{question}&lt;/h1&gt;
+            &lt;IconContext.Provider
+              value={{ className: 'fill-periwinkle flex-none ml-2', size: 20 }}
+            &gt;
+              {open ? &lt;AiOutlineMinus /&gt; : &lt;AiOutlinePlus /&gt;}
+            &lt;/IconContext.Provider&gt;
+          &lt;/Disclosure.Button&gt;
+          &lt;hr /&gt;
+          &lt;Disclosure.Panel className="py-2"&gt;{answer}&lt;/Disclosure.Panel&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/Disclosure&gt;
   )
-}
-&nbsp;
-/* istanbul ignore next */
-export async function getStaticProps({ locale }) {
-  return {
-    props: { locale },
-  }
 }
 &nbsp;</pre></td></tr></table></pre>
 
