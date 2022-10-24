@@ -6,7 +6,6 @@ export default async function (req, res) {
     host: 'smtp.office365.com',
     port: 587,
     secure: false,
-    tls: { ciphers: 'SSLv3' },
     auth: {
       user: process.env.NODEMAILER_EMAIL,
       pass: process.env.NODEMAILER_PASSWORD,
@@ -40,6 +39,6 @@ export default async function (req, res) {
     })
     res.status(200).json({ message: 'success' })
   } catch (e) {
-    res.status(500).json(e)
+    res.status(500).json({ user: process.env.NODEMAILER_EMAIL, err: e })
   }
 }
