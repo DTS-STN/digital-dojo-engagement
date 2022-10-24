@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666637078882" clover="3.2.0">
-  <project timestamp="1666637078882" name="All files">
+<coverage generated="1666637377645" clover="3.2.0">
+  <project timestamp="1666637377645" name="All files">
     <metrics statements="140" coveredstatements="63" conditionals="120" coveredconditionals="51" methods="70" coveredmethods="26" elements="330" coveredelements="140" complexity="0" loc="140" ncloc="140" packages="5" files="27" classes="27"/>
     <package name="components">
       <metrics statements="68" coveredstatements="34" conditionals="86" coveredconditionals="35" methods="39" coveredmethods="12"/>
@@ -204,10 +204,10 @@
       <file name="startEngagement.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/api/startEngagement.js">
         <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
       </file>
     </package>
     <package name="pages.belt-assessment">
