@@ -28,6 +28,7 @@ export default function Engagement({ locale }) {
       })
       setStatus(res.status)
     } catch (e) {
+      console.log(e)
       setStatus(500)
     }
   }

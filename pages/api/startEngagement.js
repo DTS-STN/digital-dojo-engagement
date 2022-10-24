@@ -40,6 +40,6 @@ export default async function (req, res) {
     })
     res.status(200).json({ message: 'success' })
   } catch (e) {
-    res.status(500).json({ message: 'failed to send' })
+    res.status(500).json(e)
   }
 }
