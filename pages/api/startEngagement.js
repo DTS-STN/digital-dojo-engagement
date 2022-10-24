@@ -3,7 +3,10 @@ import sanitizeHTML from 'sanitize-html'
 
 export default async function (req, res) {
   const transporter = nodemailer.createTransport({
-    service: 'Outlook365',
+    host: 'smtp.office365.com',
+    port: '587',
+    secureConnection: false,
+    tls: { ciphers: 'SSLv3' },
     auth: {
       user: process.env.NODEMAILER_EMAIL,
       pass: process.env.NODEMAILER_PASSWORD,
