@@ -11,7 +11,7 @@ export default function Engagement({ locale }) {
   function handleChange(e) {
     setState((prev) => ({
       ...prev,
-      [e.target.name]: e.target.type === 'radio' ? e.target.id : e.target.value,
+      [e.target.name]: e.target.value,
     }))
   }
 
@@ -28,7 +28,6 @@ export default function Engagement({ locale }) {
       })
       setStatus(res.status)
     } catch (e) {
-      console.log(e)
       setStatus(500)
     }
   }
@@ -101,7 +100,9 @@ export default function Engagement({ locale }) {
           className="border-2 rounded"
           onChange={handleChange}
         >
-          <option></option>
+          <option disabled selected>
+            -- {t.selectOption} --
+          </option>
           <option value="IITB">{t.iitb}</option>
           <option value="Other - ESDC">{t.otherEsdc}</option>
           <option value="Other - Government of Canada">{t.otherGoc}</option>
@@ -121,90 +122,47 @@ export default function Engagement({ locale }) {
           onChange={handleChange}
         ></input>
 
-        <fieldset className="flex flex-col">
-          <legend className="font-bold text-periwinkle">{t.dates}</legend>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              required
-              id="Yes"
-              name="dates"
-              className="border-2 rounded"
-              onChange={handleChange}
-            ></input>
-            <label htmlFor="Yes">{t.y}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="No"
-              name="dates"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="No">{t.n}</label>
-          </div>
-        </fieldset>
+        <label htmlFor="dates" className="font-bold text-periwinkle">
+          {t.dates}
+        </label>
+        <select
+          required
+          id="dates"
+          name="dates"
+          className="border-2 rounded"
+          onChange={handleChange}
+        >
+          <option disabled selected>
+            -- {t.selectOption} --
+          </option>
+          <option value="Yes">{t.y}</option>
+          <option value="No">{t.n}</option>
+        </select>
 
-        <fieldset className="flex flex-col">
-          <legend className="font-bold text-periwinkle">{t.practice}</legend>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              required
-              id="Agile"
-              name="practice"
-              className="border-2 rounded"
-              onChange={handleChange}
-            ></input>
-            <label htmlFor="Agile">{t.agile}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="CI/CD"
-              name="practice"
-              className="border-2 rounded"
-              onChange={handleChange}
-            ></input>
-            <label htmlFor="CI/CD">{t.cicd}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="Test Automation"
-              name="practice"
-              className="border-2 rounded"
-              onChange={handleChange}
-            ></input>
-            <label htmlFor="Test Automation">{t.testAuto}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="Cloud Automation"
-              name="practice"
-              className="border-2 rounded"
-              onChange={handleChange}
-            ></input>
-            <label htmlFor="Cloud Automation">{t.cloudAuto}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="Unsure"
-              name="practice"
-              className="border-2 rounded"
-              onChange={handleChange}
-            ></input>
-            <label htmlFor="Unsure">{t.other}</label>
-          </div>
-        </fieldset>
+        <label htmlFor="practice" className="font-bold text-periwinkle">
+          {t.practice}
+        </label>
+        <select
+          required
+          id="practice"
+          name="practice"
+          className="border-2 rounded"
+          onChange={handleChange}
+        >
+          <option disabled selected>
+            -- {t.selectOption} --
+          </option>
+          <option value="Agile">{t.agile}</option>
+          <option value="CI/CD">{t.cicd}</option>
+          <option value="Test Automation">{t.testAuto}</option>
+          <option value="Cloud Automation">{t.cloudAuto}</option>
+          <option value="Unsure">{t.other}</option>
+        </select>
 
         <label htmlFor="what_else" className="font-bold text-periwinkle">
           {t.whatElse}
         </label>
         <textarea
-          type="textarea"
           id="what_else"
           name="what_else"
           className="border-2 rounded"

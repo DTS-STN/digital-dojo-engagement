@@ -25,6 +25,7 @@ export default {
   whatElse: 'What else should we know about your team?',
   howFindOut: 'How did you find out about us?',
   submit: 'Submit',
+  selectOption: 'select and option',
   //api
   emailSent: 'Email was sent successfully',
   emailNotSent: 'Failed to send email',
