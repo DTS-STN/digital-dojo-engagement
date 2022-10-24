@@ -50,6 +50,8 @@ module.exports = {
   env: {
     NEXT_PUBLIC_BUILD_DATE: builddate,
     LOGGING_LEVEL: process.env.LOGGING_LEVEL,
+    NODEMAILER_EMAIL: process.env.NODEMAILER_EMAIL,
+    NODEMAILER_PASSWORD: process.env.NODEMAILER_PASSWORD,
   },
   reactStrictMode: true,
   //
