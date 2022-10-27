@@ -21,4 +21,7 @@ export default {
   tellUs: 'Parlez-nous de vous et de votre équipe?',
   howFindOut: 'Par quel moyen avez-vous entendu parler de notre dojo?',
   submit: 'Soumettre',
+  //api
+  emailSent: 'Courriel envoyé avec succès',
+  emailNotSent: "Échec de l'envoi du courriel",
 }
