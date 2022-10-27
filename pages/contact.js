@@ -2,11 +2,9 @@ import DottedLine from '../components/DottedLine'
 import en from '../locales/contact/en'
 import fr from '../locales/contact/fr'
 
-
-
 export default function Contact({ locale }) {
   const t = locale === 'en' ? en : fr
-  
+
   return (
     <div className="max-w-2xl mx-auto">
       <h1 className="text-center">{t.h1}</h1>
@@ -82,7 +80,7 @@ export default function Contact({ locale }) {
             {t.otherOutsideGoc}
           </option>
         </select>
-        
+
         <label htmlFor="next-step" className="font-bold text-periwinkle">
           {t.nextStep}
         </label>
@@ -96,9 +94,7 @@ export default function Contact({ locale }) {
           <option value="Meet with a Dojo Member">{t.meet}</option>
           <option value="Get a Presentation">{t.present}</option>
           <option value="Ask some questions">{t.questions}</option>
-          <option value="Other">
-            {t.other}
-          </option>
+          <option value="Other">{t.other}</option>
         </select>
         <label htmlFor="tell-us" className="font-bold text-periwinkle">
           {t.tellUs}
@@ -140,7 +136,7 @@ export async function getStaticProps({ locale }) {
       keywords: '',
     },
     data_fr: {
-      title: "Dojo Numérique - Contactez Nous",
+      title: 'Dojo Numérique - Contactez Nous',
       desc: 'Français',
       author: '',
       keywords: '',

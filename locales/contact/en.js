@@ -12,7 +12,8 @@ export default {
   otherEsdc: 'Other - ESDC',
   otherGoc: 'Other - Government of Canada',
   otherOutsideGoc: 'Other - Outside the Government of Canada',
-  nextStep: 'There are lots of ways you can learn more. Which one feels like the right next step for you and your team? *',
+  nextStep:
+    'There are lots of ways you can learn more. Which one feels like the right next step for you and your team? *',
   meet: 'Meet with a member of the Dojo team',
   present: 'Get a 20 minute presentation about the Dojo',
   questions: 'Send you some questions I have',
