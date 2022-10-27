@@ -47,113 +47,111 @@ export default function Contact({ locale }) {
           {t.a}
         </a>
       </p>
-      {status !== 200 && (
-        <form
-          className="flex flex-col gap-3 text-[.9rem] mt-10"
-          aria-describedby="required"
-          onSubmit={handleSubmit}
-        >
-          <p id="required" className="text-[.85rem] text-periwinkle">
-            {t.imp}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-2">
-            <div className="flex flex-col w-full">
-              <label htmlFor="firstName" className="font-bold text-periwinkle">
-                {t.fn}
-              </label>
-              <input
-                required
-                id="firstName"
-                name="firstName"
-                className="border-2 rounded py-2 px-3"
-                onChange={handleChange}
-              ></input>
-            </div>
-            <div className="flex flex-col w-full">
-              <label htmlFor="lastName" className="font-bold text-periwinkle">
-                {t.ln}
-              </label>
-              <input
-                required
-                id="lastName"
-                name="lastName"
-                className="border-2 rounded py-2 px-3"
-                onChange={handleChange}
-              ></input>
-            </div>
+      <form
+        className="flex flex-col gap-3 text-[.9rem] mt-10"
+        aria-describedby="required"
+        onSubmit={handleSubmit}
+      >
+        <p id="required" className="text-[.85rem] text-periwinkle">
+          {t.imp}
+        </p>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <div className="flex flex-col w-full">
+            <label htmlFor="firstName" className="font-bold text-periwinkle">
+              {t.fn}
+            </label>
+            <input
+              required
+              id="firstName"
+              name="firstName"
+              className="border-2 rounded py-2 px-3"
+              onChange={handleChange}
+            ></input>
           </div>
-          <label htmlFor="email" className="font-bold text-periwinkle">
-            {t.email}
-          </label>
-          <input
-            type="email"
-            required
-            id="email"
-            name="email"
-            className="border-2 rounded"
-            onChange={handleChange}
-          ></input>
-          <label htmlFor="workLocation" className="font-bold text-periwinkle">
-            {t.where}
-          </label>
-          <select
-            required
-            id="workLocation"
-            name="workLocation"
-            className="border-2 rounded"
-            onChange={handleChange}
-          >
-            <option></option>
-            <option value="IITB">{t.iitb}</option>
-            <option value="Other - ESDC">{t.otherEsdc}</option>
-            <option value="Other - Government of Canada">{t.otherGoc}</option>
-            <option value="Other - Outside the Government of Canada">
-              {t.otherOutsideGoc}
-            </option>
-          </select>
+          <div className="flex flex-col w-full">
+            <label htmlFor="lastName" className="font-bold text-periwinkle">
+              {t.ln}
+            </label>
+            <input
+              required
+              id="lastName"
+              name="lastName"
+              className="border-2 rounded py-2 px-3"
+              onChange={handleChange}
+            ></input>
+          </div>
+        </div>
+        <label htmlFor="email" className="font-bold text-periwinkle">
+          {t.email}
+        </label>
+        <input
+          type="email"
+          required
+          id="email"
+          name="email"
+          className="border-2 rounded"
+          onChange={handleChange}
+        ></input>
+        <label htmlFor="workLocation" className="font-bold text-periwinkle">
+          {t.where}
+        </label>
+        <select
+          required
+          id="workLocation"
+          name="workLocation"
+          className="border-2 rounded"
+          onChange={handleChange}
+        >
+          <option></option>
+          <option value="IITB">{t.iitb}</option>
+          <option value="Other - ESDC">{t.otherEsdc}</option>
+          <option value="Other - Government of Canada">{t.otherGoc}</option>
+          <option value="Other - Outside the Government of Canada">
+            {t.otherOutsideGoc}
+          </option>
+        </select>
 
-          <label htmlFor="nextStep" className="font-bold text-periwinkle">
-            {t.nextStep}
-          </label>
-          <select
-            required
-            id="nextStep"
-            name="nextStep"
-            className="border-2 rounded"
-            onChange={handleChange}
-          >
-            <option></option>
-            <option value="Meet with a Dojo Member">{t.meet}</option>
-            <option value="Get a Presentation">{t.present}</option>
-            <option value="Ask some questions">{t.questions}</option>
-            <option value="Other">{t.other}</option>
-          </select>
-          <label htmlFor="tellUs" className="font-bold text-periwinkle">
-            {t.tellUs}
-          </label>
-          <textarea
-            type="textarea"
-            id="tellUs"
-            name="tellUs"
-            className="border-2 rounded"
-            onChange={handleChange}
-          ></textarea>
+        <label htmlFor="nextStep" className="font-bold text-periwinkle">
+          {t.nextStep}
+        </label>
+        <select
+          required
+          id="nextStep"
+          name="nextStep"
+          className="border-2 rounded"
+          onChange={handleChange}
+        >
+          <option></option>
+          <option value="Meet with a Dojo Member">{t.meet}</option>
+          <option value="Get a Presentation">{t.present}</option>
+          <option value="Ask some questions">{t.questions}</option>
+          <option value="Other">{t.other}</option>
+        </select>
+        <label htmlFor="tellUs" className="font-bold text-periwinkle">
+          {t.tellUs}
+        </label>
+        <textarea
+          type="textarea"
+          id="tellUs"
+          name="tellUs"
+          className="border-2 rounded"
+          onChange={handleChange}
+        ></textarea>
 
-          <label htmlFor="howFind" className="font-bold text-periwinkle">
-            {t.howFindOut}
-          </label>
-          <textarea
-            id="howFind"
-            name="howFind"
-            className="border-2 rounded"
-            onChange={handleChange}
-          ></textarea>
+        <label htmlFor="howFind" className="font-bold text-periwinkle">
+          {t.howFindOut}
+        </label>
+        <textarea
+          id="howFind"
+          name="howFind"
+          className="border-2 rounded"
+          onChange={handleChange}
+        ></textarea>
 
-          <button className="py-1 bg-blue-700 text-white rounded hover:bg-blue-800">
-            {t.submit}
-          </button>
-        </form>
-      )}
+        <button className="py-1 bg-blue-700 text-white rounded hover:bg-blue-800">
+          {t.submit}
+        </button>
+      </form>
       {status && (
         <div
           role="status"
