@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>8/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">53.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>7/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -278,33 +278,49 @@
 <a name='L213'></a><a href='#L213'>213</a>
 <a name='L214'></a><a href='#L214'>214</a>
 <a name='L215'></a><a href='#L215'>215</a>
-<a name='L216'></a><a href='#L216'>216</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -496,11 +512,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import DottedLine from '../components/DottedLine'
 import en from '../locales/engagement/en'
 import fr from '../locales/engagement/fr'
+import { useState } from 'react'
 &nbsp;
 export default function Engagement({ locale }) {
   const t = locale === 'en' ? en : <span class="branch-1 cbranch-no" title="branch not covered" >fr</span>
+  const [state, setState] = useState({})
+  const [status, setStatus] = useState()
+&nbsp;
+  function handleChange(e) {
+    setState((prev) =&gt; ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >handleSubmit(</span>e) {
+<span class="cstat-no" title="statement not covered" >    e.preventDefault()</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      setStatus()</span>
+      let res = <span class="cstat-no" title="statement not covered" >await fetch('/api/startEngagement', {</span>
+        method: 'POST',
+        body: JSON.stringify(state),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+<span class="cstat-no" title="statement not covered" >      setStatus(res.status)</span>
+    } catch (e) {
+<span class="cstat-no" title="statement not covered" >      setStatus(500)</span>
+    }
+  }
+&nbsp;
   return (
-    &lt;div className="max-w-2xl mx-auto"&gt;
+    &lt;div className="max-w-2xl mx-auto px-2"&gt;
       &lt;h1 className="text-center"&gt;{t.h1}&lt;/h1&gt;
       &lt;DottedLine /&gt;
       &lt;p className="text-periwinkle mb-2"&gt;{t.p1}&lt;/p&gt;
@@ -516,9 +560,7 @@ export default function Engagement({ locale }) {
       &lt;form
         className="flex flex-col gap-3 text-[.9rem] mt-10"
         aria-describedby="required"
-        action="mailto:ESDC.DGIIT.Dojo-Dojo.IITD.ESDC@hrsdc-rhdcc.gc.ca?Subject=Start Team Engagement"
-        method="post"
-        encType="text/plain"
+        onSubmit={handleSubmit}
       &gt;
         &lt;p id="required" className="text-[.85rem] text-periwinkle"&gt;
           {t.imp}
@@ -532,7 +574,8 @@ export default function Engagement({ locale }) {
               required
               id="first_name"
               name="first_name"
-              className="border-2 rounded"
+              className="border-2 rounded py-2 px-3"
+              onChange={handleChange}
             &gt;&lt;/input&gt;
           &lt;/div&gt;
           &lt;div className="flex flex-col w-full"&gt;
@@ -543,7 +586,8 @@ export default function Engagement({ locale }) {
               required
               id="last_name"
               name="last_name"
-              className="border-2 rounded"
+              className="border-2 rounded py-2 px-3"
+              onChange={handleChange}
             &gt;&lt;/input&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -554,18 +598,22 @@ export default function Engagement({ locale }) {
           required
           id="team_name"
           name="team_name"
-          className="border-2 rounded"
+          className="border-2 rounded py-2 px-3"
+          onChange={handleChange}
         &gt;&lt;/input&gt;
-        &lt;label htmlFor="work-location" className="font-bold text-periwinkle"&gt;
+        &lt;label htmlFor="work_location" className="font-bold text-periwinkle"&gt;
           {t.where}
         &lt;/label&gt;
         &lt;select
           required
-          id="work-location"
-          name="work-location"
+          id="work_location"
+          name="work_location"
           className="border-2 rounded"
+          onChange={handleChange}
         &gt;
-          &lt;option&gt;&lt;/option&gt;
+          &lt;option disabled selected&gt;
+            -- {t.selectOption} --
+          &lt;/option&gt;
           &lt;option value="IITB"&gt;{t.iitb}&lt;/option&gt;
           &lt;option value="Other - ESDC"&gt;{t.otherEsdc}&lt;/option&gt;
           &lt;option value="Other - Government of Canada"&gt;{t.otherGoc}&lt;/option&gt;
@@ -582,104 +630,80 @@ export default function Engagement({ locale }) {
           id="email"
           name="email"
           className="border-2 rounded"
+          onChange={handleChange}
         &gt;&lt;/input&gt;
 &nbsp;
-        &lt;fieldset className="flex flex-col"&gt;
-          &lt;legend className="font-bold text-periwinkle"&gt;{t.dates}&lt;/legend&gt;
-          &lt;div className="flex items-center gap-2"&gt;
-            &lt;input
-              type="radio"
-              required
-              id="yes"
-              name="dates"
-              className="border-2 rounded"
-            &gt;&lt;/input&gt;
-            &lt;label htmlFor="yes"&gt;{t.y}&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div className="flex items-center gap-2"&gt;
-            &lt;input
-              type="radio"
-              id="no"
-              name="dates"
-              className="border-2 rounded"
-            &gt;&lt;/input&gt;
-            &lt;label htmlFor="no"&gt;{t.n}&lt;/label&gt;
-          &lt;/div&gt;
-        &lt;/fieldset&gt;
+        &lt;label htmlFor="dates" className="font-bold text-periwinkle"&gt;
+          {t.dates}
+        &lt;/label&gt;
+        &lt;select
+          required
+          id="dates"
+          name="dates"
+          className="border-2 rounded"
+          onChange={handleChange}
+        &gt;
+          &lt;option disabled selected&gt;
+            -- {t.selectOption} --
+          &lt;/option&gt;
+          &lt;option value="Yes"&gt;{t.y}&lt;/option&gt;
+          &lt;option value="No"&gt;{t.n}&lt;/option&gt;
+        &lt;/select&gt;
 &nbsp;
-        &lt;fieldset className="flex flex-col"&gt;
-          &lt;legend className="font-bold text-periwinkle"&gt;{t.practice}&lt;/legend&gt;
-          &lt;div className="flex items-center gap-2"&gt;
-            &lt;input
-              type="radio"
-              required
-              id="agile"
-              name="practice"
-              className="border-2 rounded"
-            &gt;&lt;/input&gt;
-            &lt;label htmlFor="agile"&gt;{t.agile}&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div className="flex items-center gap-2"&gt;
-            &lt;input
-              type="radio"
-              id="cicd"
-              name="practice"
-              className="border-2 rounded"
-            &gt;&lt;/input&gt;
-            &lt;label htmlFor="cicd"&gt;{t.cicd}&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div className="flex items-center gap-2"&gt;
-            &lt;input
-              type="radio"
-              id="automation"
-              name="practice"
-              className="border-2 rounded"
-            &gt;&lt;/input&gt;
-            &lt;label htmlFor="automation"&gt;{t.testAuto}&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div className="flex items-center gap-2"&gt;
-            &lt;input
-              type="radio"
-              id="cloud"
-              name="practice"
-              className="border-2 rounded"
-            &gt;&lt;/input&gt;
-            &lt;label htmlFor="cloud"&gt;{t.cloudAuto}&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div className="flex items-center gap-2"&gt;
-            &lt;input
-              type="radio"
-              id="unsure"
-              name="practice"
-              className="border-2 rounded"
-            &gt;&lt;/input&gt;
-            &lt;label htmlFor="unsure"&gt;{t.other}&lt;/label&gt;
-          &lt;/div&gt;
-        &lt;/fieldset&gt;
+        &lt;label htmlFor="practice" className="font-bold text-periwinkle"&gt;
+          {t.practice}
+        &lt;/label&gt;
+        &lt;select
+          required
+          id="practice"
+          name="practice"
+          className="border-2 rounded"
+          onChange={handleChange}
+        &gt;
+          &lt;option disabled selected&gt;
+            -- {t.selectOption} --
+          &lt;/option&gt;
+          &lt;option value="Agile"&gt;{t.agile}&lt;/option&gt;
+          &lt;option value="CI/CD"&gt;{t.cicd}&lt;/option&gt;
+          &lt;option value="Test Automation"&gt;{t.testAuto}&lt;/option&gt;
+          &lt;option value="Cloud Automation"&gt;{t.cloudAuto}&lt;/option&gt;
+          &lt;option value="Unsure"&gt;{t.other}&lt;/option&gt;
+        &lt;/select&gt;
 &nbsp;
-        &lt;label htmlFor="what-else" className="font-bold text-periwinkle"&gt;
+        &lt;label htmlFor="what_else" className="font-bold text-periwinkle"&gt;
           {t.whatElse}
         &lt;/label&gt;
         &lt;textarea
-          type="textarea"
-          id="what-else"
-          name="what-else"
+          id="what_else"
+          name="what_else"
           className="border-2 rounded"
+          onChange={handleChange}
         &gt;&lt;/textarea&gt;
 &nbsp;
-        &lt;label htmlFor="how-find" className="font-bold text-periwinkle"&gt;
+        &lt;label htmlFor="how_find" className="font-bold text-periwinkle"&gt;
           {t.howFindOut}
         &lt;/label&gt;
         &lt;textarea
-          id="how-find"
-          name="how-find"
+          id="how_find"
+          name="how_find"
           className="border-2 rounded"
+          onChange={handleChange}
         &gt;&lt;/textarea&gt;
 &nbsp;
-        &lt;button className="py-1 bg-blue-700 text-white rounded hover:bg-blue-800"&gt;
+        &lt;button className="mt-5 py-2 bg-blue-700 text-white rounded hover:bg-blue-800"&gt;
           {t.submit}
         &lt;/button&gt;
       &lt;/form&gt;
+      {status &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;div</span>
+          role="status"
+          className={`${
+            status === 200 ? 'bg-green-700' : 'bg-red-700'
+          } mt-5 rounded text-white text-center font-semi-bold px-3 py-2`}
+        &gt;
+          {t[status === 200 ? 'emailSent' : 'emailNotSent']}
+        &lt;/div&gt;
+      )}
     &lt;/div&gt;
   )
 }
@@ -715,7 +739,7 @@ export async function getStaticProps({ locale }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Oct 24 2022 12:35:33 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 27 2022 11:39:08 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>
