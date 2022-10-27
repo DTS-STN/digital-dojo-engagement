@@ -6,15 +6,6 @@ import fr from '../locales/contact/fr'
 
 export default function Contact({ locale }) {
   const t = locale === 'en' ? en : fr
-
-  const handleChange = e => {
-    const { name, value } = e.target;
-  
-    this.setState({
-      [name]: value
-    });
-  };
-  
   
   return (
     <div className="max-w-2xl mx-auto">
