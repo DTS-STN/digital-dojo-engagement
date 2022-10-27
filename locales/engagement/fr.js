@@ -28,6 +28,6 @@ export default {
   submit: 'Soumettre',
   selectOption: 'sélectionner une option',
   //api
-  emailSent: "L'e-mail a été envoyé avec succès",
-  emailNotSent: "Échec de l'envoi de l'e-mail",
+  emailSent: 'Courriel envoyé avec succès',
+  emailNotSent: "Échec de l'envoi du courriel",
 }

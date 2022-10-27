@@ -21,4 +21,7 @@ export default {
   tellUs: 'Tell us about yourself and your team',
   howFindOut: 'How did you find out about us?',
   submit: 'Submit',
+  //api
+  emailSent: 'Email was sent successfully',
+  emailNotSent: 'Failed to send email',
 }
