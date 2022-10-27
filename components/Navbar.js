@@ -114,7 +114,7 @@ function Navbar({ t }) {
         <Link href="">
           <a className="hover:underline">{t.tools}</a>
         </Link>
-        <Link href="">
+        <Link href="/FAQ">
           <a className="hover:underline">{t.faq}</a>
         </Link>
         <Link href="/contact">

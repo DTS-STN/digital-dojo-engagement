@@ -1,11 +1,39 @@
 import DottedLine from '../components/DottedLine'
 import en from '../locales/engagement/en'
 import fr from '../locales/engagement/fr'
+import { useState } from 'react'
 
 export default function Engagement({ locale }) {
   const t = locale === 'en' ? en : fr
+  const [state, setState] = useState({})
+  const [status, setStatus] = useState()
+
+  function handleChange(e) {
+    setState((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    try {
+      setStatus()
+      let res = await fetch('/api/startEngagement', {
+        method: 'POST',
+        body: JSON.stringify(state),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      setStatus(res.status)
+    } catch (e) {
+      setStatus(500)
+    }
+  }
+
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto px-2">
       <h1 className="text-center">{t.h1}</h1>
       <DottedLine />
       <p className="text-periwinkle mb-2">{t.p1}</p>
@@ -21,9 +49,7 @@ export default function Engagement({ locale }) {
       <form
         className="flex flex-col gap-3 text-[.9rem] mt-10"
         aria-describedby="required"
-        action="mailto:ESDC.DGIIT.Dojo-Dojo.IITD.ESDC@hrsdc-rhdcc.gc.ca?Subject=Start Team Engagement"
-        method="post"
-        encType="text/plain"
+        onSubmit={handleSubmit}
       >
         <p id="required" className="text-[.85rem] text-periwinkle">
           {t.imp}
@@ -37,7 +63,8 @@ export default function Engagement({ locale }) {
               required
               id="first_name"
               name="first_name"
-              className="border-2 rounded"
+              className="border-2 rounded py-2 px-3"
+              onChange={handleChange}
             ></input>
           </div>
           <div className="flex flex-col w-full">
@@ -48,7 +75,8 @@ export default function Engagement({ locale }) {
               required
               id="last_name"
               name="last_name"
-              className="border-2 rounded"
+              className="border-2 rounded py-2 px-3"
+              onChange={handleChange}
             ></input>
           </div>
         </div>
@@ -59,18 +87,22 @@ export default function Engagement({ locale }) {
           required
           id="team_name"
           name="team_name"
-          className="border-2 rounded"
+          className="border-2 rounded py-2 px-3"
+          onChange={handleChange}
         ></input>
-        <label htmlFor="work-location" className="font-bold text-periwinkle">
+        <label htmlFor="work_location" className="font-bold text-periwinkle">
           {t.where}
         </label>
         <select
           required
-          id="work-location"
-          name="work-location"
+          id="work_location"
+          name="work_location"
           className="border-2 rounded"
+          onChange={handleChange}
         >
-          <option></option>
+          <option disabled selected>
+            -- {t.selectOption} --
+          </option>
           <option value="IITB">{t.iitb}</option>
           <option value="Other - ESDC">{t.otherEsdc}</option>
           <option value="Other - Government of Canada">{t.otherGoc}</option>
@@ -87,104 +119,80 @@ export default function Engagement({ locale }) {
           id="email"
           name="email"
           className="border-2 rounded"
+          onChange={handleChange}
         ></input>
 
-        <fieldset className="flex flex-col">
-          <legend className="font-bold text-periwinkle">{t.dates}</legend>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              required
-              id="yes"
-              name="dates"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="yes">{t.y}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="no"
-              name="dates"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="no">{t.n}</label>
-          </div>
-        </fieldset>
+        <label htmlFor="dates" className="font-bold text-periwinkle">
+          {t.dates}
+        </label>
+        <select
+          required
+          id="dates"
+          name="dates"
+          className="border-2 rounded"
+          onChange={handleChange}
+        >
+          <option disabled selected>
+            -- {t.selectOption} --
+          </option>
+          <option value="Yes">{t.y}</option>
+          <option value="No">{t.n}</option>
+        </select>
 
-        <fieldset className="flex flex-col">
-          <legend className="font-bold text-periwinkle">{t.practice}</legend>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              required
-              id="agile"
-              name="practice"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="agile">{t.agile}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="cicd"
-              name="practice"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="cicd">{t.cicd}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="automation"
-              name="practice"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="automation">{t.testAuto}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="cloud"
-              name="practice"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="cloud">{t.cloudAuto}</label>
-          </div>
-          <div className="flex items-center gap-2">
-            <input
-              type="radio"
-              id="unsure"
-              name="practice"
-              className="border-2 rounded"
-            ></input>
-            <label htmlFor="unsure">{t.other}</label>
-          </div>
-        </fieldset>
+        <label htmlFor="practice" className="font-bold text-periwinkle">
+          {t.practice}
+        </label>
+        <select
+          required
+          id="practice"
+          name="practice"
+          className="border-2 rounded"
+          onChange={handleChange}
+        >
+          <option disabled selected>
+            -- {t.selectOption} --
+          </option>
+          <option value="Agile">{t.agile}</option>
+          <option value="CI/CD">{t.cicd}</option>
+          <option value="Test Automation">{t.testAuto}</option>
+          <option value="Cloud Automation">{t.cloudAuto}</option>
+          <option value="Unsure">{t.other}</option>
+        </select>
 
-        <label htmlFor="what-else" className="font-bold text-periwinkle">
+        <label htmlFor="what_else" className="font-bold text-periwinkle">
           {t.whatElse}
         </label>
         <textarea
-          type="textarea"
-          id="what-else"
-          name="what-else"
+          id="what_else"
+          name="what_else"
           className="border-2 rounded"
+          onChange={handleChange}
         ></textarea>
 
-        <label htmlFor="how-find" className="font-bold text-periwinkle">
+        <label htmlFor="how_find" className="font-bold text-periwinkle">
           {t.howFindOut}
         </label>
         <textarea
-          id="how-find"
-          name="how-find"
+          id="how_find"
+          name="how_find"
           className="border-2 rounded"
+          onChange={handleChange}
         ></textarea>
 
-        <button className="py-1 bg-blue-700 text-white rounded hover:bg-blue-800">
+        <button className="mt-5 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
           {t.submit}
         </button>
       </form>
+      {status && (
+        <div
+          role="status"
+          className={`${
+            status === 200 ? 'bg-green-700' : 'bg-red-700'
+          } mt-5 rounded text-white text-center font-semi-bold px-3 py-2`}
+        >
+          {t[status === 200 ? 'emailSent' : 'emailNotSent']}
+        </div>
+      )}
     </div>
   )
 }

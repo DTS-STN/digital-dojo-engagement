@@ -32,7 +32,7 @@ export default {
   // Landscape Links
 
   headerTitle: 'Dojo Numérique',
-  headerSubText: 'Une expérience sur mesure pour votre équipe',
+  headerSubText: 'Une expérience adaptée pour votre équipe',
 
   footerContactUsURL: 'https://www.canada.ca/fr/contact.html',
   footerContactUs: 'Contactez-nous',

@@ -9,7 +9,6 @@ import Navbar from './Navbar'
 export default function Header(props) {
   const t = props.t
   const { theme } = useTheme()
-  console.log(t)
   return (
     <>
       <nav
