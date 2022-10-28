@@ -1,6 +1,13 @@
 import DottedLine from '../components/DottedLine'
+import { useState } from 'react'
+import terms_en from '../locales/tools-and-resources/terms_en'
+import terms_fr from '../locales/tools-and-resources/terms_fr'
 
-export default function ToolsAndResources() {
+export default function ToolsAndResources({ locale }) {
+  const [state, setState] = useState('A')
+  const terms = locale === 'en' ? terms_en : terms_fr
+  const letterSet = new Set(Object.keys(terms).map((term) => term[0]))
+
   return (
     <div className="max-w-5xl mx-auto">
       <h1 className="text-center">tools and resources</h1>
@@ -9,13 +16,14 @@ export default function ToolsAndResources() {
         <h2 className="text-2xl text-periwinkle mb-4">
           Digital Dojo Engagement Video
         </h2>
-        <div className="flex gap-10">
+        <div className="md:flex gap-10">
           <iframe
             src="https://www.youtube.com/embed/G2FDF5LHWOU"
             title="the digital dojo experience"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            className="mb-5 md:mb-0"
           ></iframe>
           <div className="flex flex-col gap-5">
             <p>
@@ -31,7 +39,7 @@ export default function ToolsAndResources() {
           </div>
         </div>
       </section>
-      <section>
+      <section className="mb-10">
         <h2 className="text-2xl text-periwinkle mb-4">
           Curated Video Playlists
         </h2>
@@ -83,6 +91,34 @@ export default function ToolsAndResources() {
               Scrum.
             </p>
           </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-2xl text-periwinkle mb-4">
+          Glossary of Agile Terms
+        </h2>
+        <div className="flex flex-wrap md:justify-between mb-5">
+          {[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map((letter) => (
+            <button
+              key={letter}
+              onClick={(e) => setState(e.target.value)}
+              value={letter}
+              className={`p-2 text-periwinkle font-semibold ${
+                letter === state ? 'underline underline-offset-4' : ''
+              } ${letterSet.has(letter) ? '' : 'opacity-50'}`}
+              disabled={!letterSet.has(letter)}
+              tabIndex={letterSet.has(letter) ? 0 : -1}
+            >
+              {letter}
+            </button>
+          ))}
+        </div>
+        <div className="space-y-5">
+          {Object.keys(terms)
+            .filter((term) => term[0] === state)
+            .map((term) => (
+              <div key={term}>{terms[term]}</div>
+            ))}
         </div>
       </section>
     </div>
