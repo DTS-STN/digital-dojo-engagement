@@ -1,21 +1,28 @@
 import DottedLine from '../components/DottedLine'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import en from '../locales/tools-and-resources/en'
+import fr from '../locales/tools-and-resources/fr'
 import terms_en from '../locales/tools-and-resources/terms_en'
 import terms_fr from '../locales/tools-and-resources/terms_fr'
 
 export default function ToolsAndResources({ locale }) {
   const [state, setState] = useState('A')
+  const t = locale === 'en' ? en : fr
   const terms = locale === 'en' ? terms_en : terms_fr
   const letterSet = new Set(Object.keys(terms).map((term) => term[0]))
 
+  // if language is toggled, the displayed letter should be reset, otherwise
+  // the user might end up on a letter that doesn't have a similar translation
+  useEffect(() => {
+    setState('A')
+  }, [locale])
+
   return (
-    <div className="max-w-5xl mx-auto">
-      <h1 className="text-center">tools and resources</h1>
+    <div className="max-w-5xl mx-auto p-2">
+      <h1 className="text-center">{t.title}</h1>
       <DottedLine />
       <section className="mb-10">
-        <h2 className="text-2xl text-periwinkle mb-4">
-          Digital Dojo Engagement Video
-        </h2>
+        <h2 className="text-2xl text-periwinkle mb-4">{t.dojoVideo}</h2>
         <div className="md:flex gap-10">
           <iframe
             src="https://www.youtube.com/embed/G2FDF5LHWOU"
@@ -26,29 +33,15 @@ export default function ToolsAndResources({ locale }) {
             className="mb-5 md:mb-0"
           ></iframe>
           <div className="flex flex-col gap-5">
-            <p>
-              What would a stay in the Dojo look like? In this video, we try to
-              explain more about what your team’s Dojo experience might look
-              like.
-            </p>
-            <p>
-              In this example, the team wants to explore Agile but the Dojo Team
-              can help you with all of your Digital Transformation goals,
-              aligning to the TBS Digital Standards.
-            </p>
+            <p>{t.p1}</p>
+            <p>{t.p2}</p>
           </div>
         </div>
       </section>
       <section className="mb-10">
-        <h2 className="text-2xl text-periwinkle mb-4">
-          Curated Video Playlists
-        </h2>
-        <p className="mb-5">
-          The following links lead to playlists curated by the Dojo team on a
-          wide range of topics. In order to view these from your ESDC issued
-          devices, you will need to disconnect from VPN!
-        </p>
-        <div className="lg:grid grid-cols-3">
+        <h2 className="text-2xl text-periwinkle mb-4">{t.playlist}</h2>
+        <p className="mb-5">{t.p3}</p>
+        <div className="md:grid md:grid-cols-2 lg:grid lg:grid-cols-3">
           <div className="space-y-2">
             <iframe
               src="https://www.youtube.com/embed/videoseries?list=PLA--nqTdtET3gvCY8DBBX-v4-APKMMfZ3"
@@ -57,11 +50,8 @@ export default function ToolsAndResources({ locale }) {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <h3 className="text-xl text-periwinkle">Agile Basics</h3>
-            <p>
-              Videos that we feel does a great job explaining the basics of
-              Agile.
-            </p>
+            <h3 className="text-xl text-periwinkle">{t.agileBasics}</h3>
+            <p>{t.agileDesc}</p>
           </div>
           <div className="space-y-2">
             <iframe
@@ -71,11 +61,8 @@ export default function ToolsAndResources({ locale }) {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <h3 className="text-xl text-periwinkle">Kanban 101 Playlist</h3>
-            <p>
-              Videos that we feel does a great job explaining the basics of
-              Kanban.
-            </p>
+            <h3 className="text-xl text-periwinkle">{t.kanban}</h3>
+            <p>{t.kanbanDesc}</p>
           </div>
           <div className="space-y-2">
             <iframe
@@ -85,18 +72,13 @@ export default function ToolsAndResources({ locale }) {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <h3 className="text-xl text-periwinkle">Scrum 101</h3>
-            <p>
-              Videos that we feel does a great job explaining the basics of
-              Scrum.
-            </p>
+            <h3 className="text-xl text-periwinkle">{t.scrum}</h3>
+            <p>{t.scrumDesc}</p>
           </div>
         </div>
       </section>
       <section>
-        <h2 className="text-2xl text-periwinkle mb-4">
-          Glossary of Agile Terms
-        </h2>
+        <h2 className="text-2xl text-periwinkle mb-4">{t.terms}</h2>
         <div className="flex flex-wrap md:justify-between mb-5">
           {[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map((letter) => (
             <button
@@ -108,6 +90,7 @@ export default function ToolsAndResources({ locale }) {
               } ${letterSet.has(letter) ? '' : 'opacity-50'}`}
               disabled={!letterSet.has(letter)}
               tabIndex={letterSet.has(letter) ? 0 : -1}
+              aria-label={`filter terms by the letter: ${letter}`}
             >
               {letter}
             </button>

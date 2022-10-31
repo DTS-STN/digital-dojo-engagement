@@ -15,14 +15,14 @@
     @apply focus-visible:ring-1;
     @apply focus-visible:ring-periwinkle;
   }
+  html {
+    font-family: 'Didact Gothic', sans-serif;
+  }
   h1 {
     @apply text-4xl py-5 text-periwinkle;
   }
   p {
     @apply text-lg;
-  }
-  html {
-    font-family: 'Didact Gothic', sans-serif;
   }
   details > summary {
     @apply text-periwinkle;
@@ -46,4 +46,5 @@
     font-size: 2rem;
     line-height: 1.5rem;
   }
+  
 }

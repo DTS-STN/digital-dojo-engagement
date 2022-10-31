@@ -1,8 +1,8 @@
 export default {
   'Acceptance Criteria': (
-    <details>
+    <details className="space-y-2">
       <summary>Acceptance Criteria</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           The Acceptance Criteria specify a set of conditions that the solution
           must meet in order to satisfy the customer. The product owner or
@@ -12,13 +12,13 @@ export default {
           acceptance criteria; otherwise, it fails.
         </p>
         <p>
-          <strong>How it’s Used: </strong> Acceptance criteria should be written
-          in clear, easy-to-understand language. For example, “If I am logged
-          in, when I click the “Buy” button, the total item count for my cart
-          should increase by one.”
+          <span className="font-bold">How it’s Used: </span> Acceptance criteria
+          should be written in clear, easy-to-understand language. For example,
+          “If I am logged in, when I click the “Buy” button, the total item
+          count for my cart should increase by one.”
         </p>
-        Project Management Benefits:
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li> Confirms when a user story is complete.</li>
 
           <li>Helps the team understand the story/feature.</li>
@@ -29,9 +29,9 @@ export default {
     </details>
   ),
   'Acceptance Test': (
-    <details>
+    <details className="space-y-2">
       <summary>Acceptance Test</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           An Acceptance Test is derived from the Acceptance Criteria and
           verifies whether a feature is functional. The test has only two
@@ -40,19 +40,19 @@ export default {
           criteria usually include one or more acceptance tests.
         </p>
         <p>
-          <strong>Also Known As: </strong>functional test, customer test, story
-          test
+          <span className="font-bold">Also Known As: </span>functional test,
+          customer test, story test
         </p>
         <p>
-          <strong>How it’s Used: </strong> Acceptance testing ensures that the
-          software meets business and customer requirements. Acceptance tests
-          are written by the product owner and should be brief statements that
-          explain intended behavior and result. For example, “The user clicks on
-          this button and the text turns red.” This test would result in either
-          a pass or fail.
+          <span className="font-bold">How it’s Used: </span> Acceptance testing
+          ensures that the software meets business and customer requirements.
+          Acceptance tests are written by the product owner and should be brief
+          statements that explain intended behavior and result. For example,
+          “The user clicks on this button and the text turns red.” This test
+          would result in either a pass or fail.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li>
             Increases satisfaction of the customer by ensuring their
             requirements are met.
@@ -65,9 +65,9 @@ export default {
     </details>
   ),
   'Agile Manifesto': (
-    <details>
+    <details className="space-y-2">
       <summary>Agile Manifesto</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           The Agile Manifesto includes four values and 12 principles of an
           iterative software development process. In February 2001, 17 software
@@ -77,13 +77,12 @@ export default {
           and helping others do it.”
         </p>
         <p>
-          <strong>How it’s Used: </strong>Project managers refer to the Agile
-          Manifesto when they are managing any process that aligns with its core
-          concepts, such as Agile methodology.
+          <span className="font-bold">How it’s Used: </span>Project managers
+          refer to the Agile Manifesto when they are managing any process that
+          aligns with its core concepts, such as Agile methodology.
         </p>
-        <p></p>
-        <ul>
-          Project Management Benefits:
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li>
             Frequent testing and continuous delivery of valuable software.
           </li>
@@ -95,33 +94,33 @@ export default {
     </details>
   ),
   'Application Lifecycle Management (ALM)': (
-    <details>
+    <details className="space-y-2">
       <summary>Application Lifecycle Management (ALM)</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Application Lifecycle Management (ALM) is a continuous process of
           managing a software application from its initial planning to its
           retirement.
         </p>
-
         <p>
-          <strong>How it’s Used: </strong>ALM is used throughout the entire
-          project and involves the use of a variety of tools to assist with
-          requirements management, architecture, coding, testing, tracking, and
-          release.
+          <span className="font-bold">How it’s Used: </span>ALM is used
+          throughout the entire project and involves the use of a variety of
+          tools to assist with requirements management, architecture, coding,
+          testing, tracking, and release.
         </p>
-        <p>Project Management Benefits:</p>
-        <li>Reduces risk by continuously monitoring project status.</li>
-        <li>Decreases cycle time and development costs.</li>
-        <li>Minimizes downtime.</li>
-        <p></p>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
+          <li>Reduces risk by continuously monitoring project status.</li>
+          <li>Decreases cycle time and development costs.</li>
+          <li>Minimizes downtime.</li>
+        </ul>
       </div>
     </details>
   ),
   'Backlog': (
-    <details>
+    <details className="space-y-2">
       <summary>Backlog</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           A backlog is a changing list of product requirements based on the
           customer’s needs. The backlog is not a to-do list; rather, it is a
@@ -130,26 +129,27 @@ export default {
           implement first.
         </p>
         <p>
-          <strong>How It’s Used: </strong>The development team pulls work from
-          the backlog to complete during each iteration. The backlog may change
-          throughout the development process as the team learns more about the
-          customer’s requirements.
+          <span className="font-bold">How It’s Used: </span>The development team
+          pulls work from the backlog to complete during each iteration. The
+          backlog may change throughout the development process as the team
+          learns more about the customer’s requirements.
         </p>
         <p>
-          <strong>Also Known As: </strong>product backlog
+          <span className="font-bold">Also Known As: </span>product backlog
         </p>
-        <p>Project Management Benefits:</p>
-        <li>Communicates feature priorities.</li>
-        <li>Allows for longer term planning.</li>
-        <li>Ensures the customer needs are being heard.</li>
-        <p></p>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
+          <li>Communicates feature priorities.</li>
+          <li>Allows for longer term planning.</li>
+          <li>Ensures the customer needs are being heard.</li>
+        </ul>
       </div>
     </details>
   ),
   'Backlog Grooming': (
-    <details>
+    <details className="space-y-2">
       <summary>Backlog Grooming</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Backlog grooming occurs at the end of a sprint, when the team meets to
           make sure the backlog is ready for the next sprint. The team may
@@ -159,95 +159,90 @@ export default {
           action occurs (a backlog grooming meeting).
         </p>
         <p>
-          <strong>Also Known As: </strong>Backlog refinement
+          <span className="font-bold">Also Known As: </span>Backlog refinement
         </p>
 
         <p>
-          <strong>How it’s Used: </strong>Once the team finishes a sprint, a
-          backlog grooming meeting is scheduled. Backlog grooming is meant to
-          ensure the backlog only contains items that are relevant and that meet
-          objectives.
+          <span className="font-bold">How it’s Used: </span>Once the team
+          finishes a sprint, a backlog grooming meeting is scheduled. Backlog
+          grooming is meant to ensure the backlog only contains items that are
+          relevant and that meet objectives.
         </p>
-        <p>Project Management Benefits:</p>
-        <li> Ensures that all features are meeting project objectives.</li>
-        <li>
-          Helps the development team understand priorities and stay on track.
-        </li>
-        <li>
-          {' '}
-          Facilitates communication regarding which features are and aren’t
-          important, and why.
-        </li>
-        <p></p>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
+          <li> Ensures that all features are meeting project objectives.</li>
+          <li>
+            Helps the development team understand priorities and stay on track.
+          </li>
+          <li>
+            Facilitates communication regarding which features are and aren’t
+            important, and why.
+          </li>
+        </ul>
       </div>
     </details>
   ),
   'Capacity': (
-    <details>
+    <details className="space-y-2">
       <summary>Capacity</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Capacity represents the amount of work that can be completed within a
           certain time frame and is based on the number of hours that an
           individual or team will be available to complete the work.
         </p>
-
         <p>
-          <strong>How it’s Used: </strong>The product owner and Agile team
-          determine the capacity or amount of workload, they can take on for an
-          upcoming sprint. The capacity is decided during the sprint planning
-          meeting.
+          <span className="font-bold">How it’s Used: </span>The product owner
+          and Agile team determine the capacity or amount of workload, they can
+          take on for an upcoming sprint. The capacity is decided during the
+          sprint planning meeting.
         </p>
-        <p>Project Management Benefits:</p>
-        <li> Improves resource management.</li>
-        <li> Estimates the completion of a project.</li>
-        <p></p>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
+          <li> Improves resource management.</li>
+          <li> Estimates the completion of a project.</li>
+        </ul>
       </div>
     </details>
   ),
   'Continuous Integration (CI)': (
-    <details>
+    <details className="space-y-2">
       <summary>Continuous Integration (CI)</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Continuous integration is a software engineering practice that
           involves continual integration of new development code into the
           existing codebase.
         </p>
         <p>
-          <strong>Also Known As: </strong>Continuous delivery, continuous
-          deployment
+          <span className="font-bold">Also Known As: </span>Continuous delivery,
+          continuous deployment
         </p>
         <p>
-          <strong>How it’s Used: </strong>Once a feature is completed,
-          developers test it for defects and then integrate it into the existing
-          codebase. This ensures that the code repository always contains the
-          latest working software build. In practice, this process is largely
-          automated through the use of version control tools, team policies and
-          conventions, and specific CI tools.
+          <span className="font-bold">How it’s Used: </span>Once a feature is
+          completed, developers test it for defects and then integrate it into
+          the existing codebase. This ensures that the code repository always
+          contains the latest working software build. In practice, this process
+          is largely automated through the use of version control tools, team
+          policies and conventions, and specific CI tools.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li>
-            {' '}
             Enables rapid feedback, so that defects can be identified and
             corrected quickly.
           </li>
-          <li>
-            {' '}
-            Minimizes time and effort needed to perform each integration.
-          </li>
+          <li>Minimizes time and effort needed to perform each integration.</li>
           <li> Provides an automated build and release process.</li>
           <li> Allows software to be deliverable at any moment</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Continuous Improvement': (
-    <details>
+    <details className="space-y-2">
       <summary>Continuous Improvement</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Continuous improvement is a process of improving quality and
           efficiency by making small, incremental changes over time. In Kanban,
@@ -256,21 +251,19 @@ export default {
           productivity.
         </p>
         <p>
-          <strong>Also Known As: </strong>Kaizen
+          <span className="font-bold">Also Known As: </span>Kaizen
         </p>
         <p>
-          <strong>How It’s Used: </strong>Continuous improvement is used to
-          introduce improvement into the work process on an incremental basis
-          and involves the following steps:
+          <span className="font-bold">How It’s Used: </span>Continuous
+          improvement is used to introduce improvement into the work process on
+          an incremental basis and involves the following steps:
         </p>
-        <ol>
-          <li> Identify </li>
-          <li> Plan </li>
-          <li> Execute </li>
-          <li> Review. </li>
+        <ol className="list-disc list-inside">
+          <li>Identify</li>
+          <li>Plan</li>
+          <li>Execute</li>
+          <li>Review.</li>
         </ol>
-        <p></p>
-
         <p>
           More specifically for Kanban, there are no set due dates so the team
           focuses on work-in-progress. As team members collaborate to
@@ -278,9 +271,8 @@ export default {
           more efficient and streamlined, cycle times decrease, and workflow is
           optimized. Teams do not need to be cross-functional in Kanban.
         </p>
-
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li>Improves productivity and delivery.</li>
           <li>Increases accuracy in forecasting future work and delivery.</li>
           <li>Streamlines work and reduces waste.</li>
@@ -289,14 +281,13 @@ export default {
             Increases a sense of pride and accomplishment in team members.
           </li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Daily Standup': (
-    <details>
+    <details className="space-y-2">
       <summary>Daily Standup</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           The Daily Standup meeting is a key component of Agile methodologies
           and serves as a daily forum for Agile teams to share progress, report
@@ -308,52 +299,48 @@ export default {
           allotted.
         </p>
         <p>
-          <strong>Also Known As: </strong>Daily Scrum, standup meeting, daily
-          meeting, daily huddle
+          <span className="font-bold">Also Known As: </span>Daily Scrum, standup
+          meeting, daily meeting, daily huddle
         </p>
         <p>
-          <strong>How it’s Used: </strong>Daily standups are typically held
-          around the team’s physical Scrum or Kanban task board (for on-site
-          teams). Teams answer three questions about their work status along
-          these lines:
+          <span className="font-bold">How it’s Used: </span>Daily standups are
+          typically held around the team’s physical Scrum or Kanban task board
+          (for on-site teams). Teams answer three questions about their work
+          status along these lines:
         </p>
         <li> What did I accomplish yesterday?</li>
         <li> What will I commit to, or complete, today?</li>
         <li>
-          {' '}
           What impediments or obstacles are preventing me from meeting my
           commitments?
         </li>
-        <p></p>
         <p>
           All discussion during the daily standup should be focused on answering
           these three questions. Any additional discussions stemming from these
           questions should be handled outside of the daily standup.
         </p>
-
-        <p>Project Management Benefits:</p>
-        <li> Keeps workflow on track. </li>
-        <li> Keeps the meeting short (due to standing).</li>
-        <li> Helps identify issues sooner than later.</li>
-        <li>
-          {' '}
-          Increases team accountability, communication, and collaboration.
-        </li>
-        <li> Stimulates team self-organization and personal planning.</li>
-        <li>
-          {' '}
-          Helps team members address issues and make small course corrections,
-          if needed.
-        </li>
-        <li> Provides face-to-face interaction (if on site).</li>
-        <p></p>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
+          <li> Keeps workflow on track. </li>
+          <li> Keeps the meeting short (due to standing).</li>
+          <li> Helps identify issues sooner than later.</li>
+          <li>
+            Increases team accountability, communication, and collaboration.
+          </li>
+          <li> Stimulates team self-organization and personal planning.</li>
+          <li>
+            Helps team members address issues and make small course corrections,
+            if needed.
+          </li>
+          <li>Provides face-to-face interaction (if on site).</li>
+        </ul>
       </div>
     </details>
   ),
   'Definition of Done': (
-    <details>
+    <details className="space-y-2">
       <summary>Definition of Done</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Definition of Done refers to a set of predetermined criteria that a
           product needs to meet in order to be considered as being done. The
@@ -364,67 +351,62 @@ export default {
           area.
         </p>
         <p>
-          <strong>Also Known As: </strong>single done, done, done-done-done,
-          done list, done checklist, product sashimi, task complete definition,
-          punch list
+          <span className="font-bold">Also Known As: </span>single done, done,
+          done-done-done, done list, done checklist, product sashimi, task
+          complete definition, punch list
         </p>
         <p>
-          <strong>How it’s Used: </strong>The team agrees upon a list of
-          criteria which must be met before a product increment is considered to
-          be ‘done’—that is, all design, coding, testing, and documentation have
-          been completed, and the code has been fully integrated into the
-          system. If a task does not meet the Definition of Done criteria, it
-          does not count toward team velocity.
+          <span className="font-bold">How it’s Used: </span>The team agrees upon
+          a list of criteria which must be met before a product increment is
+          considered to be ‘done’—that is, all design, coding, testing, and
+          documentation have been completed, and the code has been fully
+          integrated into the system. If a task does not meet the Definition of
+          Done criteria, it does not count toward team velocity.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li> Improves likelihood of delivering working software.</li>
           <li>
-            {' '}
             Limits the cost of rework once a feature has been accepted as
             ‘done’.
           </li>
           <li>
-            {' '}
             Reduces the risk of misunderstanding and conflict between the
             development team, and customer or product owner.
           </li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Epic Stories': (
-    <details>
+    <details className="space-y-2">
       <summary>Epic Stories</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Epic or epic stories are defined as large user stories that, in their
           current state, would be difficult to estimate or to complete in a
           single iteration. Epic stories are typically lower priority and are
           waiting be broken down into smaller components.
         </p>
-
         <p>
-          <strong>How it’s Used: </strong>Epics are often used as placeholders
-          for new ideas that have not been fully developed While epic stories
-          are common when developing the initial product backlog, they should
-          eventually be broken down into more manageable user stories where the
-          requirements of the story are more narrowly defined.
+          <span className="font-bold">How it’s Used: </span>Epics are often used
+          as placeholders for new ideas that have not been fully developed While
+          epic stories are common when developing the initial product backlog,
+          they should eventually be broken down into more manageable user
+          stories where the requirements of the story are more narrowly defined.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li> Useful as placeholders for large requirements.</li>
           <li> Helpful for big-picture view of user stories.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Fail-Fast': (
-    <details>
+    <details className="space-y-2">
       <summary>Fail-Fast</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Fail-fast is the process of starting work on a task or project,
           obtaining immediate feedback, and then determining whether to continue
@@ -434,57 +416,56 @@ export default {
           invested.
         </p>
         <p>
-          <strong>How it’s Used: </strong>A team starts a new project or task,
-          obtains feedback early on, and then conducts an an analysis to
-          determine whether the project will be functional or successful. If a
-          task or project is moving in the wrong direction, team members are
-          encouraged to stop work as soon as possible.
+          <span className="font-bold">How it’s Used: </span>A team starts a new
+          project or task, obtains feedback early on, and then conducts an an
+          analysis to determine whether the project will be functional or
+          successful. If a task or project is moving in the wrong direction,
+          team members are encouraged to stop work as soon as possible.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li> Identifies issues quickly.</li>
           <li> Creates a culture of transparency</li>
           <li> Reduces wasted time, effort, and cost.</li>
           <li> Improves efficiency in software product development.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Feature Creep': (
-    <details>
+    <details className="space-y-2">
       <summary>Feature Creep</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Feature creep is the tendency to add additional requirements or
           features to a project after development is already underway. Feature
           creep can occur on either a project or sprint level.
         </p>
         <p>
-          <strong>Also Known As: </strong>Requirements creep, scope creep
+          <span className="font-bold">Also Known As: </span>Requirements creep,
+          scope creep
         </p>
         <p>
-          <strong>How it’s Used: </strong>Changes and additional requirements
-          are to be expected in a project. Any changes requested after the start
-          of a project or sprint need to be added to the backlog and prioritized
-          based on value. This ensures that feature creep will not adversely
-          impact the project timeline or cost.
+          <span className="font-bold">How it’s Used: </span>Changes and
+          additional requirements are to be expected in a project. Any changes
+          requested after the start of a project or sprint need to be added to
+          the backlog and prioritized based on value. This ensures that feature
+          creep will not adversely impact the project timeline or cost.
         </p>
-        <p>Project Management Concerns:</p>
-        <ul>
+        <p className="underline">Project Management Concerns:</p>
+        <ul className="list-disc list-inside">
           <li> Risks project schedule, quality, and cost.</li>
           <li> Reduces productivity.</li>
           <li> Prevents teams from meeting iteration goals.</li>
           <li> Decreases value of product or deliverable.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Blocker / Impediment': (
-    <details>
+    <details className="space-y-2">
       <summary>Blocker / Impediment</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           A blocker / impediment is any obstacle that prevents an individual or
           team from completing a task or project. Unscheduled meetings,
@@ -492,28 +473,28 @@ export default {
           workplace, and office conflict are all examples of impediments.
         </p>
         <p>
-          <strong>How it’s Used: </strong>The team may want to create a list of
-          impediments called an Impediment Backlog and prominently display this
-          list in the area where the team meets for Daily Scrums. Impediments
-          should be listed by how seriously they are hindering team
-          productivity. If the impediments are company-wide, it is the Scrum
-          Master’s responsibility to remove them. If they are occurring at a
-          team level, it is the team’s responsibility to resolve or remove them.
+          <span className="font-bold">How it’s Used: </span>The team may want to
+          create a list of impediments called an Impediment Backlog and
+          prominently display this list in the area where the team meets for
+          Daily Scrums. Impediments should be listed by how seriously they are
+          hindering team productivity. If the impediments are company-wide, it
+          is the Scrum Master’s responsibility to remove them. If they are
+          occurring at a team level, it is the team’s responsibility to resolve
+          or remove them.
         </p>
-        <p>Project Management Concerns:</p>
-        <ul>
+        <p className="underline">Project Management Concerns:</p>
+        <ul className="list-disc list-inside">
           <li> Results in reduced team productivity.</li>
           <li> Negatively impacts project timeline and cost.</li>
           <li> Needs to be addressed as soon as possible.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Ieration': (
-    <details>
+    <details className="space-y-2">
       <summary>Ieration</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           An iteration is a fixed or timeboxed period of time, generally
           spanning two to four weeks, during which an Agile team develops a
@@ -523,60 +504,55 @@ export default {
           iteration. Iterations are referred to as sprints in Scrum.
         </p>
         <p>
-          <strong>Also Known As: </strong>Sprint, timebox
+          <span className="font-bold">Also Known As: </span>Sprint, timebox
         </p>
         <p>
-          <strong>How it’s Used: </strong>At the beginning of an iteration or
-          sprint, the product owner and team decide which requirements to
-          complete during the iteration. The duration of an iteration may vary
-          from project to project.
+          <span className="font-bold">How it’s Used: </span>At the beginning of
+          an iteration or sprint, the product owner and team decide which
+          requirements to complete during the iteration. The duration of an
+          iteration may vary from project to project.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li> Enables teams to work effectively with customers.</li>
           <li> Encourages feedback throughout the iteration.</li>
           <li> Helps prevent feature creep.</li>
           <li> Reduces risk of timelines slippage.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Planning Poker': (
-    <details>
+    <details className="space-y-2">
       <summary>Planning Poker</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Planning Poker is a team building exercise or game used to arrive at a
           group consensus for estimating workload.
         </p>
         <p>
-          <strong>How It’s Used: </strong>Players use cards printed with numbers
-          from the Fibonacci sequence to assign story points to user stories in
-          order to estimate workload. The team must reach a group consensus
-          regarding how long user stories or requirements will take to complete.
-          Alternatively, teams can use other forms of relative estimation, such
-          as tee-shirt sizing.
+          <span className="font-bold">How It’s Used: </span>Players use cards
+          printed with numbers from the Fibonacci sequence to assign story
+          points to user stories in order to estimate workload. The team must
+          reach a group consensus regarding how long user stories or
+          requirements will take to complete. Alternatively, teams can use other
+          forms of relative estimation, such as tee-shirt sizing.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
-          <li>
-            {' '}
-            Provides benefit of collective team knowledge and experience.
-          </li>
-          <li> Encourages brainstorming and generation of ideas.</li>
-          <li> Promotes problem solving.</li>
-          <li> Stimulates team collaboration.</li>
-          <li> Increases accuracy of estimates.</li>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
+          <li>Provides benefit of collective team knowledge and experience.</li>
+          <li>Encourages brainstorming and generation of ideas.</li>
+          <li>Promotes problem solving.</li>
+          <li>Stimulates team collaboration.</li>
+          <li>Increases accuracy of estimates.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Product Owner': (
-    <details>
+    <details className="space-y-2">
       <summary>Product Owner</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           As a member of the Agile team, the Product Owner represents the
           customer, and conveys the customer’s requirements and vision to the
@@ -587,15 +563,15 @@ export default {
           stays on track to meet the customer’s vision for the product.
         </p>
         <p>
-          <strong>How it’s Used: </strong>In a Scrum environment, the product
-          owner assembles and prioritizes the user stories to be completed
-          during a sprint. During the sprint, the product owner remains silent;
-          he or she cannot make changes or offer feedback. Once the sprint is
-          complete, the product owner meets with team members and stakeholders
-          to offer feedback and discuss avenues for improvement. The product
-          owner accepts or rejects the product at the end of the sprint, based
-          on the acceptance criteria decided on during the spring planning
-          meeting.
+          <span className="font-bold">How it’s Used: </span>In a Scrum
+          environment, the product owner assembles and prioritizes the user
+          stories to be completed during a sprint. During the sprint, the
+          product owner remains silent; he or she cannot make changes or offer
+          feedback. Once the sprint is complete, the product owner meets with
+          team members and stakeholders to offer feedback and discuss avenues
+          for improvement. The product owner accepts or rejects the product at
+          the end of the sprint, based on the acceptance criteria decided on
+          during the spring planning meeting.
         </p>
         <p>
           In a Kanban environment, the Product Owner assembles and prioritizes a
@@ -603,27 +579,24 @@ export default {
           flexibility to change and reprioritize work in the backlog at any time
           without affecting work already in progress.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li>
-            {' '}
             Increased team understanding of customer’s vision and final product.
           </li>
           <li>
-            {' '}
             Increased communication and trust among customer, team, and
             stakeholders.
           </li>
           <li> Increased support for the team from outside parties.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Release': (
-    <details>
+    <details className="space-y-2">
       <summary>Release</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           An Agile release refers to the final delivery of a software package
           after the completion of multiple iterations or sprints. A release can
@@ -633,95 +606,87 @@ export default {
           months.
         </p>
         <p>
-          <strong>How it’s Used: </strong>Agile teams use the amount of time
-          planned for a software release divided by iteration velocity to
-          determine the number of iterations needed to develop the software
-          needed for the release.
+          <span className="font-bold">How it’s Used: </span>Agile teams use the
+          amount of time planned for a software release divided by iteration
+          velocity to determine the number of iterations needed to develop the
+          software needed for the release.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li> Provides a tangible goal.</li>
           <li> Clarifies the customer’s requirements and vision.</li>
           <li>
-            {' '}
             Allows for preliminary release of alpha or beta versions after the
             completion of several iterations.
           </li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Scrumban': (
-    <details>
+    <details className="space-y-2">
       <summary>Scrumban</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Scrumban is a hybrid of Scrum and Kanban used to accomplish tasks and
           produce deliverables.
         </p>
         <p>
-          <strong>How It’s Used: </strong>Scrumban is used when a Scrum team
-          wants to apply some Kanban methodology into their process by focusing
-          in on work-in-progress and continuous improvement. Or, a Kanban team
-          may want to apply some Scrum structure into their process, such as
-          daily standups or roles.
+          <span className="font-bold">How It’s Used: </span>Scrumban is used
+          when a Scrum team wants to apply some Kanban methodology into their
+          process by focusing in on work-in-progress and continuous improvement.
+          Or, a Kanban team may want to apply some Scrum structure into their
+          process, such as daily standups or roles.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li>
-            {' '}
             Combines best practices of both methods to enhance the team’s
             process.
           </li>
           <li>
-            {' '}
             Provides teams with flexibility to adapt their process in the way
             that is best for them.
           </li>
           <li> Balances team capacity vs. demand.</li>
           <li> Enhances visualization for a Scrum team.</li>
           <li>
-            {' '}
             Steers teams toward a long-term evolution of continuous improvement.
           </li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Task': (
-    <details>
+    <details className="space-y-2">
       <summary>Task</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           A task is a single unit of work broken down from a user story. A task
           is usually completed by just one person.
         </p>
         <p>
-          <strong>How it’s Used:</strong> Task is used in Scrum to identify a
-          small increment of work to be completed by a team member during a
-          sprint. The team visually identifies a task to be completed by posting
-          a card or post-it note on their task board.
+          <span className="font-bold">How it’s Used:</span> Task is used in
+          Scrum to identify a small increment of work to be completed by a team
+          member during a sprint. The team visually identifies a task to be
+          completed by posting a card or post-it note on their task board.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li> Breaks user stories down into manageable units.</li>
           <li>
-            {' '}
             Empowers team members to complete a task or tasks without feeling
             overwhelmed.
           </li>
           <li> Easy to identify on Agile taskboards.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Technical Debt': (
-    <details>
+    <details className="space-y-2">
       <summary>Technical Debt</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           Technical debt refers to the obligation a development team incurs when
           they use a short-term, expedient approach to developing a software
@@ -732,17 +697,17 @@ export default {
           mistakes can all contribute to technical debt.
         </p>
         <p>
-          <strong>How it’s Used:</strong> Technical debt is used as a motivation
-          for the team to focus on quality and added value during development.
-          This can translate into diligently and consistently refactoring and
-          reviewing code, running automated unit tests, and integrating code on
-          a consistent basis. Pair programming is often helpful in guarding
-          against technical debt. Creating an environment where team members are
-          encouraged to increase relevant knowledge and experience also helps
-          prevent technical debt.
+          <span className="font-bold">How it’s Used:</span> Technical debt is
+          used as a motivation for the team to focus on quality and added value
+          during development. This can translate into diligently and
+          consistently refactoring and reviewing code, running automated unit
+          tests, and integrating code on a consistent basis. Pair programming is
+          often helpful in guarding against technical debt. Creating an
+          environment where team members are encouraged to increase relevant
+          knowledge and experience also helps prevent technical debt.
         </p>
-        <p>Project Management Concerns:</p>
-        <ul>
+        <p className="underline">Project Management Concerns:</p>
+        <ul className="list-disc list-inside">
           <li> Reduces product quality.</li>
           <li> Results in high defect rates.</li>
           <li> Reduces productivity.</li>
@@ -750,14 +715,13 @@ export default {
           <li> Reduces the quality of code maintenance.</li>
           <li> Results in expensive modifications and implementations.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
   'Timebox': (
-    <details>
+    <details className="space-y-2">
       <summary>Timebox</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           A timebox refers to an assigned period of time during which an
           individual or team works toward an established goal. The team stops
@@ -766,21 +730,20 @@ export default {
           toward the specified goal.
         </p>
         <p>
-          <strong>How it’s Used: </strong> Timeboxes are implemented in Agile
-          software development to increase quality and value when producing a
-          deliverable. In particular, timeboxes are applied in Scrum sprints, as
-          well as spikes, where tasks are assigned fixed lengths. Any work not
-          completed within the timebox is either reassigned to another iteration
-          or reprioritized.
+          <span className="font-bold">How it’s Used: </span> Timeboxes are
+          implemented in Agile software development to increase quality and
+          value when producing a deliverable. In particular, timeboxes are
+          applied in Scrum sprints, as well as spikes, where tasks are assigned
+          fixed lengths. Any work not completed within the timebox is either
+          reassigned to another iteration or reprioritized.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
-          <li> Increases focus on tasks or issues that add the most value. </li>
-          <li> Ensures that customers needs are met.</li>
-          <li> Reduces feature creep.</li>
-          <li> Provides short feedback loop.</li>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
+          <li>Increases focus on tasks or issues that add the most value. </li>
+          <li>Ensures that customers needs are met.</li>
+          <li>Reduces feature creep.</li>
+          <li>Provides short feedback loop.</li>
           <li>
-            {' '}
             Ensures that the most important features are included in the
             software package.
           </li>
@@ -790,27 +753,28 @@ export default {
     </details>
   ),
   'User Story': (
-    <details>
+    <details className="space-y-2">
       <summary>User Story</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           A user story is a brief, non-technical description of a requirement
           written from the customer’s or end-user’s point of view.
         </p>
         <p>
-          <strong>How it’s Used: </strong> The product owner breaks Product
-          Backlog Items (PBIs) down into user stories. To assess the workload
-          effort needed to complete the story, user stories are assigned story
-          points. Once the product owner prioritizes the user stories, team
-          breaks the highest priority story down into tasks to be completed
-          during the next iteration or sprint. The Agile team uses these stories
-          to create code that will meet the customer’s requirements. When the
-          iteration or sprint is completed, the team should have produced a
-          functional and potentially shippable product or deliverable,
-          corresponding to the requirement specified in the user story.
+          <span className="font-bold">How it’s Used: </span> The product owner
+          breaks Product Backlog Items (PBIs) down into user stories. To assess
+          the workload effort needed to complete the story, user stories are
+          assigned story points. Once the product owner prioritizes the user
+          stories, team breaks the highest priority story down into tasks to be
+          completed during the next iteration or sprint. The Agile team uses
+          these stories to create code that will meet the customer’s
+          requirements. When the iteration or sprint is completed, the team
+          should have produced a functional and potentially shippable product or
+          deliverable, corresponding to the requirement specified in the user
+          story.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li>Increases productivity.</li>
           <li>
             Provides teams with a clear understanding of software requirements
@@ -825,15 +789,13 @@ export default {
           <li>Increases product value and quality.</li>
           <li>Reduces risk of defects.</li>
         </ul>
-
-        <p></p>
       </div>
     </details>
   ),
   'Unit Testing': (
-    <details>
+    <details className="space-y-2">
       <summary>Unit Testing</summary>
-      <div>
+      <div className="space-y-2">
         <p>
           A unit test is a short program fragment written for testing and
           verifying a piece of code once it is completed. A piece of code either
@@ -842,20 +804,19 @@ export default {
           development product.
         </p>
         <p>
-          <strong>How it’s Used: </strong> Developers write a unit test for a
-          small piece of code they are developing to document to verify that the
-          code works correctly. Unit tests should also be written for bug fixes.
-          When code is modified, moved, or deleted, the unit test must be edited
-          to reflect that change and then re-run.
+          <span className="font-bold">How it’s Used: </span> Developers write a
+          unit test for a small piece of code they are developing to document to
+          verify that the code works correctly. Unit tests should also be
+          written for bug fixes. When code is modified, moved, or deleted, the
+          unit test must be edited to reflect that change and then re-run.
         </p>
-        <p>Project Management Benefits:</p>
-        <ul>
+        <p className="underline">Project Management Benefits:</p>
+        <ul className="list-disc list-inside">
           <li>Identifies software bugs early in the development process.</li>
           <li>Provides documentation for each piece of code.</li>
           <li>Provides short feedback loop.</li>
           <li>Helps integration testing run more smoothly.</li>
         </ul>
-        <p></p>
       </div>
     </details>
   ),
