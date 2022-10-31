@@ -10,14 +10,16 @@ describe('tools and resources page', () => {
     expect(screen.getByText('Tools and Resources')).toBeInTheDocument()
   })
 
-  it('writes to form', () => {
-    const F = screen.getByRole('button', { value: 'F' })
+  it('opens details', () => {
+    const F = screen.getByText(/^F$/)
     fireEvent.click(F)
-    fireEvent.change(fname, { target: { value: 'test first name' } })
     const failFast = screen.getByText('Fail-Fast')
     expect(failFast).toBeInTheDocument()
     fireEvent.click(failFast)
-    expect(failFast.parentElement.getAttribute('open')).toBe(true)
+    console.log(failFast.parentElement.getAttributeNames())
+    expect(failFast.parentElement.getAttributeNames().includes('open')).toBe(
+      true
+    )
   })
 
   it('Test getStaticProps', async () => {
