@@ -16,7 +16,6 @@ describe('tools and resources page', () => {
     const failFast = screen.getByText('Fail-Fast')
     expect(failFast).toBeInTheDocument()
     fireEvent.click(failFast)
-    console.log(failFast.parentElement.getAttributeNames())
     expect(failFast.parentElement.getAttributeNames().includes('open')).toBe(
       true
     )
