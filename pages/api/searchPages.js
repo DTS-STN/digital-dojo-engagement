@@ -17,7 +17,7 @@ fs.promises
 export default async function (req, res) {
   try {
     const data = await fs.promises.readFile(
-      path.join(process.cwd(), '/postbuild/pageData.json'),
+      path.join(process.cwd(), '/pageData.json'),
       'utf-8'
     )
     res.json(JSON.parse(data))
