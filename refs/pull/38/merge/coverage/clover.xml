@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667326745886" clover="3.2.0">
-  <project timestamp="1667326745887" name="All files">
-    <metrics statements="168" coveredstatements="63" conditionals="126" coveredconditionals="50" methods="77" coveredmethods="26" elements="371" coveredelements="139" complexity="0" loc="168" ncloc="168" packages="5" files="28" classes="28"/>
+<coverage generated="1667327551747" clover="3.2.0">
+  <project timestamp="1667327551747" name="All files">
+    <metrics statements="174" coveredstatements="63" conditionals="132" coveredconditionals="50" methods="80" coveredmethods="26" elements="386" coveredelements="139" complexity="0" loc="174" ncloc="174" packages="5" files="29" classes="29"/>
     <package name="components">
       <metrics statements="68" coveredstatements="34" conditionals="86" coveredconditionals="35" methods="39" coveredmethods="12"/>
       <file name="BeltAssessment.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/BeltAssessment.js">
@@ -211,7 +211,7 @@
       </file>
     </package>
     <package name="pages.api">
-      <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="25" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="6" coveredmethods="0"/>
       <file name="contact.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/api/contact.js">
         <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
@@ -222,15 +222,24 @@
         <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
       </file>
+      <file name="getEnv.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/api/getEnv.js">
+        <metrics statements="4" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
       <file name="searchPages.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/api/searchPages.js">
-        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
       </file>
       <file name="startEngagement.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/api/startEngagement.js">
         <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
