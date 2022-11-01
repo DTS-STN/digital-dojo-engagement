@@ -2,9 +2,17 @@ import fs from 'fs'
 import path from 'path'
 import process from 'process'
 
-const PROJECT = process.env.PROJECT
-const BRANCH = process.env.BRANCH
-const DOMAIN = process.env.BASE_DOMAIN
+let a = []
+fs.promises
+  .readdir(process.cwd())
+  .then((filenames) => {
+    for (let filename of filenames) {
+      a.push(filename)
+    }
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 
 export default async function (req, res) {
   try {
@@ -16,10 +24,7 @@ export default async function (req, res) {
   } catch (e) {
     res.json({
       err: e,
-      cwd: process.cwd(),
-      project: PROJECT,
-      branch: BRANCH,
-      domain: DOMAIN,
+      files: a,
     })
   }
 }
