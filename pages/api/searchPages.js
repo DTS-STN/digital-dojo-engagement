@@ -14,6 +14,12 @@ export default async function (req, res) {
     )
     res.json(JSON.parse(data))
   } catch (e) {
-    res.json({ err: e, cwd: process.cwd(), PROJECT, BRANCH, DOMAIN })
+    res.json({
+      err: e,
+      cwd: process.cwd(),
+      project: PROJECT,
+      branch: BRANCH,
+      domain: DOMAIN,
+    })
   }
 }
