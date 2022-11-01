@@ -10,6 +10,6 @@ export default async function (req, res) {
     )
     res.json(JSON.parse(data))
   } catch (e) {
-    res.json(e), process.cwd()
+    res.json(e), process.cwd(), __dirname
   }
 }
