@@ -2,6 +2,7 @@ const axios = require('axios')
 const { parse } = require('node-html-parser')
 const { convert } = require('html-to-text')
 const fs = require('fs')
+const path = require('path')
 
 const PROJECT = process.env.PROJECT
 const BRANCH = process.env.BRANCH
@@ -31,9 +32,13 @@ async function getPage(href) {
 async function main() {
   let hrefs = await getAllHrefs()
   let data = await Promise.all([...hrefs].map((href) => getPage(href)))
-  fs.writeFile('./postbuild/pageData.json', JSON.stringify(data), (err) => {
-    if (err) console.log(err)
-  })
+  fs.writeFile(
+    path.join(process.cwd() + '/postbuild/pageData.json'),
+    JSON.stringify(data),
+    (err) => {
+      if (err) console.log(err)
+    }
+  )
 }
 
 main()
