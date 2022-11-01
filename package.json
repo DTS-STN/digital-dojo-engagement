@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "node scrape.js && next dev",
-    "build": "next build && node scrape.js",
-    "postbuild": "node scrape.js",
+    "build": "next build && node ./scrape.js",
+    "postbuild": "node ./scrape.js",
     "start": "node -r ./tracing.js node_modules/next/dist/bin/next start",
     "test": "npm run lint && npm run test:e2e && npm run test:unit",
     "lint": "next lint",
