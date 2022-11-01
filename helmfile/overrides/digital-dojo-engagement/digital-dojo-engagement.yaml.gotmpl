@@ -44,6 +44,12 @@ secrets:
           {{ requiredEnv "INGRESS_TLS_KEY" }}
 */}}
 extraEnv:
+    - name: PROJECT
+      value: {{ requiredEnv "PROJECT" }}
+    - name: BRANCH
+      value: {{ requiredEnv "BRANCH" }}
+    - name: BASE_DOMAIN
+      value: {{ requiredEnv "BASE_DOMAIN" }}
     - name: NODEMAILER_EMAIL
       value: {{ requiredEnv "NODEMAILER_EMAIL" }}
     - name: NODEMAILER_PASSWORD
