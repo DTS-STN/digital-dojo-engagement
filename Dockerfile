@@ -18,6 +18,7 @@ ENV NODE_ENV=production
 WORKDIR /build
 COPY --from=base /base ./
 RUN npm run build
+RUN npm run postbuild
 
 FROM node:17.8-alpine3.15 AS production
 ENV NODE_ENV=production
