@@ -26,7 +26,7 @@ export async function getServerSideProps({ locale, params }) {
   const { search } = params
   const server =
     process.env.NODE_ENV === 'production'
-      ? `https://${process.env.PROJECT}-${process.env.BRANCH}.${process.env.DOMAIN}`
+      ? `https://${process.env.PROJECT}-${process.env.BRANCH}.${process.env.BASE_DOMAIN}`
       : 'http://localhost:3000'
 
   let results = []
