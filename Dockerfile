@@ -28,7 +28,6 @@ COPY --from=build /build/.next ./.next
 COPY --from=build /build/public ./public
 COPY --from=build /build/tracing.js ./
 COPY --from=build /build/scrape.js ./
-COPY --from=build /build/scrape.js ./
 COPY --from=build /build/pageData.json ./
 RUN VERSION_NEXT=`node -p -e "require('./package.json').dependencies.next"`&& npm install --no-package-lock --no-save next@"$VERSION_NEXT"
 

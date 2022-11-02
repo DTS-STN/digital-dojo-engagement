@@ -46,4 +46,4 @@ async function main() {
   )
 }
 
-main()
+main().then(() => console.log('finished running main'))
