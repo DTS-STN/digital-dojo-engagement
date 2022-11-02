@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import ThemeChanger from './ThemeChanger'
 import Navbar from './Navbar'
+import SearchBar from './SearchBar'
 
 export default function Header(props) {
   const t = props.t
@@ -52,6 +53,9 @@ export default function Header(props) {
             </a>
 
             <div className="flex gap-2 md:gap-5 items-center2">
+              <div className="hidden sm:block">
+                <SearchBar />
+              </div>
               {/* Language selector for small screens */}
               <Link
                 key={props.language}
@@ -86,6 +90,7 @@ export default function Header(props) {
             </div>
           </div>
         </div>
+
         <Navbar t={t} />
 
         <div className="relative h-0 pb-[40%] md:pb-[25%]">

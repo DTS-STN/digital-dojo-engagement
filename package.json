@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node ./scrape/scrape.js next dev",
+    "dev": "node ./scrape/scrape.js && next dev",
     "build": "node ./scrape/scrape.js && next build",
     "start": "node -r ./tracing.js node_modules/next/dist/bin/next start",
     "test": "npm run lint && npm run test:e2e && npm run test:unit",
