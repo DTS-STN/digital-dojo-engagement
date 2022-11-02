@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
-export default function Search({ search, results }) {
+export default function Search({ search, results, server }) {
+  console.log(server)
   return (
     <div className="max-w-4xl mx-auto p-2">
       <h1>Results</h1>
@@ -28,15 +29,18 @@ export async function getServerSideProps({ locale, params }) {
       ? `https://${process.env.PROJECT}-${process.env.BRANCH}.${process.env.DOMAIN}`
       : 'http://localhost:3000'
 
-  const results = await (
-    await fetch(`${server}/api/searchPages`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(search),
-    })
-  ).json()
+  let results = []
+  try {
+    results = await (
+      await fetch(`${server}/api/searchPages`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(search),
+      })
+    ).json()
+  } catch (e) {}
 
   /* istanbul ignore next */
   const langToggleLink = locale === 'en' ? '/fr/engagement' : '/engagement'
