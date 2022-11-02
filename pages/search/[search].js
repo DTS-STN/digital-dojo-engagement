@@ -23,9 +23,13 @@ export default function Search({ search, results }) {
 
 export async function getServerSideProps({ locale, params }) {
   const { search } = params
+  const server =
+    process.env.NODE_ENV === 'production'
+      ? `https://${process.env.PROJECT}-${process.env.BRANCH}.${process.env.DOMAIN}`
+      : 'http://localhost:3000'
 
   const results = await (
-    await fetch('http:localhost:3000/api/searchPages', {
+    await fetch(`${server}/api/searchPages`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
