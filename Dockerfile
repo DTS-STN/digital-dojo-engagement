@@ -18,7 +18,6 @@ ENV NODE_ENV=production
 WORKDIR /build
 COPY --from=base /base ./
 RUN npm run build
-RUN npm run postbuild
 
 FROM node:17.8-alpine3.15 AS production
 ENV NODE_ENV=production
@@ -29,6 +28,8 @@ COPY --from=build /build/.next ./.next
 COPY --from=build /build/public ./public
 COPY --from=build /build/tracing.js ./
 COPY --from=build /build/scrape.js ./
+COPY --from=build /build/scrape.js ./
+COPY --from=build /build/pageData.json ./
 RUN VERSION_NEXT=`node -p -e "require('./package.json').dependencies.next"`&& npm install --no-package-lock --no-save next@"$VERSION_NEXT"
 
 # Runtime envs -- will default to build args if no env values are specified at docker run
