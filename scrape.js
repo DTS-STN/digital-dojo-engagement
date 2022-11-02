@@ -8,10 +8,12 @@ const PROJECT = process.env.PROJECT
 const BRANCH = process.env.BRANCH
 const DOMAIN = process.env.BASE_DOMAIN
 
-const BASE =
-  process.NODE_ENV === 'production'
-    ? `${PROJECT}-${BRANCH}.${DOMAIN}`
-    : 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
+// const BASE =
+//   process.NODE_ENV === 'production'
+//     ? `${PROJECT}-${BRANCH}.${DOMAIN}`
+//     : 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
+
+const BASE = 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
 
 async function getAllHrefs() {
   let res = await axios(`${BASE}/home`)
