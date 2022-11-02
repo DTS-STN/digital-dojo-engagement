@@ -36,6 +36,7 @@ async function main() {
   let hrefs = await getAllHrefs()
   let data = await Promise.all([...hrefs].map((href) => getPage(href)))
   console.log(data)
+  console.log(process.cwd() + '/pageData.json')
   fs.writeFile(
     path.join(process.cwd() + '/pageData.json'),
     JSON.stringify(data),
