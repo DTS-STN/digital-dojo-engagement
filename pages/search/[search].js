@@ -62,6 +62,6 @@ export async function getServerSideProps({ locale, params }) {
   }
 
   return {
-    props: { locale, langToggleLink, meta, search, results },
+    props: { locale, langToggleLink, meta, search, results, server },
   }
 }
