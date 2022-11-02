@@ -32,8 +32,10 @@ async function getPage(href) {
 }
 
 async function main() {
+  console.log('RUNNING::scrape.js')
   let hrefs = await getAllHrefs()
   let data = await Promise.all([...hrefs].map((href) => getPage(href)))
+  console.log(data)
   fs.writeFile(
     path.join(process.cwd() + '/pageData.json'),
     JSON.stringify(data),
