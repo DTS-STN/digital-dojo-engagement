@@ -12,7 +12,9 @@ const path = require('path')
 //     ? `${PROJECT}-${BRANCH}.${DOMAIN}`
 //     : 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
 
-const BASE = 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
+// const BASE = 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
+
+const BASE = 'http://localhost:3000'
 
 async function getAllHrefs() {
   let res = await axios(`${BASE}/home`)
@@ -33,14 +35,21 @@ async function getPage(href) {
 
 async function main() {
   let hrefs = await getAllHrefs()
-  let data = await Promise.all([...hrefs].map((href) => getPage(href)))
-  fs.writeFile(
-    path.join(process.cwd() + '/scrape/pageData.json'),
-    JSON.stringify(data),
-    (err) => {
-      if (err) console.log(err)
-    }
+  let data = await Promise.all(
+    [...hrefs, ...[...hrefs].map((href) => `/fr/${href}`)].map((href) =>
+      getPage(href)
+    )
   )
+  try {
+    fs.promises.writeFile(
+      process.cwd() + '/scrape/pageData.json',
+      JSON.stringify(data)
+    )
+  } catch (e) {
+    console.log(e)
+  }
 }
 
-main().then(() => console.log('finished running scrape.js'))
+// main().then(() => console.log('finished running scrape.js'))
+
+module.exports = { main }

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import MetaData from '../components/MetaData'
+import { main } from '../scrape/scrape'
 
 export default function Index(props) {
   return (
@@ -58,6 +59,9 @@ Index.getLayout = function PageLayout(page) {
 }
 
 export async function getStaticProps({ locale }) {
+  // run scrape.js
+  main().then(() => console.log('finished running scrape.js'))
+
   /* Place-holder Meta Data Props */
   const meta = {
     data_en: {
