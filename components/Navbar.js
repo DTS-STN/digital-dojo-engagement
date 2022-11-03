@@ -55,7 +55,7 @@ function Navbar({ t }) {
                 {t.ourCoaches}
               </a>
             </Link>
-            <Link href="">
+            <Link href="/services">
               <a className="p-1 text-left hover:bg-periwinkle duration-200">
                 {t.serviceCatalogue}
               </a>
