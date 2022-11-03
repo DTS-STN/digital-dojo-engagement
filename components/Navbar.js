@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
-import { GoTriangleDown } from 'react-icons/go'
+import { GoTriangleDown, GoTriangleRight } from 'react-icons/go'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 function Navbar({ t }) {
@@ -46,7 +46,7 @@ function Navbar({ t }) {
             {t.aboutUs} <GoTriangleDown className="text-xs" />
           </div>
           <div
-            className={`${
+            className={`peer w-[147px] ${
               about ? 'z-50 flex flex-col items-start' : 'hidden'
             } bg-periwinkle/50 md:absolute top-9 left-0'`}
           >
@@ -56,8 +56,25 @@ function Navbar({ t }) {
               </a>
             </Link>
             <Link href="/services">
-              <a className="p-1 text-left hover:bg-periwinkle duration-200">
-                {t.serviceCatalogue}
+              <a className="peer p-1 text-left hover:bg-periwinkle duration-200 flex items-center gap-1">
+                {t.serviceCatalogue} <GoTriangleRight className="text-xs" />
+              </a>
+            </Link>
+          </div>
+          <div className="md:hidden peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[147px] flex flex-col w-32 bg-periwinkle">
+            <Link href="/services/consultations">
+              <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+                Consultations
+              </a>
+            </Link>
+            <Link href="/services/workshops">
+              <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+                Workshops
+              </a>
+            </Link>
+            <Link href="/services/challenges">
+              <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+                Dojo Challenges
               </a>
             </Link>
           </div>

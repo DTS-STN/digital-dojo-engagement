@@ -1,6 +1,9 @@
+import { useRouter } from 'next/router'
 import DottedLine from '../../components/DottedLine'
 
-export default function Services() {
+export default function Services({ locale }) {
+  const router = useRouter()
+
   return (
     <div className="max-w-3xl mx-auto p-2">
       <h1 className="text-center">Our Services</h1>
@@ -23,7 +26,10 @@ export default function Services() {
           <p className="text-sm w-5/6 text-center mx-auto h-36">
             Short engagements to provide you with guidance and feedback.
           </p>
-          <button className="bg-periwinkle rounded-full text-white py-1 px-2 text-sm mx-auto flex">
+          <button
+            className="bg-periwinkle rounded-full text-white py-1 px-2 text-sm mx-auto flex"
+            onClick={() => router.push('/services/consultations')}
+          >
             Learn more
           </button>
         </div>
@@ -37,7 +43,10 @@ export default function Services() {
             Individuals or teams will learn, breakout into rooms to practice,
             network, and collaborate.
           </p>
-          <button className="bg-periwinkle rounded-full text-white py-1 px-2 text-sm flex mx-auto">
+          <button
+            onClick={() => router.push('/services/workshops')}
+            className="bg-periwinkle rounded-full text-white py-1 px-2 text-sm flex mx-auto"
+          >
             Learn more
           </button>
         </div>
@@ -51,7 +60,10 @@ export default function Services() {
             challenges itself to tackle their biggest pain points through
             facilitated sessions with our coaches.
           </p>
-          <button className="bg-periwinkle rounded-full text-white py-1 px-2 text-sm flex mx-auto">
+          <button
+            onClick={() => router.push('/services/challenges')}
+            className="bg-periwinkle rounded-full text-white py-1 px-2 text-sm flex mx-auto"
+          >
             Learn more
           </button>
         </div>

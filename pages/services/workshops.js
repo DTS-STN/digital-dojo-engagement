@@ -1,6 +1,6 @@
 import DottedLine from '../../components/DottedLine'
 
-export default function Services() {
+export default function Workshops({ locale }) {
   return (
     <div className="max-w-3xl mx-auto p-2">
       <h1 className="text-center">Workshops</h1>
