@@ -8,6 +8,8 @@ function Navbar({ t }) {
   const [about, setAbout] = useState(false)
   const [assessment, setAssessment] = useState(false)
   const [engagement, setEngagement] = useState(false)
+
+  // hamburger icon open/close state (only available on small screens)
   const [open, setOpen] = useState(false)
 
   // ensure dropdowns are closed before opening a new one

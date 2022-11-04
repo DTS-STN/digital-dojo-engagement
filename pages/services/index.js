@@ -1,70 +1,62 @@
 import { useRouter } from 'next/router'
 import DottedLine from '../../components/DottedLine'
+import en from '../../locales/services/en'
+import fr from '../../locales/services/fr'
 
 export default function Services({ locale }) {
   const router = useRouter()
+  const t = locale === 'en' ? en : fr
 
   return (
     <div className="max-w-3xl mx-auto p-2">
-      <h1 className="text-center">Our Services</h1>
-      <p className="text-center">
-        There are many ways we can help your team deliver products and services
-        using modern practices in a GoC context. Our coaches are here to help
-        you improve your ability to manage complex work, streamline processes,
-        increase communication and resiliency, and deliver with confidence.
-      </p>
+      <h1 className="text-center">{t.ourServices}</h1>
+      <p className="text-center">{t.ourServicesP}</p>
       <DottedLine />
-      <h2 className="font-bold mb-2">
-        Select a service below to view what it entails:
-      </h2>
+      <h2 className="font-bold mb-2">{t.selectService}</h2>
       <div className="md:grid grid-cols-3 gap-6">
         <div className="border-2 space-y-2 py-2">
           <img src="/consultations.png" alt="" className="w-1/2 mx-auto" />
           <h3 className="text-white bg-[#5099c3] text-lg text-center">
-            Consultations
+            {t.consultations}
           </h3>
-          <p className="text-sm w-5/6 text-center mx-auto h-36">
-            Short engagements to provide you with guidance and feedback.
+          <p className="text-sm w-5/6 text-center mx-auto h-40">
+            {t.consultationsP}
           </p>
           <button
             className="bg-periwinkle rounded-full text-white py-1 px-2 text-sm mx-auto flex"
             onClick={() => router.push('/services/consultations')}
           >
-            Learn more
+            {t.learnMore}
           </button>
         </div>
         <div className="border-2 space-y-2 py-2">
           <img src="/consultations.png" alt="" className="w-1/2 mx-auto" />
           <h3 className="text-white bg-[#49a292] text-lg text-center">
-            Workshops
+            {t.workshops}
           </h3>
-          <p className="text-sm w-5/6 text-center mx-auto h-36">
-            Short interactive sessions focused on a particular topic.
-            Individuals or teams will learn, breakout into rooms to practice,
-            network, and collaborate.
+          <p className="text-sm w-5/6 text-center mx-auto h-40">
+            {t.workshopsP}
           </p>
           <button
             onClick={() => router.push('/services/workshops')}
             className="bg-periwinkle rounded-full text-white py-1 px-2 text-sm flex mx-auto"
           >
-            Learn more
+            {t.learnMore}
           </button>
         </div>
         <div className="border-2 space-y-2 py-2">
           <img src="/consultations.png" alt="" className="w-1/2 mx-auto" />
           <h3 className="text-white bg-[#d270ac] text-lg text-center">
-            Dojo Challenges
+            {t.challenges}
           </h3>
-          <p className="text-sm w-5/6 text-center mx-auto h-36">
-            A timeboxed engagement, lasting from two to six weeks, where a team
-            challenges itself to tackle their biggest pain points through
-            facilitated sessions with our coaches.
+          <p className="text-sm w-5/6 text-center mx-auto h-40">
+            {t.challengesP}
           </p>
           <button
             onClick={() => router.push('/services/challenges')}
             className="bg-periwinkle rounded-full text-white py-1 px-2 text-sm flex mx-auto"
           >
-            Learn more
+            {t.learnMore}
           </button>
         </div>
       </div>
