@@ -13,13 +13,6 @@ function Navbar({ t }) {
   // hamburger icon open/close state (only available on small screens)
   const [open, setOpen] = useState(false)
 
-  function handleFocus(e) {
-    console.log(e)
-    console.log(services)
-    setServices(true)
-    console.log(services)
-  }
-
   // ensure dropdowns are closed before opening a new one
   // todo:  better approach needed?
   function handleClick(state, toggle) {
@@ -69,7 +62,7 @@ function Navbar({ t }) {
             </Link>
             <Link href="/services">
               <a
-                onFocus={handleFocus}
+                onFocus={() => setServices(true)}
                 className="peer p-1 text-left hover:bg-periwinkle duration-200 flex items-center gap-1"
               >
                 {t.serviceCatalogue} <GoTriangleRight className="text-xs" />
