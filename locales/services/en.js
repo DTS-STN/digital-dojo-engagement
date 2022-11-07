@@ -13,9 +13,11 @@ export default {
   challengesP:
     'A timeboxed engagement, lasting from two to six weeks, where a team challenges itself to tackle their biggest pain points through facilitated sessions with our coaches.',
   learnMore: 'Learn more',
+  nextService: 'Next Service',
+  previousService: 'Previous',
+  back: 'Back',
 
   // consultations
-  nextService: 'Next Service',
   consultationsBlurb:
     'Short engagements to provide you with guidance and feedback.',
   walkIns: 'Dojo Walk-in',
@@ -83,6 +85,48 @@ export default {
   facLi20: 'Gaining insight and receiving feedback',
   facLi21: 'Stakeholder focus groups',
   facLi22: 'Retrospectives (continuous improvement)',
-  next: 'Next Service',
-  back: 'Back',
+
+  // workshops
+  workshopsBlurb:
+    'Short interactive sessions focused on a particular topic. Individuals or teams will learn, breakout into rooms to practice, network, and collaborate.',
+  workshopsInclude: 'Workshops include:',
+  wsAgile: 'Agile and DevOps',
+  wsCollab: 'Work planning and collaboration tools',
+  wsVis: 'How to visualize work using Kanban boards',
+  wsFac: 'Facilitation techniques for your team meetings',
+  customTeam: 'Custom Team Workshop',
+  wsP: (
+    <p>
+      We plan and facilitate an interactive workshop focused on a topic of your
+      choice, <span className="font-bold">catered to your team</span>'s specific
+      needs.
+    </p>
+  ),
+  wsA: 'Plan a custom team workshop with the Dojo!',
+  wsOh: 'Open House Workshop',
+  wsOhP1:
+    'We plan and facilitate an interactive workshop focused on a topic to be provided to a wide audience that may not necessarily be able to rally around a specific common goal.',
+  wsOhP2:
+    "This may be useful as a way to quickly understand what the Dojo has to offer, without any firm commitment to working with the Dojo and it's custom catered offerings.",
+  wsEventsA: 'View our events page for upcoming Dojo workshops!',
+
+  // challenges
+  cP1: 'A timeboxed engagement, lasting from two to six weeks, where a team challenges itself to tackle their biggest pain points through facilitated sessions with our coaches.',
+  cH2: 'We work with your team to:',
+  cLi1: 'Identify a goal that can be reached in 10 or 30 days',
+  cLi2: 'Break that goal down into specific learning/practice/coaching objectives',
+  cP2: 'Using your real-world work, our coaches will then guide you through a series of facilitated sessions aimed at meeting your goals, including:',
+  cLi3: 'Interactive learning sessions',
+  cLi4: 'Co-working sessions to practice new skills together',
+  cLi5: 'Interactive exercises to brainstorm, discuss, and collaborate',
+  cLi6: 'Role-specific coaching for distinct functions and responsibilities within your team',
+  c30: '30 day challenge',
+  c30P: 'The 30 days challenge is best for teams that want to improve how they work, how they work together, and how they deliver their products and services.',
+  c30P2:
+    'This option represents a commitment of approximately 40 hours from your team (i.e. 1-2 hours a day for 30 working days).',
+  c10: '10 day challenge',
+  c10P: 'The 10 day challenge is great for teams that have a small, specific goal.',
+  c10P2:
+    'This option represents a commitment of approximately 15-20 hours from your team (i.e. 1-2 hours a day for 10 working days).',
+  backToService: 'Back to service catalogue page',
 }

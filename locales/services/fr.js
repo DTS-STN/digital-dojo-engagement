@@ -14,9 +14,11 @@ export default {
   challengesP:
     "Il s'agit d'un engagement limité dans le temps, d'une durée de deux à six semaines, au cours duquel une équipe se met au défi de s'attaquer à ses principales difficultés grâce à des sessions animées par nos coaches.",
   learnMore: 'En savoir plus',
+  nextService: 'Service suivant',
+  previousService: 'Précédent',
+  back: 'Retour',
 
   // consultations
-  nextService: 'Next Service',
   consultationsBlurb:
     "De courts engagements pour vous fournir des conseils et un retour d'information.",
   walkIns: 'Entrée du dojo',
@@ -89,5 +91,48 @@ export default {
   facLi20: 'Acquisition de connaissances et réception de commentaires',
   facLi21: 'Groupes de discussion avec les parties prenantes',
   facLi22: 'Rétrospectives (amélioration continue)',
-  back: 'Back',
+
+  // workshops
+  workshopsBlurb:
+    "De courtes sessions interactives axées sur un sujet particulier. Les individus ou les équipes apprendront, se répartiront dans des salles pour s'exercer, se mettre en réseau et collaborer.",
+  workshopsInclude: 'Les ateliers comprennent :',
+  wsAgile: 'Agile et DevOps',
+  wsCollab: 'Outils de planification du travail et de collaboration',
+  wsVis: "Comment visualiser le travail à l'aide de tableaux Kanban",
+  wsFac: "Techniques d'animation pour vos réunions d'équipe",
+  customTeam: "Atelier d'équipe personnalisé",
+  wsP: (
+    <p>
+      Nous planifions et animons un atelier interactif axé sur un sujet de votre
+      choix, adapté aux besoins spécifiques de votre équipe.
+    </p>
+  ),
+  wsA: "Organisez un atelier d'équipe personnalisé avec le Dojo !",
+  wsOh: 'Atelier portes ouvertes',
+  wsOhP1:
+    "Nous planifions et animons un atelier interactif centré sur un sujet à fournir à un large public qui n'est pas nécessairement capable de se rallier autour d'un objectif commun spécifique.",
+  wsOhP2:
+    'être utile comme moyen de comprendre rapidement ce que le Dojo a à offrir, sans engagement ferme à travailler avec le Dojo et ses offres personnalisées.',
+  wsEventsA:
+    "Consultez notre page d'événements pour connaître les prochains ateliers du Dojo !",
+
+  // challenges
+  cP1: "Il s'agit d'un engagement limité dans le temps, d'une durée de deux à six semaines, au cours duquel une équipe se met au défi de s'attaquer à ses principales difficultés grâce à des sessions animées par nos coaches.",
+  cH2: 'Nous travaillons avec votre équipe pour :',
+  cLi1: 'Identifiez un objectif qui peut être atteint en 10 ou 30 jours.',
+  cLi2: "Décomposer ce but en objectifs spécifiques d'apprentissage/pratique/coaching.",
+  cP2: "En s'appuyant sur votre travail réel, nos coachs vous guideront ensuite à travers une série de sessions animées visant à atteindre vos objectifs, notamment :",
+  cLi3: "des séances d'apprentissage interactif",
+  cLi4: 'des sessions de co-working pour mettre en pratique de nouvelles compétences ensemble',
+  cLi5: 'des exercices interactifs de remue-méninges, de discussion et de collaboration',
+  cLi6: 'un accompagnement spécifique pour les différentes fonctions et responsabilités au sein de votre équipe.',
+  c30: 'Défi 30 jours',
+  c30P: 'Le défi 30 jours est idéal pour les équipes qui veulent améliorer leur façon de travailler, de collaborer et de fournir leurs produits et services. comment elles travaillent ensemble, et comment elles fournissent leurs produits et services.',
+  c30P2:
+    "Cette option représente un engagement d'environ 40 heures de la part de votre équipe (c'est-à-dire 1 à 2 heures par jour pendant 30 jours ouvrables).",
+  c10: 'Défi de 10 jours',
+  c10P: 'Le défi de 10 jours est idéal pour les équipes qui ont un objectif petit et spécifique.',
+  c10P2:
+    "Cette option représente un engagement d'environ 15 à 20 heures de la part de votre équipe (c'est-à-dire 1 à 2 heures par jour pendant 10 jours ouvrables).",
+  backToService: 'Retour à la page du catalogue des services',
 }
