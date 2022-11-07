@@ -107,4 +107,7 @@ export default {
   tools: 'Tools and Resources',
   faq: 'FAQ',
   contactUs: 'Contact us',
+  consultations: 'Consultations',
+  workshops: 'Workshops',
+  challenges: 'Dojo Challenges',
 }

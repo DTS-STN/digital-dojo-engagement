@@ -8,14 +8,24 @@ function Navbar({ t }) {
   const [about, setAbout] = useState(false)
   const [assessment, setAssessment] = useState(false)
   const [engagement, setEngagement] = useState(false)
+  const [services, setServices] = useState(false)
 
   // hamburger icon open/close state (only available on small screens)
   const [open, setOpen] = useState(false)
 
+  function handleFocus(e) {
+    console.log(e)
+    console.log(services)
+    setServices(true)
+    console.log(services)
+  }
+
   // ensure dropdowns are closed before opening a new one
   // todo:  better approach needed?
   function handleClick(state, toggle) {
-    ;[setAbout, setAssessment, setEngagement].forEach((fn) => fn(false))
+    ;[setAbout, setAssessment, setEngagement, setServices].forEach((fn) =>
+      fn(false)
+    )
     toggle(!state)
   }
 
@@ -58,25 +68,34 @@ function Navbar({ t }) {
               </a>
             </Link>
             <Link href="/services">
-              <a className="peer p-1 text-left hover:bg-periwinkle duration-200 flex items-center gap-1">
+              <a
+                onFocus={handleFocus}
+                className="peer p-1 text-left hover:bg-periwinkle duration-200 flex items-center gap-1"
+              >
                 {t.serviceCatalogue} <GoTriangleRight className="text-xs" />
               </a>
             </Link>
           </div>
-          <div className="md:hidden peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[147px] flex flex-col w-32 bg-periwinkle">
+          <div
+            className={`${
+              services
+                ? 'peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[147px] flex flex-col w-32 bg-periwinkle'
+                : 'md:hidden peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[147px] flex flex-col w-32 bg-periwinkle'
+            }`}
+          >
             <Link href="/services/consultations">
               <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
-                Consultations
+                {t.consultations}
               </a>
             </Link>
             <Link href="/services/workshops">
               <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
-                Workshops
+                {t.workshops}
               </a>
             </Link>
             <Link href="/services/challenges">
               <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
-                Dojo Challenges
+                {t.challenges}
               </a>
             </Link>
           </div>
