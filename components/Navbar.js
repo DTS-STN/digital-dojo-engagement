@@ -13,17 +13,26 @@ function Navbar({ t }) {
   // hamburger icon open/close state (only available on small screens)
   const [open, setOpen] = useState(false)
 
-  // ensure dropdowns are closed before opening a new one
-  // todo:  better approach needed?
-  function handleClick(state, toggle) {
+  function falsifyAllStates() {
     ;[setAbout, setAssessment, setEngagement, setServices].forEach((fn) =>
       fn(false)
     )
+  }
+
+  // ensure dropdowns are closed before opening a new one
+  // todo:  better approach needed?
+  function handleClick(state, toggle) {
+    falsifyAllStates()
     toggle(!state)
   }
 
+  // for keyboard accesibility to close nav items on escape press (common practice)
+  function handleEscape(e) {
+    if (e.key === 'Escape') falsifyAllStates()
+  }
+
   return (
-    <nav>
+    <nav onKeyDown={handleEscape}>
       <button
         aria-label="toggle navigation menu"
         onClick={() => setOpen((prev) => !prev)}
