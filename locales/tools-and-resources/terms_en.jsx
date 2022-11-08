@@ -491,9 +491,9 @@ export default {
       </div>
     </details>
   ),
-  'Ieration': (
+  'Iteration': (
     <details className="space-y-2">
-      <summary>Ieration</summary>
+      <summary>Iteration</summary>
       <div className="space-y-2">
         <p>
           An iteration is a fixed or timeboxed period of time, generally
