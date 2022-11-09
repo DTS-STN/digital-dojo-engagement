@@ -1,4 +1,4 @@
-const axios = require('axios')
+const { axios } = require('axios')
 const { parse } = require('node-html-parser')
 const { convert } = require('html-to-text')
 const fs = require('fs')
