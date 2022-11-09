@@ -1,8 +1,14 @@
-const axios = require('axios')
-const { parse } = require('node-html-parser')
-const { convert } = require('html-to-text')
-const fs = require('fs')
-const path = require('path')
+// const axios = require('axios')
+// const { parse } = require('node-html-parser')
+// const { convert } = require('html-to-text')
+// const fs = require('fs')
+// const path = require('path')
+
+import axios from 'axios'
+import { parse } from 'node-html-parser'
+import { convert } from 'html-to-text'
+import fs from 'fs'
+import path from 'path'
 
 const PROJECT = process.env.PROJECT
 const BRANCH = process.env.BRANCH
@@ -36,7 +42,7 @@ async function getPage(href) {
   }
 }
 
-async function main() {
+export async function main() {
   let hrefs = await getAllHrefs()
   let data = await Promise.all(
     [...hrefs, ...[...hrefs].map((href) => `/fr/${href}`)].map((href) =>
@@ -55,4 +61,4 @@ async function main() {
 
 // main().then(() => console.log('finished running scrape.js'))
 
-module.exports = { main }
+// module.exports = { main }
