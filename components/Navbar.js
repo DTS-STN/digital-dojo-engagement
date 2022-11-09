@@ -108,7 +108,7 @@ function Navbar({ t }) {
             </Link>
           </div>
         </div>
-        <Link href="">
+        <Link href="/events">
           <a className="hover:underline">{t.events}</a>
         </Link>
         <Link href="">
