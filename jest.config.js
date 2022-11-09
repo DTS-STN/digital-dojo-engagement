@@ -33,6 +33,7 @@ module.exports = {
   },
   transformIgnorePatterns: [
     '/node_modules/',
+    'node_modules/(?!axios)',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
   jestWebpackResolver: {
