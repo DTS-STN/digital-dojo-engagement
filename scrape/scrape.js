@@ -14,7 +14,10 @@ const path = require('path')
 
 // const BASE = 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
 
-const BASE = 'http://localhost:3000'
+const BASE =
+  NODE_ENV === 'production'
+    ? `${PROJECT}-${BRANCH}.${DOMAIN}`
+    : 'http://localhost:3000'
 
 async function getAllHrefs() {
   let res = await axios(`${BASE}/home`)
