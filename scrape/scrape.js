@@ -1,14 +1,8 @@
-// const axios = require('axios')
-// const { parse } = require('node-html-parser')
-// const { convert } = require('html-to-text')
-// const fs = require('fs')
-// const path = require('path')
-
-import axios from 'axios'
-import { parse } from 'node-html-parser'
-import { convert } from 'html-to-text'
-import fs from 'fs'
-import path from 'path'
+const axios = require('axios')
+const { parse } = require('node-html-parser')
+const { convert } = require('html-to-text')
+const fs = require('fs')
+const path = require('path')
 
 const PROJECT = process.env.PROJECT
 const BRANCH = process.env.BRANCH
