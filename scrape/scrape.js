@@ -4,20 +4,20 @@ const { convert } = require('html-to-text')
 const fs = require('fs')
 const path = require('path')
 
-// const PROJECT = process.env.PROJECT
-// const BRANCH = process.env.BRANCH
-// const DOMAIN = process.env.BASE_DOMAIN
+const PROJECT = process.env.PROJECT
+const BRANCH = process.env.BRANCH
+const DOMAIN = process.env.BASE_DOMAIN
+const BASE =
+  process.env.NODE_ENV === 'production'
+    ? `${PROJECT}-${BRANCH}.${DOMAIN}`
+    : 'http://localhost:3000'
+
 // const BASE =
 //   process.NODE_ENV === 'production'
 //     ? `${PROJECT}-${BRANCH}.${DOMAIN}`
 //     : 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
 
 // const BASE = 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
-
-const BASE =
-  process.env.NODE_ENV === 'production'
-    ? `${PROJECT}-${BRANCH}.${DOMAIN}`
-    : 'http://localhost:3000'
 
 async function getAllHrefs() {
   let res = await axios(`${BASE}/home`)
