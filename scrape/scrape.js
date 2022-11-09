@@ -9,7 +9,7 @@ const BRANCH = process.env.BRANCH
 const DOMAIN = process.env.BASE_DOMAIN
 const BASE =
   process.env.NODE_ENV === 'production'
-    ? `${PROJECT}-${BRANCH}.${DOMAIN}`
+    ? `https://${PROJECT}-${BRANCH}.${DOMAIN}`
     : 'http://localhost:3000'
 
 // const BASE =
