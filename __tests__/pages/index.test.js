@@ -8,6 +8,8 @@ import { getStaticProps } from '../../pages/index'
 
 import { useRouter } from 'next/router'
 
+import * as axios from 'axios'
+
 // mocks useRouter to be able to use component' router.asPath
 jest.mock('next/router', () => ({
   useRouter: jest.fn(),
@@ -19,6 +21,9 @@ jest.mock('../../lib/cms', () => ({
     return {}
   },
 }))
+
+jest.mock('axios')
+axios.get.mockImplementation(() => Promise.resolve({ data: {} }))
 
 describe('index page', () => {
   /* Place-holder Meta Data Props */
