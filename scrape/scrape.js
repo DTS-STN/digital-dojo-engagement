@@ -15,7 +15,7 @@ const path = require('path')
 // const BASE = 'https://digital-dojo-engagement-main.bdm-dev.dts-stn.com'
 
 const BASE =
-  NODE_ENV === 'production'
+  process.env.NODE_ENV === 'production'
     ? `${PROJECT}-${BRANCH}.${DOMAIN}`
     : 'http://localhost:3000'
 
