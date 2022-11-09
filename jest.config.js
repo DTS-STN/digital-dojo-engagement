@@ -36,7 +36,4 @@ module.exports = {
     'node_modules/(?!axios)',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
-  jestWebpackResolver: {
-    webpackConfig: './path/to/webpack.config.js',
-  },
 }

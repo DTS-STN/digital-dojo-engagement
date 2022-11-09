@@ -36,7 +36,7 @@ async function getPage(href) {
   }
 }
 
-export async function main() {
+async function main() {
   let hrefs = await getAllHrefs()
   let data = await Promise.all(
     [...hrefs, ...[...hrefs].map((href) => `/fr/${href}`)].map((href) =>
@@ -55,4 +55,4 @@ export async function main() {
 
 // main().then(() => console.log('finished running scrape.js'))
 
-// module.exports = { main }
+module.exports = { main }

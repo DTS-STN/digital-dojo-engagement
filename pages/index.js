@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import MetaData from '../components/MetaData'
-import { main } from '../scrape/scrape'
+const { main } = require('../scrape/scrape')
 
 export default function Index(props) {
   return (
