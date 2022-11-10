@@ -5,7 +5,6 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Index from '../../pages/index'
 import { getStaticProps } from '../../pages/index'
-
 import { useRouter } from 'next/router'
 
 // mocks useRouter to be able to use component' router.asPath
@@ -18,6 +17,10 @@ jest.mock('../../lib/cms', () => ({
   fetchContent: () => {
     return {}
   },
+}))
+
+jest.mock('../../scrape/scrape', () => ({
+  main: () => new Promise((resolve, reject) => resolve()),
 }))
 
 describe('index page', () => {

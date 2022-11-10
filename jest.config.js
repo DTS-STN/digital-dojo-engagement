@@ -1,4 +1,8 @@
-module.exports = {
+const nextJest = require('next/jest')
+
+const createJestConfig = nextJest({ dir: './' })
+
+const customJestConfig = {
   modulePathIgnorePatterns: ['./cypress'],
   collectCoverageFrom: [
     'components/**/*.{js,jsx}',
@@ -31,9 +35,11 @@ module.exports = {
       https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object */
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
-  transformIgnorePatterns: [
-    '/node_modules/',
-    'node_modules/(?!axios)',
-    '^.+\\.module\\.(css|sass|scss)$',
-  ],
+}
+
+module.exports = async () => {
+  const asyncConfig = createJestConfig(customJestConfig)
+  const config = await asyncConfig()
+  const transformIgnorePatterns = ['node_modules/(?!axios)/']
+  return { ...config, transformIgnorePatterns }
 }

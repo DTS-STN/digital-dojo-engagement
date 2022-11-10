@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import MetaData from '../components/MetaData'
-const { main } = require('../scrape/scrape')
-const axios = require('axios').default
+import { main } from '../scrape/scrape'
 
 export default function Index(props) {
   return (
