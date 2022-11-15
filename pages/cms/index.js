@@ -21,7 +21,7 @@ export default function CMS({ locale, pages_en, pages_fr }) {
   )
 }
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   let pages = await getPages()
   let pages_en = [],
     pages_fr = []
@@ -51,6 +51,5 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: { locale, langToggleLink, meta, pages_en, pages_fr },
-    revalidate: 1,
   }
 }

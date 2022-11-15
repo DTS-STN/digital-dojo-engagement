@@ -10,14 +10,14 @@ export default function WP({ locale, page_en, page_fr }) {
   )
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: 'blocking',
-  }
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [],
+//     fallback: 'blocking',
+//   }
+// }
 
-export async function getStaticProps({ locale, params }) {
+export async function getServerSideProps({ locale, params }) {
   let { slug } = params
   let page_en = await getPage(slug, 'en')
   let page_fr = await getPage(slug, 'fr')
@@ -43,6 +43,5 @@ export async function getStaticProps({ locale, params }) {
 
   return {
     props: { locale, langToggleLink, meta, page_en, page_fr },
-    revalidate: 1,
   }
 }
