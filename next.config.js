@@ -62,6 +62,11 @@ module.exports = {
     defaultLocale: 'en',
     localeDetection: true,
   },
+  // last ditch effort for ISR to work on self-hosted Next.js site
+  experimental: {
+    // Defaults to 50MB
+    isrMemoryCacheSize: 0,
+  },
   //
   // rewrites setup
   //
