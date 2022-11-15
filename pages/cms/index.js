@@ -51,5 +51,6 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: { locale, langToggleLink, meta, pages_en, pages_fr },
+    revalidate: 1,
   }
 }
