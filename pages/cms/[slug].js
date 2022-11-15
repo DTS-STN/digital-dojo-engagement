@@ -23,8 +23,6 @@ export async function getStaticProps({ locale, params }) {
   let page_en = await getPage(slug, 'en')
   let page_fr = await getPage(slug, 'fr')
 
-  console.log(page_en.content)
-
   /* istanbul ignore next */
   const langToggleLink = locale === 'en' ? `/fr/cms/${slug}` : `/cms/${slug}`
 
@@ -46,5 +44,6 @@ export async function getStaticProps({ locale, params }) {
 
   return {
     props: { locale, langToggleLink, meta, page_en, page_fr },
+    revalidate: 1,
   }
 }
