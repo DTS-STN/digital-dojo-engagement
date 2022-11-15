@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668537817461" clover="3.2.0">
-  <project timestamp="1668537817461" name="All files">
-    <metrics statements="235" coveredstatements="82" conditionals="154" coveredconditionals="60" methods="114" coveredmethods="37" elements="503" coveredelements="179" complexity="0" loc="235" ncloc="235" packages="7" files="37" classes="37"/>
+<coverage generated="1668540457932" clover="3.2.0">
+  <project timestamp="1668540457932" name="All files">
+    <metrics statements="234" coveredstatements="82" conditionals="154" coveredconditionals="60" methods="114" coveredmethods="37" elements="502" coveredelements="179" complexity="0" loc="234" ncloc="234" packages="7" files="37" classes="37"/>
     <package name="components">
       <metrics statements="73" coveredstatements="35" conditionals="90" coveredconditionals="36" methods="42" coveredmethods="12"/>
       <file name="BeltAssessment.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/BeltAssessment.js">
@@ -294,18 +294,17 @@
       </file>
     </package>
     <package name="pages.cms">
-      <metrics statements="20" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <metrics statements="19" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
       <file name="[slug].js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/cms/[slug].js">
-        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="6" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
       </file>
       <file name="index.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/cms/index.js">
         <metrics statements="11" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
