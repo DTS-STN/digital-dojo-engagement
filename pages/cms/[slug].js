@@ -2,6 +2,7 @@ import { getPage } from '../../lib/cms'
 
 export default function WP({ locale, page_en, page_fr }) {
   let page = locale === 'en' ? page_en : page_fr
+
   return (
     <div className="max-w-4xl mx-auto p-2">
       <h1>{page.title.rendered}</h1>
@@ -10,17 +11,19 @@ export default function WP({ locale, page_en, page_fr }) {
   )
 }
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [],
-//     fallback: 'blocking',
-//   }
-// }
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  }
+}
 
-export async function getServerSideProps({ locale, params }) {
+export async function getStaticProps({ locale, params }) {
   let { slug } = params
   let page_en = await getPage(slug, 'en')
   let page_fr = await getPage(slug, 'fr')
+
+  console.log(page_en.content)
 
   /* istanbul ignore next */
   const langToggleLink = locale === 'en' ? `/fr/cms/${slug}` : `/cms/${slug}`
@@ -43,5 +46,6 @@ export async function getServerSideProps({ locale, params }) {
 
   return {
     props: { locale, langToggleLink, meta, page_en, page_fr },
+    revalidate: 1,
   }
 }
