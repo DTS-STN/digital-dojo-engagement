@@ -21,7 +21,7 @@ export default function CMS({ locale, pages_en, pages_fr }) {
   )
 }
 
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   let pages = await getPages()
   let pages_en = [],
     pages_fr = []
