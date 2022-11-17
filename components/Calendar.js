@@ -96,10 +96,12 @@ export default function Calendar({
                     }`}
                   >
                     <p className="text-right">{date.date()}</p>
-                    {eventsForDay.length > 0 &&
-                      eventsForDay.map((e, index) => (
-                        <CalendarEvent key={index} event={e} />
-                      ))}
+                    <div className="flex flex-col overflow-hidden">
+                      {eventsForDay.length > 0 &&
+                        eventsForDay.map((e, index) => (
+                          <CalendarEvent key={index} event={e} />
+                        ))}
+                    </div>
                   </div>
                 </div>
               </div>

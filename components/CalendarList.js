@@ -65,24 +65,30 @@ export default function CalendarList({
           const eventsForDay = events.filter(
             (e) => e.date === date.format('YYYY-MM-DD')
           )
+          console.log(date.format('YYYY-MM-DD'))
+          console.log(eventsForDay)
           return (
             <div key={index} className={``}>
               <div
-                className={`flex justify-between items-center font-semibold text-periwinkle bg-periwinkle/10 border border-periwinkle -my-px px-2 py-1 ${
-                  isToday ? 'bg-periwinkle/10' : ''
-                }`}
+                className={`flex justify-between items-center font-semibold text-periwinkle bg-periwinkle/10 border border-periwinkle -my-px px-2 py-1`}
               >
                 <p>{DAYS[dayjs(date).day()]}</p>
                 <p className="text-sm ">{dayjs(date).format('MMMM DD,YYYY')}</p>
               </div>
-              <div className="h-14 border border-periwinkle">
-                {eventsForDay.length > 0 ? (
-                  eventsForDay.map((e, index) => (
-                    <CalendarListEvent key={index} event={e} />
-                  ))
-                ) : (
-                  <p>{t.noEvents}</p>
-                )}
+              <div
+                className={`h-min border border-periwinkle ${
+                  isToday ? 'bg-periwinkle/10' : ''
+                }`}
+              >
+                <div className="flex flex-col items-start px-1 my-2">
+                  {eventsForDay.length > 0 ? (
+                    eventsForDay.map((e, index) => (
+                      <CalendarListEvent key={index} event={e} />
+                    ))
+                  ) : (
+                    <p className="text-periwinkle py-2">{t.noEvents}</p>
+                  )}
+                </div>
               </div>
             </div>
           )
