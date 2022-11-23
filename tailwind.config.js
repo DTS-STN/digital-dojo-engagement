@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         periwinkle: '#6E749F',
         darkPeriwinkle: '#4a4e6b',
+        lightPeriwinkle: '#e6e8f3',
         blue: colors.blue,
       },
       boxShadow: {

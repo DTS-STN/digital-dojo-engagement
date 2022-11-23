@@ -69,74 +69,110 @@ export default function Room() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-10">
+    <div className="max-w-6xl mx-auto p-10">
       <h1 className="text-2xl text-blue-800 mb-10">
         Socket Poker Room #{room}
       </h1>
-      <div className="flex justify-between">
-        <button
-          onClick={() => handleCardClick('white')}
-          className="w-24 h-24 border-2 rounded shadow-lg hover:scale-105 duration-200"
-        >
-          White
-        </button>
-        <button
-          onClick={() => handleCardClick('yellow')}
-          className="w-24 h-24 border-2 rounded shadow-lg hover:scale-105 duration-200"
-        >
-          Yellow
-        </button>
-        <button
-          onClick={() => handleCardClick('green')}
-          className="w-24 h-24 border-2 rounded shadow-lg hover:scale-105 duration-200"
-        >
-          Green
-        </button>
-        <button
-          onClick={() => handleCardClick('black')}
-          className="w-24 h-24 border-2 rounded shadow-lg hover:scale-105 duration-200"
-        >
-          Black
-        </button>
-      </div>
-      <div className="my-5 flex justify-between">
-        {roomData[socket?.id]?.admin && (
-          <button
-            onClick={handleHideClick}
-            className="px-2 rounded bg-blue-800 text-white hover:bg-blue-900"
-          >
-            Hide
-          </button>
-        )}
-        <div className="flex gap-2 ml-auto">
-          {roomData[socket?.id]?.admin && (
+      <div className="md:flex gap-5">
+        <div className="md:w-2/3 mb-5">
+          <div className="flex justify-between">
             <button
-              onClick={handleTimerClick}
-              className="px-2 rounded bg-blue-800 text-white hover:bg-blue-900"
+              onClick={() => handleCardClick('white')}
+              className="w-24 h-24 border-2 rounded shadow-lg hover:scale-105 duration-200"
             >
-              Timer
+              White
             </button>
-          )}
-          <div className={`${timer < 10 ? 'text-red-500' : 'text-green-500'}`}>
-            :{('0' + timer).slice(-2)}
+            <button
+              onClick={() => handleCardClick('yellow')}
+              className="w-24 h-24 border-2 rounded shadow-lg hover:scale-105 duration-200"
+            >
+              Yellow
+            </button>
+            <button
+              onClick={() => handleCardClick('green')}
+              className="w-24 h-24 border-2 rounded shadow-lg hover:scale-105 duration-200"
+            >
+              Green
+            </button>
+            <button
+              onClick={() => handleCardClick('black')}
+              className="w-24 h-24 border-2 rounded shadow-lg hover:scale-105 duration-200"
+            >
+              Black
+            </button>
+            <button
+              onClick={() => handleCardClick('na')}
+              className="w-24 h-24 border-2 rounded shadow-lg hover:scale-105 duration-200"
+            >
+              ???
+            </button>
+          </div>
+
+          <div className="mt-5 space-y-3">
+            {Object.entries(roomData).map(([k, v]) => (
+              <div
+                key={k}
+                className="flex justify-between shadow-lg h-12 rounded"
+              >
+                <div
+                  className={`${
+                    socket?.id === k ? 'bg-red-100' : ''
+                  } flex items-center px-2 rounded-tl rounded-bl`}
+                >
+                  {v.user}
+                </div>
+                <div className="flex items-center px-2">
+                  {socket?.id !== k && hide ? '???' : v.belt}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-      <div className="mt-5 space-y-3">
-        {Object.entries(roomData).map(([k, v]) => (
-          <div key={k} className="flex justify-between shadow-lg h-12 rounded">
-            <div
-              className={`${
-                socket?.id === k ? 'bg-red-100' : ''
-              } flex items-center px-2 rounded-tl rounded-bl`}
-            >
-              {v.user}
-            </div>
-            <div className="flex items-center px-2">
-              {socket?.id !== k && hide ? '???' : v.belt}
+        <aside className="flex flex-col border md:w-1/3">
+          <div>
+            <p className="bg-lightPeriwinkle p-3">
+              Room Code: <span className="font-bold float-right">{room}</span>
+            </p>
+            <p className="p-3">
+              Players Name:
+              <span className="font-bold float-right">{user}</span>
+            </p>
+            <p className="p-3">
+              Players Online:
+              <span className="font-bold float-right">
+                {Object.keys(roomData).length}
+              </span>
+            </p>
+            <div className="my-5 flex justify-between p-3">
+              {roomData[socket?.id]?.admin && (
+                <button
+                  onClick={handleHideClick}
+                  className="px-2 rounded bg-blue-800 text-white hover:bg-blue-900"
+                >
+                  Hide
+                </button>
+              )}
+              <div className="flex gap-2 ml-auto">
+                {roomData[socket?.id]?.admin && (
+                  <button
+                    onClick={handleTimerClick}
+                    className="px-2 rounded bg-blue-800 text-white hover:bg-blue-900"
+                  >
+                    Timer
+                  </button>
+                )}
+                <div
+                  className={`${
+                    timer < 10 ? 'text-red-500' : 'text-green-500'
+                  } border-2 w-10 px-1 text-right`}
+                >
+                  :{('0' + timer).slice(-2)}
+                </div>
+              </div>
             </div>
           </div>
-        ))}
+          <div></div>
+        </aside>
       </div>
     </div>
   )
