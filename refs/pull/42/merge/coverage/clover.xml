@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669129157115" clover="3.2.0">
-  <project timestamp="1669129157115" name="All files">
+<coverage generated="1669228681950" clover="3.2.0">
+  <project timestamp="1669228681951" name="All files">
     <metrics statements="286" coveredstatements="83" conditionals="170" coveredconditionals="60" methods="136" coveredmethods="37" elements="592" coveredelements="180" complexity="0" loc="286" ncloc="286" packages="7" files="37" classes="37"/>
     <package name="components">
       <metrics statements="73" coveredstatements="35" conditionals="90" coveredconditionals="36" methods="42" coveredmethods="12"/>
@@ -358,19 +358,19 @@
       </file>
       <file name="index.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/rooms/index.js">
         <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="84" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
       </file>
     </package>
     <package name="pages.services">
