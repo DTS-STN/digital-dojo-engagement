@@ -1,3 +1,4 @@
+import DottedLine from '../../components/DottedLine'
 import { useRouter } from 'next/router'
 
 function randomRoom() {
@@ -29,30 +30,59 @@ export default function Home() {
 
   return (
     <div className="p-2 max-w-2xl mx-auto">
-      <h1 className="text-2xl text-blue-800 mb-5">Socket Poker</h1>
-      <div className="flex gap-10">
-        <form className="flex flex-col gap-2" onSubmit={handleCreateRoom}>
-          <label>Name:</label>
+      <h1 className="text-2xl text-periwinkle mb-5">Belt System</h1>
+      <p>
+        The Digital Dojo Belt System Self-Assessment is designed for your team
+        to help identify your team's current knowledge pf Agile, DevOps, and
+        Design Thinking domains. Thye will help the Dojo team work with you to
+        improve your skills throughout an engagement.
+      </p>
+      <DottedLine />
+      <div className="flex justify-around w-full">
+        <form
+          className="flex flex-col gap-2 border-2 p-4"
+          onSubmit={handleCreateRoom}
+        >
+          <h2 className="text-xl text-periwinkle text-center">Create a Room</h2>
+          <label htmlFor="admin">Name:</label>
           <input
-            className="border-2 rounded border-blue-800 px-1"
+            className="border-2 rounded border-periwinkle px-1"
+            id="admin"
             name="admin"
           />
-          <button className="bg-blue-800 text-white hover:bg-blue-900 cursor-pointer rounded self-start mx-auto px-1">
+          <label htmlFor="domain">Select a domain:</label>
+          <select
+            name="domain"
+            id="domain"
+            className="px-1 py-0 border-periwinkle border-2 mb-5"
+          >
+            <option disabled selected value>
+              select an option
+            </option>
+            <option value="agile">Agile</option>
+            <option value="devops">DevOps</option>
+            <option value="design thinking">Design Thinking</option>
+          </select>
+          <button className="bg-periwinkle text-white hover:bg-blue-900 cursor-pointer rounded self-start mx-auto px-1 mt-auto">
             Create Room
           </button>
         </form>
-        <form className="flex flex-col gap-2" onSubmit={handleJoinRoom}>
+        <form
+          className="flex flex-col gap-2 border-2 p-4"
+          onSubmit={handleJoinRoom}
+        >
+          <h2 className="text-xl text-periwinkle text-center">Join a Room</h2>
           <label>Name:</label>
           <input
-            className="border-2 rounded border-blue-800 px-1"
+            className="border-2 rounded border-periwinkle px-1"
             name="name"
           />
           <label>Room:</label>
           <input
-            className="border-2 rounded border-blue-800 px-1"
+            className="border-2 rounded border-periwinkle px-1"
             name="room"
           />
-          <button className="bg-blue-800 text-white hover:bg-blue-900 cursor-pointer rounded self-start mx-auto px-1">
+          <button className="bg-periwinkle text-white hover:bg-blue-900 cursor-pointer rounded self-start mx-auto px-1 mt-auto">
             Join Room
           </button>
         </form>
