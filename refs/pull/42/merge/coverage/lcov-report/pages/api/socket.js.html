@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>0/32</span>
             </div>
         
             
@@ -112,7 +112,21 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,16 +146,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -151,9 +159,29 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -178,17 +206,20 @@ export default function <span class="fstat-no" title="function not covered" >Soc
 <span class="cstat-no" title="statement not covered" >    socket.on('join-room', <span class="fstat-no" title="function not covered" >({</span> room, user, domain }) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (!(room in rooms)) {</span>
 <span class="cstat-no" title="statement not covered" >        rooms[room] = {</span>
-          [socket.id]: { admin: true, user, belt: '', domain },
+          connections: {
+            [socket.id]: { admin: true, user, belt: '', domain },
+          },
+          chat: [],
         }
       } else {
-<span class="cstat-no" title="statement not covered" >        rooms[room][socket.id] = { user, belt: '' }</span>
+<span class="cstat-no" title="statement not covered" >        rooms[room].connections[socket.id] = { user, belt: '' }</span>
       }
 <span class="cstat-no" title="statement not covered" >      socket.join(room)</span>
 <span class="cstat-no" title="statement not covered" >      io.to(room).emit('room-data', rooms[room])</span>
     })
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    socket.on('select-belt-colour', <span class="fstat-no" title="function not covered" >({</span> room, colour }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      rooms[room][socket.id].belt = colour</span>
+<span class="cstat-no" title="statement not covered" >      rooms[room].connections[socket.id].belt = colour</span>
 <span class="cstat-no" title="statement not covered" >      io.to(room).emit('room-data', rooms[room])</span>
     })
 &nbsp;
@@ -197,14 +228,25 @@ export default function <span class="fstat-no" title="function not covered" >Soc
     })
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    socket.on('clear-cards', <span class="fstat-no" title="function not covered" >({</span> room }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      for (let id in rooms[room]) {</span>
-<span class="cstat-no" title="statement not covered" >        rooms[room][id].belt = ''</span>
+<span class="cstat-no" title="statement not covered" >      for (let id in rooms[room].connections) {</span>
+<span class="cstat-no" title="statement not covered" >        rooms[room].connections[id].belt = ''</span>
       }
 <span class="cstat-no" title="statement not covered" >      io.to(room).emit('room-data', rooms[room])</span>
     })
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    socket.on('update-timer', <span class="fstat-no" title="function not covered" >({</span> room, timer }) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      io.to(room).emit('update-timer-from-server', timer - 1)</span>
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    socket.on('leave-room', <span class="fstat-no" title="function not covered" >({</span> room }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      delete rooms[room].connections[socket.id]</span>
+<span class="cstat-no" title="statement not covered" >      socket.leave(room)</span>
+<span class="cstat-no" title="statement not covered" >      io.to(room).emit('room-data', rooms[room])</span>
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    socket.on('chat-message', <span class="fstat-no" title="function not covered" >({</span> room, msg }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      rooms[room].chat.push({ id: socket.id, msg })</span>
+<span class="cstat-no" title="statement not covered" >      io.to(room).emit('room-data', rooms[room])</span>
     })
   })
 &nbsp;
@@ -217,7 +259,7 @@ export default function <span class="fstat-no" title="function not covered" >Soc
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Nov 24 2022 16:32:16 GMT+0000 (Coordinated Universal Time)
+                at Thu Nov 24 2022 19:37:11 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
