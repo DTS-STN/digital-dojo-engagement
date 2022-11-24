@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { FiCopy, FiEye, FiEyeOff } from 'react-icons/fi'
 import { RiVipCrownFill } from 'react-icons/ri'
+import { TbDoorExit } from 'react-icons/tb'
 
 let socket
 
@@ -12,7 +13,7 @@ export default function Room() {
   const user = router.query.user
   const domain = router.query.domain
 
-  const [roomData, setRoomData] = useState({})
+  const [roomData, setRoomData] = useState()
   const [hide, setHide] = useState(true)
   const [timer, setTimer] = useState(30)
   const [timerStarted, setTimerStarted] = useState(false)
@@ -20,8 +21,6 @@ export default function Room() {
   useEffect(() => {
     socketInitializer()
   }, [])
-
-  console.log(roomData)
 
   useEffect(() => {
     let interval
@@ -77,6 +76,18 @@ export default function Room() {
     socket.emit('update-timer', { room, timer: 31 })
   }
 
+  function handleLeaveRoomClick() {
+    socket.emit('leave-room', { room })
+    router.push('/rooms')
+  }
+
+  function handleChatSubmit(e) {
+    e.preventDefault()
+    let msg = e.target.elements.chat.value
+    socket.emit('chat-message', { room, msg })
+    e.target.elements.chat.value = ''
+  }
+
   return (
     <div className="max-w-6xl mx-auto p-10">
       <h1 className="text-2xl text-blue-800 mb-10">
@@ -118,7 +129,7 @@ export default function Room() {
           </div>
 
           <div className="mt-7 flex justify-center gap-10">
-            {roomData[socket?.id]?.admin && (
+            {roomData?.connections?.[socket?.id]?.admin && (
               <>
                 <button
                   onClick={handleHideClick}
@@ -136,7 +147,7 @@ export default function Room() {
             )}
           </div>
 
-          <div className="mt-5 flex justify-between font-bold text-periwinkle">
+          <div className="my-5 flex justify-between font-bold text-periwinkle">
             <p>Users</p>
             <div className="flex items-center gap-2">
               {hide ? <FiEyeOff /> : <FiEye />}
@@ -144,32 +155,39 @@ export default function Room() {
             </div>
           </div>
           <div className="space-y-3">
-            {Object.entries(roomData).map(([k, v]) => (
-              <div
-                key={k}
-                className="flex justify-between shadow-lg h-16 rounded"
-              >
+            {roomData &&
+              Object.entries(roomData?.connections).map(([k, v]) => (
                 <div
-                  className={`${
-                    socket?.id === k ? 'bg-red-100' : ''
-                  } flex items-center px-2 rounded-tl rounded-bl`}
+                  key={k}
+                  className="flex justify-between shadow-lg h-16 rounded text-white"
                 >
-                  {v.user}
-                  {roomData[k]?.admin ? (
-                    <RiVipCrownFill className="ml-2 text-darkPeriwinkle text-sm" />
-                  ) : (
-                    ''
-                  )}
+                  <div
+                    className={`${
+                      socket?.id === k
+                        ? 'bg-periwinkle text-white'
+                        : 'text-black'
+                    } flex items-center px-2 rounded-tl rounded-bl border-r border-periwinkle min-w-[75px]`}
+                  >
+                    {v.user}
+                    {v.admin ? (
+                      <RiVipCrownFill
+                        className={`ml-2 text-sm ${
+                          socket?.id === k ? 'text-white' : 'text-periwinkle'
+                        }`}
+                      />
+                    ) : (
+                      ''
+                    )}
+                  </div>
+                  <div className="flex items-center px-2 w-12 h-14 py-2 border mr-1 my-auto mx-auto justify-center">
+                    {(socket?.id !== k && hide) || !v.belt ? (
+                      ''
+                    ) : (
+                      <img src={`/${v.belt}_poker_belt.png`}></img>
+                    )}
+                  </div>
                 </div>
-                <div className="flex items-center px-2 w-12 h-14 py-2 border mr-1 my-auto mx-auto justify-center">
-                  {(socket?.id !== k && hide) || !v.belt ? (
-                    '???'
-                  ) : (
-                    <img src={`/${v.belt}_poker_belt.png`}></img>
-                  )}
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
         <aside className="flex flex-col border md:w-1/3">
@@ -191,13 +209,13 @@ export default function Room() {
             <p className="p-3 font-bold text-periwinkle">
               Players Online:
               <span className="font-bold float-right">
-                {Object.keys(roomData).length}
+                {roomData && Object.keys(roomData?.connections).length}
               </span>
             </p>
             <div className="my-5 flex justify-between p-3">
               <p className="font-bold text-periwinkle">Timer:</p>
               <div className="flex gap-2 ml-auto">
-                {roomData[socket?.id]?.admin && (
+                {roomData && roomData?.connections?.[socket?.id]?.admin && (
                   <button
                     onClick={handleTimerClick}
                     className="px-2 rounded bg-periwinkle text-white hover:bg-darkPeriwinkle"
@@ -214,8 +232,54 @@ export default function Room() {
                 </div>
               </div>
             </div>
+            <div className="flex items-start justify-center">
+              <button
+                onClick={handleLeaveRoomClick}
+                className="bg-periwinkle text-white hover:bg-darkPeriwinkle rounded px-2 py-1 flex items-center gap-2"
+              >
+                Leave Room <TbDoorExit />
+              </button>
+            </div>
           </div>
-          <div>chatbox</div>
+          <div>
+            <p className="bg-lightPeriwinkle font-bold p-3 mt-5">Chat Room</p>
+            <div className="min-h-[300px] max-h-[300px] overflow-y-scroll mt-2">
+              {roomData &&
+                roomData.chat.map((e, i) => (
+                  <>
+                    <p
+                      className={`px-1 text-sm mx-2 font-bold ${
+                        e.id === socket?.id ? 'text-right' : ''
+                      }`}
+                    >
+                      {roomData.connections?.[e.id]?.user}:
+                    </p>
+                    <p
+                      key={i}
+                      className={`px-2 text-sm rounded bg-lightPeriwinkle mx-2 mb-2 ${
+                        e.id === socket?.id ? 'text-right' : ''
+                      }`}
+                    >
+                      {e.msg}
+                    </p>
+                  </>
+                ))}
+            </div>
+            <form
+              onSubmit={handleChatSubmit}
+              className="flex items-center justify-center"
+            >
+              <label htmlFor="chat" hidden>
+                chat box
+              </label>
+              <input
+                id="chat"
+                name="chat"
+                className="text-periwinkle flex-1 px-2 p-1"
+                placeholder="Write a message"
+              />
+            </form>
+          </div>
         </aside>
       </div>
     </div>
