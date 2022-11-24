@@ -11,9 +11,10 @@ export default function Home() {
   function handleCreateRoom(e) {
     e.preventDefault()
     let admin = e.target.elements.admin.value
+    let domain = e.target.elements.domain.value
     let room = randomRoom()
     router.push(
-      { pathname: `/rooms/${room}`, query: { room, user: admin } },
+      { pathname: `/rooms/${room}`, query: { room, user: admin, domain } },
       `rooms/${room}`
     )
   }
@@ -50,14 +51,14 @@ export default function Home() {
             id="admin"
             name="admin"
           />
-          <label htmlFor="domain">Select a domain:</label>
+          <label htmlFor="domain">Domain:</label>
           <select
             name="domain"
             id="domain"
             className="px-1 py-0 border-periwinkle border-2 mb-5"
           >
-            <option disabled selected value>
-              select an option
+            <option disabled selected value="DEFAULT">
+              select a domain
             </option>
             <option value="agile">Agile</option>
             <option value="devops">DevOps</option>

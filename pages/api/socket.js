@@ -12,10 +12,10 @@ export default function SocketHandler(req, res) {
   res.socket.server.io = io
 
   io.on('connection', (socket) => {
-    socket.on('join-room', ({ room, user }) => {
+    socket.on('join-room', ({ room, user, domain }) => {
       if (!(room in rooms)) {
         rooms[room] = {
-          [socket.id]: { admin: true, user, belt: '' },
+          [socket.id]: { admin: true, user, belt: '', domain },
         }
       } else {
         rooms[room][socket.id] = { user, belt: '' }
@@ -31,6 +31,13 @@ export default function SocketHandler(req, res) {
 
     socket.on('hide-cards', ({ room, hide }) => {
       io.to(room).emit('hide-from-server', hide)
+    })
+
+    socket.on('clear-cards', ({ room }) => {
+      for (let id in rooms[room]) {
+        rooms[room][id].belt = ''
+      }
+      io.to(room).emit('room-data', rooms[room])
     })
 
     socket.on('update-timer', ({ room, timer }) => {
