@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { FiCopy, FiEye, FiEyeOff } from 'react-icons/fi'
 import { RiVipCrownFill } from 'react-icons/ri'
 import { TbDoorExit } from 'react-icons/tb'
+import { BiArrowToRight } from 'react-icons/bi'
 
 let socket
 
@@ -84,8 +85,10 @@ export default function Room() {
   function handleChatSubmit(e) {
     e.preventDefault()
     let msg = e.target.elements.chat.value
-    socket.emit('chat-message', { room, msg })
-    e.target.elements.chat.value = ''
+    if (msg) {
+      socket.emit('chat-message', { room, msg })
+      e.target.elements.chat.value = ''
+    }
   }
 
   return (
@@ -179,9 +182,15 @@ export default function Room() {
                       ''
                     )}
                   </div>
-                  <div className="flex items-center px-2 w-12 h-14 py-2 border mr-1 my-auto mx-auto justify-center">
-                    {(socket?.id !== k && hide) || !v.belt ? (
+                  <div
+                    className={`flex items-center w-12 h-14 p-2 mr-1 my-auto mx-auto justify-center border-2 border-darkPeriwinkle text-black ${
+                      v.belt ? '' : 'border-dashed'
+                    }`}
+                  >
+                    {!v.belt ? (
                       ''
+                    ) : socket?.id !== k && hide ? (
+                      <img src="/card_back.jpg"></img>
                     ) : (
                       <img src={`/${v.belt}_poker_belt.png`}></img>
                     )}
@@ -269,15 +278,23 @@ export default function Room() {
               onSubmit={handleChatSubmit}
               className="flex items-center justify-center"
             >
-              <label htmlFor="chat" hidden>
-                chat box
-              </label>
-              <input
-                id="chat"
-                name="chat"
-                className="text-periwinkle flex-1 px-2 p-1"
-                placeholder="Write a message"
-              />
+              <div className="flex w-full">
+                <label htmlFor="chat" hidden>
+                  chat box
+                </label>
+                <input
+                  id="chat"
+                  name="chat"
+                  className="text-periwinkle flex-1 px-2 p-1 border border-periwinkle"
+                  placeholder="Write a message"
+                />
+                <button
+                  className="bg-periwinkle text-white w-8"
+                  aria-label="submit chat message"
+                >
+                  <BiArrowToRight className="text-center mx-auto" />
+                </button>
+              </div>
             </form>
           </div>
         </aside>

@@ -49,6 +49,9 @@ export default function SocketHandler(req, res) {
 
     socket.on('leave-room', ({ room }) => {
       delete rooms[room].connections[socket.id]
+      if (!rooms[room].connections.length) {
+        delete rooms[room]
+      }
       socket.leave(room)
       io.to(room).emit('room-data', rooms[room])
     })
