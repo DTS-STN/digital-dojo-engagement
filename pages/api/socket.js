@@ -1,4 +1,5 @@
 import { Server } from 'socket.io'
+import dojoDomains from '../../lib/dojoDomains'
 
 let rooms = {}
 
@@ -16,9 +17,12 @@ export default function SocketHandler(req, res) {
       if (!(room in rooms)) {
         rooms[room] = {
           connections: {
-            [socket.id]: { admin: true, user, belt: '', domain },
+            [socket.id]: { admin: true, user, belt: '' },
           },
+          domain,
+          principle: Object.keys(dojoDomains[domain])[0],
           chat: [],
+          votes: {},
         }
       } else {
         rooms[room].connections[socket.id] = { user, belt: '' }
@@ -49,7 +53,7 @@ export default function SocketHandler(req, res) {
 
     socket.on('leave-room', ({ room }) => {
       delete rooms[room].connections[socket.id]
-      if (!rooms[room].connections.length) {
+      if (!Object.keys(rooms[room].connections).length) {
         delete rooms[room]
       }
       socket.leave(room)
@@ -58,6 +62,11 @@ export default function SocketHandler(req, res) {
 
     socket.on('chat-message', ({ room, msg }) => {
       rooms[room].chat.push({ id: socket.id, msg })
+      io.to(room).emit('room-data', rooms[room])
+    })
+
+    socket.on('set-principle', ({ room, newPrinciple }) => {
+      rooms[room].principle = newPrinciple
       io.to(room).emit('room-data', rooms[room])
     })
   })

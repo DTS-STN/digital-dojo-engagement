@@ -65,11 +65,12 @@ export default function Home() {
           />
           <label htmlFor="domain">Domain:</label>
           <select
+            required
             name="domain"
             id="domain"
             className="px-1 py-0 border-periwinkle border-2 mb-5"
           >
-            <option disabled selected value="DEFAULT">
+            <option disabled selected value="">
               select a domain
             </option>
             <option value="agile">Agile</option>

@@ -5,6 +5,7 @@ import { FiCopy, FiEye, FiEyeOff } from 'react-icons/fi'
 import { RiVipCrownFill } from 'react-icons/ri'
 import { TbDoorExit } from 'react-icons/tb'
 import { BiArrowToRight } from 'react-icons/bi'
+import dojoDomains from '../../lib/dojoDomains'
 
 let socket
 
@@ -57,6 +58,14 @@ export default function Room() {
     })
   }
 
+  function handlePrincipleBtnClick(n) {
+    let principles = Object.keys(dojoDomains[domain])
+    let i = principles.indexOf(roomData.principle)
+    let newPrinciple =
+      principles[(i + n + principles.length) % principles.length]
+    socket.emit('set-principle', { room, newPrinciple })
+  }
+
   function handleCardClick(colour) {
     socket.emit('select-belt-colour', { room, colour })
   }
@@ -91,11 +100,43 @@ export default function Room() {
     }
   }
 
+  console.log(roomData)
+
   return (
     <div className="max-w-6xl mx-auto p-10">
-      <h1 className="text-2xl text-blue-800 mb-10">
-        Socket Poker Room #{room}
+      <h1 className="text-2xl text-blue-800 mb-10 capitalize">
+        Domain: {domain}
       </h1>
+      <div className="mb-10">
+        <div className="bg-lightPeriwinkle p-2 flex justify-between">
+          <h2 className="text-xl">{roomData?.principle}</h2>
+          {roomData && roomData?.connections?.[socket?.id]?.admin && (
+            <div className="flex gap-5">
+              <button
+                onClick={() => handlePrincipleBtnClick(-1)}
+                className="bg-periwinkle text-white px-2 py-1 rounded-xl hover:bg-darkPeriwinkle"
+              >
+                Previous Principle
+              </button>
+              <button
+                onClick={() => handlePrincipleBtnClick(1)}
+                className="bg-periwinkle text-white px-2 py-1 rounded-xl hover:bg-darkPeriwinkle"
+              >
+                Next Principle
+              </button>
+            </div>
+          )}
+        </div>
+        <div>
+          <div>Digital Dojo Practices:</div>
+          <ul>
+            {roomData &&
+              dojoDomains?.[roomData?.domain]?.[
+                roomData?.principle
+              ]?.practices.map((e, i) => <li key={i}>{e}</li>)}
+          </ul>
+        </div>
+      </div>
       <div className="md:flex gap-5">
         <div className="md:w-2/3 mb-5">
           <div className="flex justify-between">
@@ -265,7 +306,7 @@ export default function Room() {
                     </p>
                     <p
                       key={i}
-                      className={`px-2 text-sm rounded bg-lightPeriwinkle mx-2 mb-2 ${
+                      className={`px-2 text-sm rounded bg-lightPeriwinkle mx-2 mb-2 break-words ${
                         e.id === socket?.id ? 'text-right' : ''
                       }`}
                     >
