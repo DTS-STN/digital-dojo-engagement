@@ -181,7 +181,23 @@
 <a name='L116'></a><a href='#L116'>116</a>
 <a name='L117'></a><a href='#L117'>117</a>
 <a name='L118'></a><a href='#L118'>118</a>
-<a name='L119'></a><a href='#L119'>119</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -213,6 +229,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -335,11 +367,20 @@ export default function <span class="fstat-no" title="function not covered" >Hom
       &lt;h1 className="text-2xl text-periwinkle mb-5"&gt;Belt System&lt;/h1&gt;
       &lt;p&gt;
         The Digital Dojo Belt System Self-Assessment is designed for your team
-        to help identify your team's current knowledge pf Agile, DevOps, and
-        Design Thinking domains. Thye will help the Dojo team work with you to
+        to help identify your team's current knowledge of Agile, DevOps, and
+        Design Thinking domains. They will help the Dojo team work with you to
         improve your skills throughout an engagement.
       &lt;/p&gt;
       &lt;DottedLine /&gt;
+      &lt;h2 className="text-periwinkle text-2xl mb-5"&gt;How-to Assess&lt;/h2&gt;
+      &lt;p className="mb-5"&gt;
+        We have developed an interactive self-assessmenr voting tool for your
+        team.
+      &lt;/p&gt;
+      &lt;p className="mb-10"&gt;
+        When you enter a room, you will have the ability to anonymously vote on
+        topics and questions based on our Dojo belt system.
+      &lt;/p&gt;
       &lt;div className="flex justify-around w-full"&gt;
         &lt;form
           className="flex flex-col gap-2 border-2 p-4"
@@ -348,6 +389,9 @@ export default function <span class="fstat-no" title="function not covered" >Hom
           &lt;h2 className="text-xl text-periwinkle text-center"&gt;Create a Room&lt;/h2&gt;
           &lt;label htmlFor="admin"&gt;Name:&lt;/label&gt;
           &lt;input
+            required
+            pattern="[A-Za-z]{1,}"
+            minLength="1"
             className="border-2 rounded border-periwinkle px-1"
             id="admin"
             name="admin"
@@ -365,7 +409,7 @@ export default function <span class="fstat-no" title="function not covered" >Hom
             &lt;option value="devops"&gt;DevOps&lt;/option&gt;
             &lt;option value="design thinking"&gt;Design Thinking&lt;/option&gt;
           &lt;/select&gt;
-          &lt;button className="bg-periwinkle text-white hover:bg-blue-900 cursor-pointer rounded self-start mx-auto px-1 mt-auto"&gt;
+          &lt;button className="bg-periwinkle text-white hover:bg-darkPeriwinkle cursor-pointer rounded self-start mx-auto px-1 mt-auto"&gt;
             Create Room
           &lt;/button&gt;
         &lt;/form&gt;
@@ -376,15 +420,19 @@ export default function <span class="fstat-no" title="function not covered" >Hom
           &lt;h2 className="text-xl text-periwinkle text-center"&gt;Join a Room&lt;/h2&gt;
           &lt;label&gt;Name:&lt;/label&gt;
           &lt;input
+            required
+            pattern="[A-Za-z]{1,}"
+            minLength="1"
             className="border-2 rounded border-periwinkle px-1"
             name="name"
           /&gt;
           &lt;label&gt;Room:&lt;/label&gt;
           &lt;input
+            required
             className="border-2 rounded border-periwinkle px-1"
             name="room"
           /&gt;
-          &lt;button className="bg-periwinkle text-white hover:bg-blue-900 cursor-pointer rounded self-start mx-auto px-1 mt-auto"&gt;
+          &lt;button className="bg-periwinkle text-white hover:bg-darkPeriwinkle cursor-pointer rounded self-start mx-auto px-1 mt-auto"&gt;
             Join Room
           &lt;/button&gt;
         &lt;/form&gt;
@@ -424,7 +472,7 @@ export async function <span class="fstat-no" title="function not covered" >getSt
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Nov 24 2022 19:37:11 GMT+0000 (Coordinated Universal Time)
+                at Fri Nov 25 2022 16:41:47 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
