@@ -103,7 +103,7 @@ export default function Room() {
   return (
     <div className="max-w-6xl mx-auto p-10">
       <h1 className="text-2xl text-blue-800 mb-10 capitalize">
-        Domain: {domain}
+        Domain: {roomData?.domain}
       </h1>
       <div className="mb-10 border-2">
         <div className="bg-lightPeriwinkle p-2 flex justify-between">
