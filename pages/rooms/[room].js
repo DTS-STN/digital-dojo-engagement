@@ -153,6 +153,7 @@ export default function Room() {
                 <div>
                   <img
                     src={`/${belt}_poker_belt.png`}
+                    alt={`/${belt} poker belt`}
                     className="w-20 rounded-lg border-2 p-1 shadow-lg"
                   />
                 </div>
@@ -173,32 +174,37 @@ export default function Room() {
             <button
               onClick={() => handleCardClick('white')}
               className="w-24 h-32 px-4 border-2 rounded shadow-lg hover:scale-105 duration-200"
+              aria-label="white poker belt select"
             >
-              <img src="/white_poker_belt.png"></img>
+              <img src="/white_poker_belt.png" alt="white poker belt"></img>
             </button>
             <button
               onClick={() => handleCardClick('yellow')}
               className="w-24 h-32 px-4 border-2 rounded shadow-lg hover:scale-105 duration-200"
+              aria-label="yellow poker belt select"
             >
-              <img src="/yellow_poker_belt.png"></img>
+              <img src="/yellow_poker_belt.png" alt="yellow poker belt"></img>
             </button>
             <button
               onClick={() => handleCardClick('green')}
               className="w-24 h-32 px-4 border-2 rounded shadow-lg hover:scale-105 duration-200"
+              aria-label="green poker belt select"
             >
-              <img src="/green_poker_belt.png"></img>
+              <img src="/green_poker_belt.png" alt="green poker belt"></img>
             </button>
             <button
               onClick={() => handleCardClick('black')}
               className="w-24 h-32 px-4 border-2 rounded shadow-lg hover:scale-105 duration-200"
+              aria-label="black poker belt select"
             >
-              <img src="/black_poker_belt.png"></img>
+              <img src="/black_poker_belt.png" alt="black poker belt"></img>
             </button>
             <button
               onClick={() => handleCardClick('na')}
               className="w-24 h-32 px-4 border-2 rounded shadow-lg hover:scale-105 duration-200"
+              aria-label="unknown belt select"
             >
-              <img src="/na_poker_belt.png"></img>
+              <img src="/na_poker_belt.png" alt="unknown poker belt"></img>
             </button>
           </div>
 
@@ -261,7 +267,7 @@ export default function Room() {
                     {!v.belt ? (
                       ''
                     ) : socket?.id !== k && hide ? (
-                      <img src="/card_back.jpg"></img>
+                      <img src="/card_back.JPG" alt={`${v.belt} belt`}></img>
                     ) : (
                       <img src={`/${v.belt}_poker_belt.png`}></img>
                     )}
