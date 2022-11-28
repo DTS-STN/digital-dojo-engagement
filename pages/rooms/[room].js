@@ -62,7 +62,7 @@ export default function Room() {
     let principles = Object.keys(dojoDomains[domain])
     let i = principles.indexOf(roomData.principle)
     let newPrinciple =
-      principles[(i + n + principles.length) % principles.length]
+      principles[Math.min(principles.length - 1, Math.max(0, i + n))]
     socket.emit('set-principle', { room, newPrinciple })
   }
 
@@ -100,41 +100,71 @@ export default function Room() {
     }
   }
 
-  console.log(roomData)
-
   return (
     <div className="max-w-6xl mx-auto p-10">
       <h1 className="text-2xl text-blue-800 mb-10 capitalize">
         Domain: {domain}
       </h1>
-      <div className="mb-10">
+      <div className="mb-10 border-2">
         <div className="bg-lightPeriwinkle p-2 flex justify-between">
           <h2 className="text-xl">{roomData?.principle}</h2>
           {roomData && roomData?.connections?.[socket?.id]?.admin && (
             <div className="flex gap-5">
-              <button
-                onClick={() => handlePrincipleBtnClick(-1)}
-                className="bg-periwinkle text-white px-2 py-1 rounded-xl hover:bg-darkPeriwinkle"
-              >
-                Previous Principle
-              </button>
-              <button
-                onClick={() => handlePrincipleBtnClick(1)}
-                className="bg-periwinkle text-white px-2 py-1 rounded-xl hover:bg-darkPeriwinkle"
-              >
-                Next Principle
-              </button>
+              {roomData &&
+                roomData?.connections?.[socket?.id]?.admin &&
+                Object.keys(dojoDomains[domain]).indexOf(roomData.principle) >
+                  0 && (
+                  <button
+                    onClick={() => handlePrincipleBtnClick(-1)}
+                    className="bg-periwinkle text-white px-2 py-1 rounded-xl hover:bg-darkPeriwinkle"
+                  >
+                    Previous Principle
+                  </button>
+                )}
+              {roomData &&
+                roomData?.connections?.[socket?.id]?.admin &&
+                Object.keys(dojoDomains[domain]).indexOf(roomData.principle) <
+                  Object.keys(dojoDomains[domain]).length - 1 && (
+                  <button
+                    onClick={() => handlePrincipleBtnClick(1)}
+                    className="bg-periwinkle text-white px-2 py-1 rounded-xl hover:bg-darkPeriwinkle"
+                  >
+                    Next Principle
+                  </button>
+                )}
             </div>
           )}
         </div>
-        <div>
-          <div>Digital Dojo Practices:</div>
-          <ul>
+        <div className="flex gap-10 mt-5 px-5">
+          <div className="font-bold">Digital Dojo Practices:</div>
+          <ul className="list-disc list-inside">
             {roomData &&
               dojoDomains?.[roomData?.domain]?.[
                 roomData?.principle
               ]?.practices.map((e, i) => <li key={i}>{e}</li>)}
           </ul>
+        </div>
+        <div className="space-y-5 p-5">
+          {roomData &&
+            Object.entries(
+              dojoDomains?.[roomData?.domain]?.[roomData?.principle]?.belts
+            ).map(([belt, qualities], i) => (
+              <div key={belt + i} className="flex gap-5 items-center">
+                <div>
+                  <img
+                    src={`/${belt}_poker_belt.png`}
+                    className="w-20 rounded-lg border-2 p-1 shadow-lg"
+                  />
+                </div>
+                <ul className="list-disc list-inside rounded-lg border-2 border-black px-5 py-2 shadow-lg w-full">
+                  {qualities.map((quality, i) => (
+                    <li key={quality + i} className="w-full">
+                      {quality}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
         </div>
       </div>
       <div className="md:flex gap-5">
@@ -245,8 +275,9 @@ export default function Room() {
             <p className="bg-lightPeriwinkle p-3 font-bold">
               Room Code:
               <button
+                title="copy room code"
                 onClick={() => navigator.clipboard.writeText(room)}
-                className="font-semibold float-right relative mr-2"
+                className="font-semibold float-right relative mr-2 hover:text-darkPeriwinkle"
               >
                 {room}
                 <FiCopy className="absolute -top-2 -right-4" />

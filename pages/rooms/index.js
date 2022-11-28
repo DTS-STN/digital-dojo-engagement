@@ -73,9 +73,9 @@ export default function Home() {
             <option disabled selected value="">
               select a domain
             </option>
-            <option value="agile">Agile</option>
-            <option value="devops">DevOps</option>
-            <option value="design thinking">Design Thinking</option>
+            <option value="Agile">Agile</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Design Thinking">Design Thinking</option>
           </select>
           <button className="bg-periwinkle text-white hover:bg-darkPeriwinkle cursor-pointer rounded self-start mx-auto px-1 mt-auto">
             Create Room
