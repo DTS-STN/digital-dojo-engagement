@@ -7,8 +7,6 @@ import logger from '../lib/logger'
 import { useEffect, useState } from 'react'
 import DottedLine from '../components/DottedLine'
 
-import { fetchContent } from '../lib/cms'
-
 export default function Home(props) {
   /* istanbul ignore next */
   const t = props.locale === 'en' ? en : fr
@@ -129,8 +127,6 @@ export default function Home(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  const content = await fetchContent()
-
   /* istanbul ignore next */
   const langToggleLink = locale === 'en' ? '/fr/home' : '/home'
 
@@ -151,7 +147,7 @@ export async function getStaticProps({ locale }) {
   }
 
   return {
-    props: { locale, langToggleLink, content, meta },
+    props: { locale, langToggleLink, meta },
   }
 }
 
