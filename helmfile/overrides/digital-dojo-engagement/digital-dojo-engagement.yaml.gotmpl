@@ -48,6 +48,8 @@ extraEnv:
       value: {{ requiredEnv "NODEMAILER_EMAIL" }}
     - name: NODEMAILER_PASSWORD
       value: {{ requiredEnv "NODEMAILER_PASSWORD" }}
+    - name: SECRET_TOKEN
+      value: {{ requiredEnv "SECRET_TOKEN"}}
 image:
   repository: {{ requiredEnv "ACR_DOMAIN" }}/{{ requiredEnv "PROJECT" }}
   tag: "{{ env "DOCKER_TAG" | default "latest" }}" 

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import { fetchContent } from '../lib/cms'
 import ExpandableHeadline from '../components/ExpandableHeadline'
 import DottedLine from '../components/DottedLine'
 
@@ -21,8 +20,6 @@ export default function FAQ(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  const content = await fetchContent()
-
   /* istanbul ignore next */
   const langToggleLink = locale === 'en' ? '/fr/FAQ' : '/FAQ'
 
@@ -43,7 +40,7 @@ export async function getStaticProps({ locale }) {
   }
 
   return {
-    props: { locale, langToggleLink, content, meta },
+    props: { locale, langToggleLink, meta },
   }
 }
 

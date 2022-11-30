@@ -13,12 +13,12 @@ jest.mock('next/router', () => ({
   useRouter: jest.fn(),
 }))
 
-// 'Mock' call to fetchContent
-jest.mock('../../lib/cms', () => ({
-  fetchContent: () => {
-    return {}
-  },
-}))
+// // 'Mock' call to fetchContent
+// jest.mock('../../lib/cms', () => ({
+//   fetchContent: () => {
+//     return {}
+//   },
+// }))
 
 describe('index page', () => {
   /* Place-holder Meta Data Props */

@@ -14,11 +14,11 @@ jest.mock('next/router', () => ({
 }))
 
 //
-jest.mock('../../lib/cms', () => ({
-  fetchContent: () => {
-    return {}
-  },
-}))
+// jest.mock('../../lib/cms', () => ({
+//   fetchContent: () => {
+//     return {}
+//   },
+// }))
 
 describe('Home page', () => {
   const content = {
@@ -44,7 +44,6 @@ describe('Home page', () => {
 
     expect(props).toEqual({
       props: {
-        content: {},
         langToggleLink: '/fr/home',
         locale: 'en',
         meta: {

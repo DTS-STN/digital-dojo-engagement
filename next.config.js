@@ -39,7 +39,7 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value:
-      "default-src 'self'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; object-src 'none'; script-src-elem 'self'; script-src 'self' 'unsafe-eval'; connect-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:",
+      "frame-src https://www.youtube.com/; default-src 'self'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; object-src 'none'; script-src-elem 'self'; script-src 'self' 'unsafe-eval'; connect-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:",
   },
 ]
 
@@ -61,6 +61,11 @@ module.exports = {
     locales: ['en', 'fr'],
     defaultLocale: 'en',
     localeDetection: true,
+  },
+  // last ditch effort for ISR to work on self-hosted Next.js site
+  experimental: {
+    // Defaults to 50MB
+    isrMemoryCacheSize: 0,
   },
   //
   // rewrites setup

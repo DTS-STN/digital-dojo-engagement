@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
-import { GoTriangleDown } from 'react-icons/go'
+import { GoTriangleDown, GoTriangleRight } from 'react-icons/go'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 function Navbar({ t }) {
@@ -8,17 +8,31 @@ function Navbar({ t }) {
   const [about, setAbout] = useState(false)
   const [assessment, setAssessment] = useState(false)
   const [engagement, setEngagement] = useState(false)
+  const [services, setServices] = useState(false)
+
+  // hamburger icon open/close state (only available on small screens)
   const [open, setOpen] = useState(false)
+
+  function falsifyAllStates() {
+    ;[setAbout, setAssessment, setEngagement, setServices].forEach((fn) =>
+      fn(false)
+    )
+  }
 
   // ensure dropdowns are closed before opening a new one
   // todo:  better approach needed?
   function handleClick(state, toggle) {
-    ;[setAbout, setAssessment, setEngagement].forEach((fn) => fn(false))
+    falsifyAllStates()
     toggle(!state)
   }
 
+  // for keyboard accesibility to close nav items on escape press (common practice)
+  function handleEscape(e) {
+    if (e.key === 'Escape') falsifyAllStates()
+  }
+
   return (
-    <nav>
+    <nav onKeyDown={handleEscape}>
       <button
         aria-label="toggle navigation menu"
         onClick={() => setOpen((prev) => !prev)}
@@ -46,7 +60,7 @@ function Navbar({ t }) {
             {t.aboutUs} <GoTriangleDown className="text-xs" />
           </div>
           <div
-            className={`${
+            className={`peer w-[147px] ${
               about ? 'z-50 flex flex-col items-start' : 'hidden'
             } bg-periwinkle/50 md:absolute top-9 left-0'`}
           >
@@ -55,9 +69,35 @@ function Navbar({ t }) {
                 {t.ourCoaches}
               </a>
             </Link>
-            <Link href="">
-              <a className="p-1 text-left hover:bg-periwinkle duration-200">
-                {t.serviceCatalogue}
+            <Link href="/services">
+              <a
+                onFocus={() => setServices(true)}
+                className="peer p-1 text-left hover:bg-periwinkle duration-200 flex items-center gap-1"
+              >
+                {t.serviceCatalogue} <GoTriangleRight className="text-xs" />
+              </a>
+            </Link>
+          </div>
+          <div
+            className={`${
+              services
+                ? 'peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[147px] flex flex-col w-32 bg-periwinkle'
+                : 'md:hidden peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[147px] flex flex-col w-32 bg-periwinkle'
+            }`}
+          >
+            <Link href="/services/consultations">
+              <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+                {t.consultations}
+              </a>
+            </Link>
+            <Link href="/services/workshops">
+              <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+                {t.workshops}
+              </a>
+            </Link>
+            <Link href="/services/challenges">
+              <a className="p-1 text-left hover:text-periwinkle hover:bg-white duration-200">
+                {t.challenges}
               </a>
             </Link>
           </div>
@@ -111,7 +151,7 @@ function Navbar({ t }) {
         <Link href="/events">
           <a className="hover:underline">{t.events}</a>
         </Link>
-        <Link href="">
+        <Link href="/tools-and-resources">
           <a className="hover:underline">{t.tools}</a>
         </Link>
         <Link href="/FAQ">
