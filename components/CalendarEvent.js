@@ -11,18 +11,22 @@ export default function CalendarEvent({ event }) {
   }
   return (
     <Popover className="relative bg-periwinkle rounded w-full my-px">
-      <Popover.Button>
-        <p className="text-xs text-white">{event.title}</p>
-      </Popover.Button>
+      <div className="overflow-hidden">
+        <Popover.Button>
+          <p className="text-xs text-white whitespace-nowrap leading-tight">
+            {event.title}
+          </p>
+        </Popover.Button>
+      </div>
 
-      <Popover.Panel className="absolute z-10 w-96 bg-white drop-shadow-2xl rounded border border-periwinkle">
+      <Popover.Panel className="absolute z-10 w-96 bg-white drop-shadow-2xl rounded border border-periwinkle my-2">
         <div className="flex flex-row justify-between bg-periwinkle text-white px-1">
           <div className="flex flex-col ">
             <p className="text-lg">{event.title}</p>
             <p className="text-sm">
               {dayjs(event.date).format('dddd, MMMM D, YYYY')}
             </p>
-            <p className="text-sm">event time</p>
+            <p className="text-sm">{dayjs(event.date).format('HH:mm')}</p>
           </div>
           <Popover.Button
             className="cursor-pointer mt-2 ml-2 rounded-full bg-black/30"

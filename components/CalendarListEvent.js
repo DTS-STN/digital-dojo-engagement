@@ -6,7 +6,7 @@ export default function CalendarListEvent({ event }) {
     return text
   }
   return (
-    <div className="cursor-pointer flex flex-row w-full text-periwinkle">
+    <div className="cursor-pointer flex flex-row w-full text-periwinkle py-2">
       <p className="mr-5">{dayjs(event.date).format('HH:mm')}</p>
       <p className="grow underline">{event.title}</p>
     </div>

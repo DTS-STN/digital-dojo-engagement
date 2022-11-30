@@ -91,12 +91,12 @@ export default function Calendar({
                   }`}
                 >
                   <div
-                    className={`px-1 h-full text-periwinkle ${
+                    className={`h-full text-periwinkle ${
                       isToday ? 'bg-periwinkle/10' : ''
                     }`}
                   >
-                    <p className="text-right">{date.date()}</p>
-                    <div className="flex flex-col overflow-hidden">
+                    <p className="px-1 text-right">{date.date()}</p>
+                    <div className="flex flex-col">
                       {eventsForDay.length > 0 &&
                         eventsForDay.map((e, index) => (
                           <CalendarEvent key={index} event={e} />
