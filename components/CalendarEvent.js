@@ -4,18 +4,22 @@ BsTextLeft
 import { BsTextLeft } from 'react-icons/bs'
 import dayjs from 'dayjs'
 
-export default function CalendarEvent({ event }) {
+export default function CalendarEvent({ event, hasMultipleEvents }) {
   const shortenText = (text) => {
     if (text.length > 5) return text.substring(0, 20) + '...'
     return text
   }
   return (
-    <Popover className="relative bg-periwinkle rounded w-full my-px">
+    <Popover
+      className={`relative w-full my-px ${
+        hasMultipleEvents
+          ? 'whitespace-nowrap border border-periwinkle rounded'
+          : ''
+      }`}
+    >
       <div className="overflow-hidden">
         <Popover.Button>
-          <p className="text-xs text-white whitespace-nowrap leading-tight">
-            {event.title}
-          </p>
+          <p className="text-xs text-periwinkel leading-tight">{event.title}</p>
         </Popover.Button>
       </div>
 
@@ -24,9 +28,12 @@ export default function CalendarEvent({ event }) {
           <div className="flex flex-col ">
             <p className="text-lg">{event.title}</p>
             <p className="text-sm">
-              {dayjs(event.date).format('dddd, MMMM D, YYYY')}
+              {dayjs(event.startDate).format('dddd, MMMM D, YYYY')}
             </p>
-            <p className="text-sm">{dayjs(event.date).format('HH:mm')}</p>
+            <p className="text-sm">
+              {dayjs(event.startDate).format('HH:mm')} -{' '}
+              {dayjs(event.endDate).format('HH:mm')}
+            </p>
           </div>
           <Popover.Button
             className="cursor-pointer mt-2 ml-2 rounded-full bg-black/30"

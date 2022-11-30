@@ -38,7 +38,7 @@ export default function Events({ locale, events }) {
 }
 
 export async function getStaticProps({ locale }) {
-  const content = await fetchContent()
+  // const content = await fetchContent()
 
   /* istanbul ignore next */
   const langToggleLink = locale === 'en' ? '/fr/events' : '/events'
@@ -63,7 +63,7 @@ export async function getStaticProps({ locale }) {
     props: {
       locale,
       langToggleLink,
-      content,
+      // content,
       meta,
       events: eventsFromFile.events,
     },

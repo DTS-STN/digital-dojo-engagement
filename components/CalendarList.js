@@ -63,9 +63,10 @@ export default function CalendarList({
       <div className="flex flex-col">
         {generateWeek(today).map(({ date, isToday }, index) => {
           const eventsForDay = events.filter(
-            (e) => e.date === date.format('YYYY-MM-DD')
+            (e) =>
+              dayjs(e.startDate).format('YYYY-MM-D') ===
+              date.format('YYYY-MM-D')
           )
-          console.log(date.format('YYYY-MM-DD'))
           console.log(eventsForDay)
           return (
             <div key={index} className={``}>

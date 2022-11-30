@@ -76,7 +76,9 @@ export default function Calendar({
         {generateMonth(today.month(), today.year()).map(
           ({ date, isInCurrentMonth, isToday }, index) => {
             const eventsForDay = events.filter(
-              (e) => e.date === date.format('YYYY-MM-DD')
+              (e) =>
+                dayjs(e.startDate).format('YYYY-MM-DD') ===
+                date.format('YYYY-MM-DD')
             )
             return (
               <div
@@ -99,7 +101,11 @@ export default function Calendar({
                     <div className="flex flex-col">
                       {eventsForDay.length > 0 &&
                         eventsForDay.map((e, index) => (
-                          <CalendarEvent key={index} event={e} />
+                          <CalendarEvent
+                            key={index}
+                            event={e}
+                            hasMultipleEvents={eventsForDay.length > 1}
+                          />
                         ))}
                     </div>
                   </div>
