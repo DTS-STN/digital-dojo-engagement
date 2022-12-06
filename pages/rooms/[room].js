@@ -17,13 +17,27 @@ export default function Room() {
 
   const [roomData, setRoomData] = useState()
   const [hide, setHide] = useState(true)
+  const [initTimer, setInitTimer] = useState()
   const [timer, setTimer] = useState(30)
   const [timerStarted, setTimerStarted] = useState(false)
 
+  // Notify user if they actually want to refresh the page
+  useEffect(() => {
+    if (window !== undefined) {
+      window.addEventListener('beforeunload', (e) => {
+        e.preventDefault()
+        e.returnValue = ''
+        socket.emit('leave-room', { room })
+      })
+    }
+  }, [])
+
+  // Initialize socket server/client
   useEffect(() => {
     socketInitializer()
   }, [])
 
+  // Timer operations for setting/clearing intervals
   useEffect(() => {
     let interval
     if (timerStarted) {
@@ -38,10 +52,16 @@ export default function Room() {
     return () => clearInterval(interval)
   }, [timerStarted, timer])
 
+  // socket initialization function and event handlers
   const socketInitializer = async () => {
     await fetch('/api/socket')
 
     socket = io()
+
+    if (!user) {
+      socket.emit('leave-room', { room })
+      router.push('/rooms')
+    }
 
     socket.emit('join-room', { room, user, domain })
 
@@ -56,10 +76,16 @@ export default function Room() {
     socket.on('update-timer-from-server', (timer) => {
       setTimer(timer)
     })
+
+    socket.on('disconnect', () => {
+      socket.emit('leave-room', { room })
+    })
   }
 
   function handlePrincipleBtnClick(n) {
-    let principles = Object.keys(dojoDomains[domain])
+    setHide(true)
+    socket.emit('clear-cards', { room })
+    let principles = Object.keys(dojoDomains[roomData?.domain])
     let i = principles.indexOf(roomData.principle)
     let newPrinciple =
       principles[Math.min(principles.length - 1, Math.max(0, i + n))]
@@ -83,12 +109,13 @@ export default function Room() {
       setTimerStarted(false)
     }
     setTimerStarted(true)
-    socket.emit('update-timer', { room, timer: 31 })
+    socket.emit('update-timer', { room, timer: initTimer + 1 })
   }
 
   function handleLeaveRoomClick() {
     socket.emit('leave-room', { room })
     router.push('/rooms')
+    socket.emit('leave-room', { room })
   }
 
   function handleChatSubmit(e) {
@@ -112,8 +139,9 @@ export default function Room() {
             <div className="flex gap-5">
               {roomData &&
                 roomData?.connections?.[socket?.id]?.admin &&
-                Object.keys(dojoDomains[domain]).indexOf(roomData.principle) >
-                  0 && (
+                Object.keys(dojoDomains[roomData?.domain]).indexOf(
+                  roomData.principle
+                ) > 0 && (
                   <button
                     onClick={() => handlePrincipleBtnClick(-1)}
                     className="bg-periwinkle text-white px-2 py-1 rounded-xl hover:bg-darkPeriwinkle"
@@ -123,8 +151,10 @@ export default function Room() {
                 )}
               {roomData &&
                 roomData?.connections?.[socket?.id]?.admin &&
-                Object.keys(dojoDomains[domain]).indexOf(roomData.principle) <
-                  Object.keys(dojoDomains[domain]).length - 1 && (
+                Object.keys(dojoDomains[roomData?.domain]).indexOf(
+                  roomData.principle
+                ) <
+                  Object.keys(dojoDomains[roomData?.domain]).length - 1 && (
                   <button
                     onClick={() => handlePrincipleBtnClick(1)}
                     className="bg-periwinkle text-white px-2 py-1 rounded-xl hover:bg-darkPeriwinkle"
@@ -215,7 +245,7 @@ export default function Room() {
                   onClick={handleHideClick}
                   className="px-2 rounded bg-periwinkle text-white hover:bg-darkPeriwinkle"
                 >
-                  Hide
+                  {hide ? 'Show' : 'Hide'}
                 </button>
                 <button
                   onClick={handleClearCards}
@@ -236,44 +266,52 @@ export default function Room() {
           </div>
           <div className="space-y-3">
             {roomData &&
-              Object.entries(roomData?.connections).map(([k, v]) => (
-                <div
-                  key={k}
-                  className="flex justify-between shadow-lg h-16 rounded text-white"
-                >
-                  <div
-                    className={`${
-                      socket?.id === k
-                        ? 'bg-periwinkle text-white'
-                        : 'text-black'
-                    } flex items-center px-2 rounded-tl rounded-bl border-r border-periwinkle min-w-[75px]`}
-                  >
-                    {v.user}
-                    {v.admin ? (
-                      <RiVipCrownFill
-                        className={`ml-2 text-sm ${
-                          socket?.id === k ? 'text-white' : 'text-periwinkle'
+              Object.entries(roomData?.connections).map(
+                ([k, v]) =>
+                  v.user && (
+                    <div
+                      key={k}
+                      className="flex justify-between shadow-lg h-16 rounded text-white"
+                    >
+                      <div
+                        className={`${
+                          socket?.id === k
+                            ? 'bg-periwinkle text-white'
+                            : 'text-black'
+                        } flex items-center px-2 rounded-tl rounded-bl border-r border-periwinkle min-w-[75px]`}
+                      >
+                        {v.user}
+                        {v.admin ? (
+                          <RiVipCrownFill
+                            className={`ml-2 text-sm ${
+                              socket?.id === k
+                                ? 'text-white'
+                                : 'text-periwinkle'
+                            }`}
+                          />
+                        ) : (
+                          ''
+                        )}
+                      </div>
+                      <div
+                        className={`flex items-center w-12 h-14 p-2 mr-1 my-auto mx-auto justify-center border-2 border-darkPeriwinkle text-black ${
+                          v.belt ? '' : 'border-dashed'
                         }`}
-                      />
-                    ) : (
-                      ''
-                    )}
-                  </div>
-                  <div
-                    className={`flex items-center w-12 h-14 p-2 mr-1 my-auto mx-auto justify-center border-2 border-darkPeriwinkle text-black ${
-                      v.belt ? '' : 'border-dashed'
-                    }`}
-                  >
-                    {!v.belt ? (
-                      ''
-                    ) : socket?.id !== k && hide ? (
-                      <img src="/card_back.JPG" alt={`${v.belt} belt`}></img>
-                    ) : (
-                      <img src={`/${v.belt}_poker_belt.png`}></img>
-                    )}
-                  </div>
-                </div>
-              ))}
+                      >
+                        {!v.belt ? (
+                          ''
+                        ) : socket?.id !== k && hide ? (
+                          <img
+                            src="/card_back.JPG"
+                            alt={`${v.belt} belt`}
+                          ></img>
+                        ) : (
+                          <img src={`/${v.belt}_poker_belt.png`}></img>
+                        )}
+                      </div>
+                    </div>
+                  )
+              )}
           </div>
         </div>
         <aside className="flex flex-col border md:w-1/3">
@@ -303,12 +341,22 @@ export default function Room() {
               <p className="font-bold text-periwinkle">Timer:</p>
               <div className="flex gap-2 ml-auto">
                 {roomData && roomData?.connections?.[socket?.id]?.admin && (
-                  <button
-                    onClick={handleTimerClick}
-                    className="px-2 rounded bg-periwinkle text-white hover:bg-darkPeriwinkle"
-                  >
-                    Timer
-                  </button>
+                  <>
+                    <input
+                      type="number"
+                      min={0}
+                      max={60}
+                      onChange={(e) => setInitTimer(+e.target.value)}
+                      placeholder="duration"
+                      className="w-24 border-2 text-sm px-1 py-0"
+                    />
+                    <button
+                      onClick={handleTimerClick}
+                      className="px-2 rounded bg-periwinkle text-white hover:bg-darkPeriwinkle"
+                    >
+                      Start
+                    </button>
+                  </>
                 )}
                 <div
                   className={`${

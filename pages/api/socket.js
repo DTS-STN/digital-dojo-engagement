@@ -24,11 +24,13 @@ export default function SocketHandler(req, res) {
           chat: [],
           votes: {},
         }
-      } else {
+        socket.join(room)
+        io.to(room).emit('room-data', rooms[room])
+      } else if (user) {
         rooms[room].connections[socket.id] = { user, belt: '' }
+        socket.join(room)
+        io.to(room).emit('room-data', rooms[room])
       }
-      socket.join(room)
-      io.to(room).emit('room-data', rooms[room])
     })
 
     socket.on('select-belt-colour', ({ room, colour }) => {
@@ -52,6 +54,14 @@ export default function SocketHandler(req, res) {
     })
 
     socket.on('leave-room', ({ room }) => {
+      // handle passing admin to next in line
+      if (rooms[room].connections[socket.id]?.admin) {
+        if (Object.keys(rooms[room].connections).length > 1) {
+          rooms[room].connections[
+            Object.keys(rooms[room].connections)[1]
+          ].admin = true
+        }
+      }
       delete rooms[room].connections[socket.id]
       if (!Object.keys(rooms[room].connections).length) {
         delete rooms[room]
