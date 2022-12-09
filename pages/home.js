@@ -81,7 +81,7 @@ export default function HomePage({ locale }) {
             <div className="w-3/4 mx-auto my-5 min-h-36 sm:h-36">
               <img src="/consultations.png" alt=""></img>
             </div>
-            <div className="bg-blue-700/70 text-white text-xl text-center mb-5">
+            <div className="bg-blue-900 text-white text-xl text-center mb-5">
               Consultations
             </div>
             <div className="text-center">
@@ -97,7 +97,7 @@ export default function HomePage({ locale }) {
             <div className="w-3/4 mx-auto my-5 min-h-36 sm:h-36">
               <img src="/workshops.png" alt=""></img>
             </div>
-            <div className="bg-green-700/70 text-white text-xl text-center mb-5">
+            <div className="bg-green-900 text-white text-xl text-center mb-5">
               Workshops
             </div>
             <div className="text-center">
@@ -113,7 +113,7 @@ export default function HomePage({ locale }) {
             <div className="w-3/4 mx-auto my-5 min-h-36 sm:h-36">
               <img src="/challenges.png" alt=""></img>
             </div>
-            <div className="bg-pink-700/70 text-white text-xl text-center mb-5">
+            <div className="bg-pink-900 text-white text-xl text-center mb-5">
               Dojo Challenges
             </div>
             <div className="text-center">
