@@ -35,7 +35,7 @@ export default function BeltResults({ locale }) {
   }
 
   return (
-    <div className="flex flex-col gap-5 max-w-2xl mx-auto">
+    <div className="flex flex-col gap-5 max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold text-periwinkle text-center">
         {t.title}
       </h1>

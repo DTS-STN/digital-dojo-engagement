@@ -33,7 +33,7 @@ export default function Engagement({ locale }) {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-2">
+    <div className="max-w-4xl mx-auto px-2">
       <h1 className="text-center">{t.h1}</h1>
       <DottedLine />
       <p className="text-periwinkle mb-2">{t.p1}</p>
@@ -63,7 +63,7 @@ export default function Engagement({ locale }) {
               required
               id="first_name"
               name="first_name"
-              className="border-2 rounded py-2 px-3"
+              className="border-2 rounded py-2 px-3 border-periwinkle"
               onChange={handleChange}
             ></input>
           </div>
@@ -75,7 +75,7 @@ export default function Engagement({ locale }) {
               required
               id="last_name"
               name="last_name"
-              className="border-2 rounded py-2 px-3"
+              className="border-2 rounded py-2 px-3 border-periwinkle"
               onChange={handleChange}
             ></input>
           </div>
@@ -87,7 +87,7 @@ export default function Engagement({ locale }) {
           required
           id="team_name"
           name="team_name"
-          className="border-2 rounded py-2 px-3"
+          className="border-2 rounded py-2 px-3 border-periwinkle"
           onChange={handleChange}
         ></input>
         <label htmlFor="work_location" className="font-bold text-periwinkle">
@@ -97,7 +97,7 @@ export default function Engagement({ locale }) {
           required
           id="work_location"
           name="work_location"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         >
           <option disabled selected>
@@ -118,7 +118,7 @@ export default function Engagement({ locale }) {
           required
           id="email"
           name="email"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         ></input>
 
@@ -129,7 +129,7 @@ export default function Engagement({ locale }) {
           required
           id="dates"
           name="dates"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         >
           <option disabled selected>
@@ -146,7 +146,7 @@ export default function Engagement({ locale }) {
           required
           id="practice"
           name="practice"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         >
           <option disabled selected>
@@ -165,7 +165,7 @@ export default function Engagement({ locale }) {
         <textarea
           id="what_else"
           name="what_else"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         ></textarea>
 
@@ -175,11 +175,11 @@ export default function Engagement({ locale }) {
         <textarea
           id="how_find"
           name="how_find"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         ></textarea>
 
-        <button className="mt-5 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
+        <button className="mt-5 py-2 bg-periwinkle text-white rounded hover:bg-darkPeriwinkle">
           {t.submit}
         </button>
       </form>

@@ -15,7 +15,7 @@ export default function Events({ locale, events }) {
   const t = locale === 'en' ? enEvents : frEvents
 
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       <h1 className="text-center">{t.title}</h1>
       <DottedLine />
       {isCalendarView ? (

@@ -6,7 +6,7 @@ import fr from '../../locales/belt-assessment/belt-assessment/fr'
 export default function BeltSystem({ locale }) {
   const t = locale === 'en' ? en : fr
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       <h1 className="text-2xl text-periwinkle text-center mb-5">{t.title}</h1>
       <p className="mb-5">{t.p1}</p>
       <DottedLine />

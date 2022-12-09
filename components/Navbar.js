@@ -60,7 +60,7 @@ function Navbar({ t }) {
             {t.aboutUs} <GoTriangleDown className="text-xs" />
           </div>
           <div
-            className={`peer w-[147px] ${
+            className={`peer w-[150px] ${
               about ? 'z-50 flex flex-col items-start' : 'hidden'
             } bg-periwinkle/50 md:absolute top-9 left-0'`}
           >
@@ -81,8 +81,8 @@ function Navbar({ t }) {
           <div
             className={`${
               services
-                ? 'peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[147px] flex flex-col w-32 bg-periwinkle'
-                : 'md:hidden peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[147px] flex flex-col w-32 bg-periwinkle'
+                ? 'peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[150px] flex flex-col w-36 bg-periwinkle'
+                : 'md:hidden peer-hover:flex peer-hover:flex-col hover:flex hover:flex-col z-50 md:absolute top-[68px] left-[150px] flex flex-col w-36 bg-periwinkle'
             }`}
           >
             <Link href="/services/consultations">
@@ -139,7 +139,7 @@ function Navbar({ t }) {
           <div
             className={`${
               engagement ? 'z-50 flex flex-col items-start' : 'hidden'
-            } bg-periwinkle/50 w-full md:absolute top-9 left-0'`}
+            } bg-periwinkle/50 w-[180px] md:absolute top-9 left-0'`}
           >
             <Link href="/engagement">
               <a className="w-full p-1 text-left hover:bg-periwinkle duration-200">

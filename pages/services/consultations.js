@@ -8,7 +8,7 @@ export default function Consultations({ locale }) {
   const router = useRouter()
   const t = locale === 'en' ? en : fr
   return (
-    <div className="max-w-3xl mx-auto p-2">
+    <div className="max-w-4xl mx-auto p-2">
       <h1 className="text-center">{t.consultations}</h1>
       <DottedLine />
       <section className="w-full mx-auto md:w-5/6 border-b-2 pb-5 pt-5 mb-6">

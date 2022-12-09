@@ -67,7 +67,6 @@ export default function CalendarList({
               dayjs(e.startDate).format('YYYY-MM-D') ===
               date.format('YYYY-MM-D')
           )
-          console.log(eventsForDay)
           return (
             <div key={index} className={``}>
               <div
