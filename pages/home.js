@@ -51,7 +51,7 @@ export default function HomePage({ locale }) {
           <DottedLine />
         </div>
         <div>
-          <img src="/collab.png" />
+          <img src="/collab.png" alt="" />
         </div>
       </div>
       <div>
@@ -79,7 +79,7 @@ export default function HomePage({ locale }) {
         <div className="block space-y-10 sm:space-y-0 sm:flex gap-10">
           <div className="border-2 sm:h-72">
             <div className="w-3/4 mx-auto my-5 min-h-36 sm:h-36">
-              <img src="/consultations.png"></img>
+              <img src="/consultations.png" alt=""></img>
             </div>
             <div className="bg-blue-700/70 text-white text-xl text-center mb-5">
               Consultations
@@ -95,7 +95,7 @@ export default function HomePage({ locale }) {
           </div>
           <div className="border-2 sm:h-72">
             <div className="w-3/4 mx-auto my-5 min-h-36 sm:h-36">
-              <img src="/workshops.png"></img>
+              <img src="/workshops.png" alt=""></img>
             </div>
             <div className="bg-green-700/70 text-white text-xl text-center mb-5">
               Workshops
@@ -111,7 +111,7 @@ export default function HomePage({ locale }) {
           </div>
           <div className="border-2 sm:h-72">
             <div className="w-3/4 mx-auto my-5 min-h-36 sm:h-36">
-              <img src="/challenges.png"></img>
+              <img src="/challenges.png" alt=""></img>
             </div>
             <div className="bg-pink-700/70 text-white text-xl text-center mb-5">
               Dojo Challenges
@@ -163,6 +163,7 @@ export default function HomePage({ locale }) {
         <div className="flex items-center mt-5">
           <div>
             <button
+              aria-label="previous testimonial"
               onClick={() => handleClick(-1)}
               className="text-4xl text-periwinkle mr-3 hover:text-darkPeriwinkle"
             >
@@ -171,9 +172,9 @@ export default function HomePage({ locale }) {
           </div>
           <div className="border p-5 rounded">
             <div className="flex items-center justify-between">
-              <h4 className="text-periwinkle text-xl">
+              <p className="text-periwinkle text-xl">
                 Name of client, department or role
-              </h4>
+              </p>
               <div className="flex ">
                 {Array(5)
                   .fill()
@@ -200,6 +201,7 @@ export default function HomePage({ locale }) {
           </div>
           <div>
             <button
+              aria-label="next testimonial"
               onClick={() => handleClick(1)}
               className="text-4xl text-periwinkle ml-3 hover:text-darkPeriwinkle"
             >
