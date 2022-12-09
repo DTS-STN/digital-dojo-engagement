@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670614016491" clover="3.2.0">
-  <project timestamp="1670614016491" name="All files">
+<coverage generated="1670614801026" clover="3.2.0">
+  <project timestamp="1670614801026" name="All files">
     <metrics statements="404" coveredstatements="78" conditionals="250" coveredconditionals="54" methods="194" coveredmethods="38" elements="848" coveredelements="170" complexity="0" loc="404" ncloc="404" packages="8" files="46" classes="46"/>
     <package name="components">
       <metrics statements="107" coveredstatements="35" conditionals="116" coveredconditionals="36" methods="63" coveredmethods="12"/>
@@ -245,12 +245,12 @@
         <line num="89" count="0" type="stmt"/>
         <line num="105" count="0" type="stmt"/>
         <line num="121" count="0" type="stmt"/>
-        <line num="166" count="0" type="stmt"/>
-        <line num="181" count="5" type="stmt"/>
-        <line num="203" count="0" type="stmt"/>
-        <line num="212" count="5" type="stmt"/>
-        <line num="231" count="1" type="stmt"/>
-        <line num="246" count="1" type="stmt"/>
+        <line num="167" count="0" type="stmt"/>
+        <line num="182" count="5" type="stmt"/>
+        <line num="205" count="0" type="stmt"/>
+        <line num="214" count="5" type="stmt"/>
+        <line num="233" count="1" type="stmt"/>
+        <line num="248" count="1" type="stmt"/>
       </file>
       <file name="homeOriginal.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/homeOriginal.js">
         <metrics statements="13" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="4" coveredmethods="0"/>
