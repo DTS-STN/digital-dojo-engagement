@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>0/43</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/12</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>0/43</span>
             </div>
         
             
@@ -138,7 +138,17 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -164,26 +174,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,6 +193,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -239,11 +259,13 @@ export default function <span class="fstat-no" title="function not covered" >Soc
           chat: [],
           votes: {},
         }
-      } else {
+<span class="cstat-no" title="statement not covered" >        socket.join(room)</span>
+<span class="cstat-no" title="statement not covered" >        io.to(room).emit('room-data', rooms[room])</span>
+      } else <span class="cstat-no" title="statement not covered" >if (user) {</span>
 <span class="cstat-no" title="statement not covered" >        rooms[room].connections[socket.id] = { user, belt: '' }</span>
+<span class="cstat-no" title="statement not covered" >        socket.join(room)</span>
+<span class="cstat-no" title="statement not covered" >        io.to(room).emit('room-data', rooms[room])</span>
       }
-<span class="cstat-no" title="statement not covered" >      socket.join(room)</span>
-<span class="cstat-no" title="statement not covered" >      io.to(room).emit('room-data', rooms[room])</span>
     })
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    socket.on('select-belt-colour', <span class="fstat-no" title="function not covered" >({</span> room, colour }) =&gt; {</span>
@@ -267,6 +289,14 @@ export default function <span class="fstat-no" title="function not covered" >Soc
     })
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    socket.on('leave-room', <span class="fstat-no" title="function not covered" >({</span> room }) =&gt; {</span>
+      // handle passing admin to next in line
+<span class="cstat-no" title="statement not covered" >      if (rooms[room].connections[socket.id]?.admin) {</span>
+<span class="cstat-no" title="statement not covered" >        if (Object.keys(rooms[room].connections).length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >          rooms[room].connections[</span>
+            Object.keys(rooms[room].connections)[1]
+          ].admin = true
+        }
+      }
 <span class="cstat-no" title="statement not covered" >      delete rooms[room].connections[socket.id]</span>
 <span class="cstat-no" title="statement not covered" >      if (!Object.keys(rooms[room].connections).length) {</span>
 <span class="cstat-no" title="statement not covered" >        delete rooms[room]</span>
@@ -295,7 +325,7 @@ export default function <span class="fstat-no" title="function not covered" >Soc
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Dec 09 2022 19:46:16 GMT+0000 (Coordinated Universal Time)
+                at Mon Dec 12 2022 12:50:21 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
