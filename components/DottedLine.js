@@ -4,7 +4,7 @@ export default function DottedLine({ numDots }) {
   return (
     <ul
       role="presentation"
-      className="flex flex-initial flex-row justify-center w-full mb-7"
+      className={'flex flex-initial flex-row justify-center w-full mb-7'}
     >
       {[...Array(numDots)].map((_, i) => (
         <li
