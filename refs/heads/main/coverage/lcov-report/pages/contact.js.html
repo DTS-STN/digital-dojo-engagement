@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
@@ -254,8 +254,7 @@
 <a name='L189'></a><a href='#L189'>189</a>
 <a name='L190'></a><a href='#L190'>190</a>
 <a name='L191'></a><a href='#L191'>191</a>
-<a name='L192'></a><a href='#L192'>192</a>
-<a name='L193'></a><a href='#L193'>193</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L192'></a><a href='#L192'>192</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -283,7 +282,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -475,7 +473,6 @@ export default function <span class="fstat-no" title="function not covered" >Con
           'Content-Type': 'application/json',
         },
       })
-<span class="cstat-no" title="statement not covered" >      console.log(res)</span>
 <span class="cstat-no" title="statement not covered" >      setStatus(res.status)</span>
     } catch (e) {
 <span class="cstat-no" title="statement not covered" >      setStatus(500)</span>
@@ -483,7 +480,7 @@ export default function <span class="fstat-no" title="function not covered" >Con
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;div className="max-w-2xl mx-auto"&gt;
+    &lt;div className="max-w-4xl mx-auto"&gt;
       &lt;h1 className="text-center"&gt;{t.h1}&lt;/h1&gt;
       &lt;DottedLine /&gt;
       &lt;p className="text-periwinkle mb-2"&gt;{t.p1}&lt;/p&gt;
@@ -513,7 +510,7 @@ export default function <span class="fstat-no" title="function not covered" >Con
               required
               id="firstName"
               name="firstName"
-              className="border-2 rounded py-2 px-3"
+              className="border-2 rounded py-2 px-3 border-periwinkle"
               onChange={handleChange}
             &gt;&lt;/input&gt;
           &lt;/div&gt;
@@ -525,7 +522,7 @@ export default function <span class="fstat-no" title="function not covered" >Con
               required
               id="lastName"
               name="lastName"
-              className="border-2 rounded py-2 px-3"
+              className="border-2 rounded py-2 px-3 border-periwinkle"
               onChange={handleChange}
             &gt;&lt;/input&gt;
           &lt;/div&gt;
@@ -538,7 +535,7 @@ export default function <span class="fstat-no" title="function not covered" >Con
           required
           id="email"
           name="email"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         &gt;&lt;/input&gt;
         &lt;label htmlFor="workLocation" className="font-bold text-periwinkle"&gt;
@@ -548,7 +545,7 @@ export default function <span class="fstat-no" title="function not covered" >Con
           required
           id="workLocation"
           name="workLocation"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         &gt;
           &lt;option&gt;&lt;/option&gt;
@@ -567,7 +564,7 @@ export default function <span class="fstat-no" title="function not covered" >Con
           required
           id="nextStep"
           name="nextStep"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         &gt;
           &lt;option&gt;&lt;/option&gt;
@@ -583,7 +580,7 @@ export default function <span class="fstat-no" title="function not covered" >Con
           type="textarea"
           id="tellUs"
           name="tellUs"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         &gt;&lt;/textarea&gt;
 &nbsp;
@@ -593,11 +590,11 @@ export default function <span class="fstat-no" title="function not covered" >Con
         &lt;textarea
           id="howFind"
           name="howFind"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         &gt;&lt;/textarea&gt;
 &nbsp;
-        &lt;button className="py-1 bg-blue-700 text-white rounded hover:bg-blue-800"&gt;
+        &lt;button className="mt-5 py-2 bg-periwinkle text-white rounded hover:bg-darkPeriwinkle"&gt;
           {t.submit}
         &lt;/button&gt;
       &lt;/form&gt;
@@ -646,7 +643,7 @@ export async function <span class="fstat-no" title="function not covered" >getSt
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Dec 12 2022 12:43:49 GMT+0000 (Coordinated Universal Time)
+                at Mon Dec 12 2022 12:44:22 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>

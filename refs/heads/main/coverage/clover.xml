@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670849029842" clover="3.2.0">
-  <project timestamp="1670849029842" name="All files">
-    <metrics statements="409" coveredstatements="82" conditionals="260" coveredconditionals="60" methods="186" coveredmethods="37" elements="855" coveredelements="179" complexity="0" loc="409" ncloc="409" packages="8" files="45" classes="45"/>
+<coverage generated="1670849062467" clover="3.2.0">
+  <project timestamp="1670849062467" name="All files">
+    <metrics statements="415" coveredstatements="90" conditionals="260" coveredconditionals="60" methods="191" coveredmethods="42" elements="866" coveredelements="192" complexity="0" loc="415" ncloc="415" packages="8" files="45" classes="45"/>
     <package name="components">
-      <metrics statements="107" coveredstatements="35" conditionals="116" coveredconditionals="36" methods="63" coveredmethods="12"/>
+      <metrics statements="106" coveredstatements="35" conditionals="116" coveredconditionals="36" methods="63" coveredmethods="12"/>
       <file name="BeltAssessment.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/BeltAssessment.js">
         <metrics statements="11" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="2"/>
         <line num="5" count="2" type="stmt"/>
@@ -48,7 +48,7 @@
         <line num="12" count="0" type="stmt"/>
       </file>
       <file name="CalendarList.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/CalendarList.js">
-        <metrics statements="12" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <metrics statements="11" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="8" coveredmethods="0"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
@@ -59,8 +59,7 @@
         <line num="65" count="0" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="87" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
       </file>
       <file name="CalendarListEvent.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/CalendarListEvent.js">
         <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -108,7 +107,7 @@
         <line num="10" count="10" type="stmt"/>
         <line num="11" count="8" type="stmt"/>
         <line num="12" count="8" type="stmt"/>
-        <line num="119" count="3" type="stmt"/>
+        <line num="120" count="3" type="stmt"/>
       </file>
       <file name="Layout.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/Layout.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
@@ -167,7 +166,7 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="74" coveredstatements="41" conditionals="50" coveredconditionals="23" methods="34" coveredmethods="22"/>
+      <metrics statements="81" coveredstatements="49" conditionals="50" coveredconditionals="23" methods="39" coveredmethods="27"/>
       <file name="404.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/404.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="4" count="1" type="stmt"/>
@@ -191,7 +190,7 @@
         <line num="4" count="2" type="stmt"/>
       </file>
       <file name="contact.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/contact.js">
-        <metrics statements="14" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <metrics statements="13" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
@@ -201,11 +200,10 @@
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="174" count="0" type="stmt"/>
-        <line num="189" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="173" count="0" type="stmt"/>
+        <line num="188" count="0" type="stmt"/>
       </file>
       <file name="engagement.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/engagement.js">
         <metrics statements="13" coveredstatements="7" conditionals="8" coveredconditionals="2" methods="5" coveredmethods="4"/>
@@ -257,20 +255,28 @@
         <line num="77" count="1" type="stmt"/>
       </file>
       <file name="tools-and-resources.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/tools-and-resources.js">
-        <metrics statements="13" coveredstatements="13" conditionals="10" coveredconditionals="8" methods="8" coveredmethods="8"/>
+        <metrics statements="21" coveredstatements="21" conditionals="10" coveredconditionals="8" methods="13" coveredmethods="13"/>
         <line num="9" count="4" type="stmt"/>
         <line num="10" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="11" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="12" count="100" type="stmt"/>
         <line num="16" count="4" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="84" count="104" type="stmt"/>
-        <line num="86" count="1" type="stmt"/>
-        <line num="101" count="100" type="stmt"/>
-        <line num="103" count="14" type="stmt"/>
-        <line num="117" count="1" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="14" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="99" count="104" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="116" count="100" type="stmt"/>
+        <line num="118" count="14" type="stmt"/>
         <line num="132" count="1" type="stmt"/>
+        <line num="147" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pages.about">
