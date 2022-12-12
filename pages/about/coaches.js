@@ -4,8 +4,8 @@ import DottedLine from '../../components/DottedLine'
 
 export default function Coaches({ fakeCoaches }) {
   return (
-    <div className="max-w-3xl mx-auto">
-      <h1 className="text-center">Our Coaches</h1>
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-center">Our Team</h1>
       <p>
         Our experienced coaches are here to help guide your team and provide
         support through your entire Dojo engagement.
@@ -18,8 +18,8 @@ export default function Coaches({ fakeCoaches }) {
           <Coach
             key={e.uid}
             src={e.picture.large}
-            name={`${e.first_name} ${e.last_name}`}
-            title={e.employment.title}
+            name={e.full_name}
+            title={e.title}
             blurb={e.blurb}
           />
         ))}

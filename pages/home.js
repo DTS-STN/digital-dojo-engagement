@@ -25,7 +25,7 @@ export default function Home(props) {
   }
 
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       <section className="flex items-center gap-5 mb-10">
         <div className="flex flex-col items-center">
           <div className="border border-black shadow-lg p-4 text-periwinkle">

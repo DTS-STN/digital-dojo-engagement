@@ -17,6 +17,21 @@ export default function ToolsAndResources({ locale }) {
     setState('A')
   }, [locale])
 
+  // needed to trigger the code below to be able to collapse summaries when clicking a new one
+  useEffect(() => {
+    setState('A')
+  }, [])
+
+  useEffect(() => {
+    let summaries = document.querySelectorAll('summary')
+    let details = document.querySelectorAll('details')
+    summaries.forEach((summary) =>
+      summary.addEventListener('click', () => {
+        details.forEach((detail) => (detail.open = false))
+      })
+    )
+  }, [state])
+
   return (
     <div className="max-w-5xl mx-auto p-2">
       <h1 className="text-center">{t.title}</h1>

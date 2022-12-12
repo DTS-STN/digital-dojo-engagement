@@ -88,18 +88,19 @@ export default function Header(props) {
         </div>
         <Navbar t={t} />
 
-        <div className="relative h-0 pb-[40%] md:pb-[25%]">
+        <div className="relative h-[200px]">
           <Image
-            className="object-cover"
-            alt=""
             src="/Homepage_header.png"
+            objectFit="cover"
             layout="fill"
+            role="presentation"
+            alt=""
           />
-          <div className="absolute whitespace-nowrap text-center font-medium tracking-[.2em] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <h1 className="text-[4rem] md:text-[8rem] text-white pb-[2.5rem] md:pb-[3.5rem]">
+          <div className="absolute whitespace-nowrap text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <h1 className="text-[2rem] md:text-[4rem] text-white">
               {t.headerTitle}
             </h1>
-            <h2 className="text-[1.3] md:text-[2.6rem] text-white">
+            <h2 className="text-[1.3rem] md:text-[2rem] text-white">
               {t.headerSubText}
             </h2>
           </div>

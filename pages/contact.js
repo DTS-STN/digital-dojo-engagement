@@ -26,7 +26,6 @@ export default function Contact({ locale }) {
           'Content-Type': 'application/json',
         },
       })
-      console.log(res)
       setStatus(res.status)
     } catch (e) {
       setStatus(500)
@@ -34,7 +33,7 @@ export default function Contact({ locale }) {
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       <h1 className="text-center">{t.h1}</h1>
       <DottedLine />
       <p className="text-periwinkle mb-2">{t.p1}</p>
@@ -64,7 +63,7 @@ export default function Contact({ locale }) {
               required
               id="firstName"
               name="firstName"
-              className="border-2 rounded py-2 px-3"
+              className="border-2 rounded py-2 px-3 border-periwinkle"
               onChange={handleChange}
             ></input>
           </div>
@@ -76,7 +75,7 @@ export default function Contact({ locale }) {
               required
               id="lastName"
               name="lastName"
-              className="border-2 rounded py-2 px-3"
+              className="border-2 rounded py-2 px-3 border-periwinkle"
               onChange={handleChange}
             ></input>
           </div>
@@ -89,7 +88,7 @@ export default function Contact({ locale }) {
           required
           id="email"
           name="email"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         ></input>
         <label htmlFor="workLocation" className="font-bold text-periwinkle">
@@ -99,7 +98,7 @@ export default function Contact({ locale }) {
           required
           id="workLocation"
           name="workLocation"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         >
           <option></option>
@@ -118,7 +117,7 @@ export default function Contact({ locale }) {
           required
           id="nextStep"
           name="nextStep"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         >
           <option></option>
@@ -134,7 +133,7 @@ export default function Contact({ locale }) {
           type="textarea"
           id="tellUs"
           name="tellUs"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         ></textarea>
 
@@ -144,11 +143,11 @@ export default function Contact({ locale }) {
         <textarea
           id="howFind"
           name="howFind"
-          className="border-2 rounded"
+          className="border-2 rounded border-periwinkle"
           onChange={handleChange}
         ></textarea>
 
-        <button className="py-1 bg-blue-700 text-white rounded hover:bg-blue-800">
+        <button className="mt-5 py-2 bg-periwinkle text-white rounded hover:bg-darkPeriwinkle">
           {t.submit}
         </button>
       </form>

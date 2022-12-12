@@ -8,7 +8,7 @@ import frFAQ from '../locales/FAQ/fr'
 export default function FAQ(props) {
   const t = props.locale === 'en' ? enFAQ : frFAQ
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-4xl mx-auto">
       <h1 className="text-center">{t.faq}</h1>
       <DottedLine />
       {/* Loop through all FAQ objects here */}

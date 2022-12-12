@@ -8,7 +8,7 @@ export default function Services({ locale }) {
   const t = locale === 'en' ? en : fr
 
   return (
-    <div className="max-w-3xl mx-auto p-2">
+    <div className="max-w-4xl mx-auto p-2">
       <h1 className="text-center">{t.ourServices}</h1>
       <p className="text-center">{t.ourServicesP}</p>
       <DottedLine />
@@ -30,7 +30,7 @@ export default function Services({ locale }) {
           </button>
         </div>
         <div className="border-2 space-y-2 py-2">
-          <img src="/consultations.png" alt="" className="w-1/2 mx-auto" />
+          <img src="/workshops.png" alt="" className="w-1/2 mx-auto" />
           <h3 className="text-white bg-[#49a292] text-lg text-center">
             {t.workshops}
           </h3>
@@ -45,7 +45,7 @@ export default function Services({ locale }) {
           </button>
         </div>
         <div className="border-2 space-y-2 py-2">
-          <img src="/consultations.png" alt="" className="w-1/2 mx-auto" />
+          <img src="/challenges.png" alt="" className="w-1/2 mx-auto" />
           <h3 className="text-white bg-[#d270ac] text-lg text-center">
             {t.challenges}
           </h3>
