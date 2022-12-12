@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670849661906" clover="3.2.0">
-  <project timestamp="1670849661906" name="All files">
-    <metrics statements="432" coveredstatements="86" conditionals="264" coveredconditionals="54" methods="203" coveredmethods="43" elements="899" coveredelements="183" complexity="0" loc="432" ncloc="432" packages="8" files="46" classes="46"/>
+<coverage generated="1670859242206" clover="3.2.0">
+  <project timestamp="1670859242206" name="All files">
+    <metrics statements="432" coveredstatements="122" conditionals="264" coveredconditionals="77" methods="203" coveredmethods="61" elements="899" coveredelements="260" complexity="0" loc="432" ncloc="432" packages="8" files="46" classes="46"/>
     <package name="components">
-      <metrics statements="106" coveredstatements="35" conditionals="116" coveredconditionals="36" methods="63" coveredmethods="12"/>
+      <metrics statements="106" coveredstatements="54" conditionals="116" coveredconditionals="54" methods="63" coveredmethods="22"/>
       <file name="BeltAssessment.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/BeltAssessment.js">
         <metrics statements="11" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="2"/>
         <line num="5" count="2" type="stmt"/>
@@ -25,45 +25,45 @@
         <line num="11" count="0" type="stmt"/>
       </file>
       <file name="Calendar.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/Calendar.js">
-        <metrics statements="12" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="9" coveredmethods="0"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <metrics statements="12" coveredstatements="9" conditionals="12" coveredconditionals="11" methods="9" coveredmethods="6"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="83" count="0" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="65" count="21" type="stmt"/>
+        <line num="78" count="126" type="stmt"/>
+        <line num="80" count="756" type="stmt"/>
+        <line num="83" count="126" type="stmt"/>
+        <line num="104" count="3" type="stmt"/>
       </file>
       <file name="CalendarEvent.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/CalendarEvent.js">
-        <metrics statements="5" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="3" conditionals="4" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
         <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
       </file>
       <file name="CalendarList.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/CalendarList.js">
-        <metrics statements="11" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="8" coveredmethods="0"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <metrics statements="11" coveredstatements="6" conditionals="8" coveredconditionals="6" methods="8" coveredmethods="3"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
+        <line num="65" count="7" type="stmt"/>
+        <line num="67" count="42" type="stmt"/>
+        <line num="70" count="7" type="stmt"/>
         <line num="86" count="0" type="stmt"/>
       </file>
       <file name="CalendarListEvent.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/CalendarListEvent.js">
-        <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="3" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="10" count="0" type="stmt"/>
@@ -81,10 +81,10 @@
       </file>
       <file name="DottedLine.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/DottedLine.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="10" type="stmt"/>
-        <line num="10" count="80" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="10" count="144" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
       </file>
       <file name="ExpandableHeadline.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/ExpandableHeadline.js">
         <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -166,7 +166,7 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="98" coveredstatements="45" conditionals="54" coveredconditionals="17" methods="51" coveredmethods="28"/>
+      <metrics statements="98" coveredstatements="58" conditionals="54" coveredconditionals="22" methods="51" coveredmethods="34"/>
       <file name="404.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/404.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="4" count="1" type="stmt"/>
@@ -190,20 +190,20 @@
         <line num="4" count="2" type="stmt"/>
       </file>
       <file name="contact.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/contact.js">
-        <metrics statements="13" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <metrics statements="13" coveredstatements="7" conditionals="8" coveredconditionals="2" methods="5" coveredmethods="4"/>
+        <line num="7" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="173" count="0" type="stmt"/>
-        <line num="188" count="0" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="173" count="1" type="stmt"/>
+        <line num="188" count="1" type="stmt"/>
       </file>
       <file name="engagement.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/engagement.js">
         <metrics statements="13" coveredstatements="7" conditionals="8" coveredconditionals="2" methods="5" coveredmethods="4"/>
@@ -222,13 +222,13 @@
         <line num="220" count="1" type="stmt"/>
       </file>
       <file name="events.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/events.js">
-        <metrics statements="6" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
       </file>
       <file name="home.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/home.js">
         <metrics statements="17" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="12" coveredmethods="4"/>
@@ -300,14 +300,14 @@
       </file>
     </package>
     <package name="pages.about">
-      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
       <file name="coaches.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/pages/about/coaches.js">
-        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pages.api">
