@@ -14,7 +14,7 @@ describe('coaches page loads', () => {
         cy.get('h1').should('contain.text','Our Team')
     })  
   
-    it('Home page has no detectable a11y violations on load', () => {
+    it('has no detectable a11y violations on load', () => {
       cy.checkA11y()
     })
   })

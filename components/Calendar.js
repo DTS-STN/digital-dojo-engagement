@@ -21,21 +21,22 @@ export default function Calendar({
             onClick={() => {
               setToday(today.subtract(1, 'month'))
             }}
-            className="uppercase rounded text-periwinkle border px-2 border-periwinkle hover:bg-periwinkle hover:text-white "
+            className="uppercase rounded text-darkPeriwinkle border px-2 border-darkPeriwinkle hover:bg-darkPeriwinkle hover:text-white "
           >
             {t.prev}
           </button>
           <button
+            id="nextMonth"
             onClick={() => {
               setToday(today.add(1, 'month'))
             }}
-            className="uppercase rounded text-periwinkle border px-2 border-periwinkle hover:bg-periwinkle hover:text-white ml-1"
+            className="uppercase rounded text-darkPeriwinkle border px-2 border-darkPeriwinkle hover:bg-darkPeriwinkle hover:text-white ml-1"
           >
             {t.next}
           </button>
         </div>
         <div>
-          <p className="text-periwinkle text-xl font-bold mx-3">
+          <p className="text-darkPeriwinkle text-xl font-bold mx-3">
             {today.year()} {MONTHS[today.month()]}
           </p>
         </div>
@@ -43,7 +44,7 @@ export default function Calendar({
           <div className="float-right">
             <button
               onClick={() => toggleCalenderView(1)}
-              className={`rounded text-periwinkle border px-2 border-periwinkle hover:bg-periwinkle hover:text-white ${
+              className={`rounded text-white border px-2 border-darkPeriwinkle hover:bg-darkPeriwinkle hover:text-white ${
                 isCalendarView && 'bg-periwinkle text-white'
               }`}
             >
@@ -51,7 +52,7 @@ export default function Calendar({
             </button>
             <button
               onClick={() => toggleCalenderView(0)}
-              className={`rounded text-periwinkle border px-2 border-periwinkle hover:bg-periwinkle hover:text-white ml-1 ${
+              className={`rounded text-darkPeriwinkle border px-2 border-darkPeriwinkle hover:bg-darkPeriwinkle hover:text-white ml-1 ${
                 !isCalendarView && 'bg-periwinkle text-white'
               }`}
             >
@@ -64,7 +65,7 @@ export default function Calendar({
         {DAYS.map((day, index) => {
           return (
             <p
-              className="-mt-px -ml-px border border-periwinkle text-left text-periwinkle px-1 bg-periwinkle/10"
+              className="-mt-px -ml-px border border-darkPeriwinkle text-left text-darkPeriwinkle px-1 bg-periwinkle/10"
               key={index}
             >
               {day.substring(0, 3)}
@@ -83,17 +84,17 @@ export default function Calendar({
             return (
               <div
                 key={index}
-                className={`-mt-px -ml-px border border-periwinkle aspect-[4/5] ${
+                className={`-mt-px -ml-px border border-darkPeriwinkle aspect-[4/5] ${
                   !isInCurrentMonth ? 'invisible' : ''
                 }`}
               >
                 <div
-                  className={`h-full border-2 border-white hover:border-periwinkle ${
-                    isToday ? 'border-periwinkle/10' : ''
+                  className={`h-full border-2 border-white hover:border-darkPeriwinkle ${
+                    isToday ? 'border-darkPeriwinkle/10' : ''
                   }`}
                 >
                   <div
-                    className={`h-full text-periwinkle ${
+                    className={`h-full text-darkPeriwinkle ${
                       isToday ? 'bg-periwinkle/10' : ''
                     }`}
                   >
