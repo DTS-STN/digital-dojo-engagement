@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1671026049781" clover="3.2.0">
-  <project timestamp="1671026049781" name="All files">
+<coverage generated="1671029967480" clover="3.2.0">
+  <project timestamp="1671029967480" name="All files">
     <metrics statements="432" coveredstatements="122" conditionals="264" coveredconditionals="77" methods="203" coveredmethods="61" elements="899" coveredelements="260" complexity="0" loc="432" ncloc="432" packages="8" files="46" classes="46"/>
     <package name="components">
       <metrics statements="106" coveredstatements="54" conditionals="116" coveredconditionals="54" methods="63" coveredmethods="22"/>
@@ -30,14 +30,14 @@
         <line num="14" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="65" count="21" type="stmt"/>
-        <line num="78" count="126" type="stmt"/>
-        <line num="80" count="756" type="stmt"/>
-        <line num="83" count="126" type="stmt"/>
-        <line num="104" count="3" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="66" count="21" type="stmt"/>
+        <line num="79" count="126" type="stmt"/>
+        <line num="81" count="756" type="stmt"/>
+        <line num="84" count="126" type="stmt"/>
+        <line num="105" count="3" type="stmt"/>
       </file>
       <file name="CalendarEvent.js" path="/home/runner/work/digital-dojo-engagement/digital-dojo-engagement/components/CalendarEvent.js">
         <metrics statements="5" coveredstatements="3" conditionals="4" coveredconditionals="1" methods="2" coveredmethods="1"/>

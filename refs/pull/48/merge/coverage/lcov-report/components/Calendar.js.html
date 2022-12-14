@@ -183,7 +183,8 @@
 <a name='L118'></a><a href='#L118'>118</a>
 <a name='L119'></a><a href='#L119'>119</a>
 <a name='L120'></a><a href='#L120'>120</a>
-<a name='L121'></a><a href='#L121'>121</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,6 +206,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -326,21 +328,22 @@ export default function Calendar({
             onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >              setToday(today.subtract(1, 'month'))</span>
             }}
-            className="uppercase rounded text-periwinkle border px-2 border-periwinkle hover:bg-periwinkle hover:text-white "
+            className="uppercase rounded text-darkPeriwinkle border px-2 border-darkPeriwinkle hover:bg-darkPeriwinkle hover:text-white "
           &gt;
             {t.prev}
           &lt;/button&gt;
           &lt;button
+            id="nextMonth"
             onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >              setToday(today.add(1, 'month'))</span>
             }}
-            className="uppercase rounded text-periwinkle border px-2 border-periwinkle hover:bg-periwinkle hover:text-white ml-1"
+            className="uppercase rounded text-darkPeriwinkle border px-2 border-darkPeriwinkle hover:bg-darkPeriwinkle hover:text-white ml-1"
           &gt;
             {t.next}
           &lt;/button&gt;
         &lt;/div&gt;
         &lt;div&gt;
-          &lt;p className="text-periwinkle text-xl font-bold mx-3"&gt;
+          &lt;p className="text-darkPeriwinkle text-xl font-bold mx-3"&gt;
             {today.year()} {MONTHS[today.month()]}
           &lt;/p&gt;
         &lt;/div&gt;
@@ -348,7 +351,7 @@ export default function Calendar({
           &lt;div className="float-right"&gt;
             &lt;button
               onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >toggleCalenderView(1)}</span>
-              className={`rounded text-periwinkle border px-2 border-periwinkle hover:bg-periwinkle hover:text-white ${
+              className={`rounded text-white border px-2 border-darkPeriwinkle hover:bg-darkPeriwinkle hover:text-white ${
                 isCalendarView &amp;&amp; 'bg-periwinkle text-white'
               }`}
             &gt;
@@ -356,7 +359,7 @@ export default function Calendar({
             &lt;/button&gt;
             &lt;button
               onClick={() =&gt; toggleCalenderView(0)}
-              className={`rounded text-periwinkle border px-2 border-periwinkle hover:bg-periwinkle hover:text-white ml-1 ${
+              className={`rounded text-darkPeriwinkle border px-2 border-darkPeriwinkle hover:bg-darkPeriwinkle hover:text-white ml-1 ${
                 !isCalendarView &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >'bg-periwinkle text-white'</span>
               }`}
             &gt;
@@ -369,7 +372,7 @@ export default function Calendar({
         {DAYS.map((day, index) =&gt; {
           return (
             &lt;p
-              className="-mt-px -ml-px border border-periwinkle text-left text-periwinkle px-1 bg-periwinkle/10"
+              className="-mt-px -ml-px border border-darkPeriwinkle text-left text-darkPeriwinkle px-1 bg-periwinkle/10"
               key={index}
             &gt;
               {day.substring(0, 3)}
@@ -388,17 +391,17 @@ export default function Calendar({
             return (
               &lt;div
                 key={index}
-                className={`-mt-px -ml-px border border-periwinkle aspect-[4/5] ${
+                className={`-mt-px -ml-px border border-darkPeriwinkle aspect-[4/5] ${
                   !isInCurrentMonth ? 'invisible' : ''
                 }`}
               &gt;
                 &lt;div
-                  className={`h-full border-2 border-white hover:border-periwinkle ${
-                    isToday ? 'border-periwinkle/10' : ''
+                  className={`h-full border-2 border-white hover:border-darkPeriwinkle ${
+                    isToday ? 'border-darkPeriwinkle/10' : ''
                   }`}
                 &gt;
                   &lt;div
-                    className={`h-full text-periwinkle ${
+                    className={`h-full text-darkPeriwinkle ${
                       isToday ? 'bg-periwinkle/10' : ''
                     }`}
                   &gt;
@@ -430,7 +433,7 @@ export default function Calendar({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Dec 14 2022 13:54:09 GMT+0000 (Coordinated Universal Time)
+                at Wed Dec 14 2022 14:59:27 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>
