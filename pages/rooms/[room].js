@@ -17,7 +17,7 @@ export default function Room() {
 
   const [roomData, setRoomData] = useState()
   const [hide, setHide] = useState(true)
-  const [initTimer, setInitTimer] = useState()
+  const [initTimer, setInitTimer] = useState(30)
   const [timer, setTimer] = useState(30)
   const [timerStarted, setTimerStarted] = useState(false)
 
@@ -346,6 +346,7 @@ export default function Room() {
                       type="number"
                       min={0}
                       max={60}
+                      step={5}
                       onChange={(e) => setInitTimer(+e.target.value)}
                       placeholder="duration"
                       className="w-24 border-2 text-sm px-1 py-0"
@@ -363,7 +364,7 @@ export default function Room() {
                     timer < 10 ? 'text-red-700' : 'text-periwinkle'
                   } border-2 w-10 px-1 text-right`}
                 >
-                  :{('0' + timer).slice(-2)}
+                  :{('0' + Math.max(0, timer)).slice(-2)}
                 </div>
               </div>
             </div>

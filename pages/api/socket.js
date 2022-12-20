@@ -55,15 +55,15 @@ export default function SocketHandler(req, res) {
 
     socket.on('leave-room', ({ room }) => {
       // handle passing admin to next in line
-      if (rooms[room].connections[socket.id]?.admin) {
-        if (Object.keys(rooms[room].connections).length > 1) {
+      if (rooms[room]?.connections[socket.id]?.admin) {
+        if (Object.keys(rooms[room]?.connections || {}).length > 1) {
           rooms[room].connections[
-            Object.keys(rooms[room].connections)[1]
+            Object.keys(rooms[room]?.connections || {})[1]
           ].admin = true
         }
       }
-      delete rooms[room].connections[socket.id]
-      if (!Object.keys(rooms[room].connections).length) {
+      delete rooms[room]?.connections[socket.id]
+      if (!Object.keys(rooms[room]?.connections || {}).length) {
         delete rooms[room]
       }
       socket.leave(room)
