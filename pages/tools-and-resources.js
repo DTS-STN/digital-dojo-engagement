@@ -82,7 +82,7 @@ export default function ToolsAndResources({ locale }) {
           <div className="space-y-2">
             <iframe
               src="https://www.youtube.com/embed/videoseries?list=PLA--nqTdtET37Dnay7PJy_X6aQsipwfMa"
-              title="the digital dojo experience"
+              title="scrum basics"
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

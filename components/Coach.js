@@ -6,7 +6,7 @@ function Coach({ src, name, title, blurb }) {
     <div className="flex flex-col items-center">
       <div className="rounded-full border-2 p-1 h-32 w-32">
         {src ? (
-          <img src={src} className="rounded-full bg-cover" />
+          <img src={src} className="rounded-full bg-cover" alt={name} />
         ) : (
           <BsFillPersonFill className="w-28 h-28" />
         )}

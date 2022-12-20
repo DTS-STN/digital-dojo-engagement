@@ -11,7 +11,7 @@ export default function Coaches({ fakeCoaches }) {
         support through your entire Dojo engagement.
       </p>
       <DottedLine />
-      <h1 className="text-left ">Meet the team</h1>
+      <h2 className="text-left ">Meet the team</h2>
 
       <div className="grid grid-cols-3 gap-10 mt-10">
         {fakeCoaches.map((e) => (
